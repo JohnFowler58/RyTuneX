@@ -1090,10 +1090,10 @@ Biztos, hogy folytatni szeretné?</value>
     <value>Memóriateszt</value>
   </data>
     <data name="MemoryDiagnosticDialogText" xml:space="preserve">
-    <value>A memória problémái miatt a számítógép elveszítheti az információkat, vagy leállhat.
+    <value>A memóriaproblémák miatt a számítógép adatokat veszíthet, vagy leállhat.
 
 
-Ellenőrizi a számítógépét a memóriahibák után?</value>
+Ellenőrizze, hogy nincs-e memóriaprobléma a számítógépén!</value>
   </data>
     <data name="RestartNow" xml:space="preserve">
     <value>Indítsa újra most</value>
@@ -1372,10 +1372,10 @@ Ellenőrizi a számítógépét a memóriahibák után?</value>
     <value>Alapbiztonsági szolgáltatás állapota</value>
   </data>
     <data name="SecurityPage_LastUpdated" xml:space="preserve">
-    <value>Utolsó frissítés</value>
+    <value>Utoljára frissítve</value>
   </data>
     <data name="SecurityPage_LastRefreshed" xml:space="preserve">
-    <value>Utolsó frissítés</value>
+    <value>Utoljára szinkronizálva</value>
   </data>
     <data name="SecurityPage_QuickScanCompleted" xml:space="preserve">
     <value>Gyors vizsgálat befejezve</value>
@@ -1411,7 +1411,7 @@ Ellenőrizi a számítógépét a memóriahibák után?</value>
     <value>Maximális teljesítmény energiaséma sikeresen hozzáadva.</value>
   </data>
     <data name="Feature_AddUltimatePowerPlanButton.Content" xml:space="preserve">
-    <value>Add Plan</value>
+    <value>Energiaterv hozzáadása</value>
   </data>
     <data name="UltimatePowerPlanExists" xml:space="preserve">
     <value>A Maximális teljesítmény energiaséma már létezik.</value>
@@ -1507,7 +1507,7 @@ Ellenőrizi a számítógépét a memóriahibák után?</value>
     <value>{0} Beállítva</value>
   </data>
     <data name="PoliciesPage_ScanError" xml:space="preserve">
-    <value>Hiba a háziredek vizsgálata során: {0}</value>
+    <value>Hiba a házirendek vizsgálata során: {0}</value>
   </data>
     <data name="PoliciesPage_RemoveErrorTitle" xml:space="preserve">
     <value>Eltávolítás sikertelen</value>
@@ -1555,7 +1555,7 @@ Ellenőrizi a számítógépét a memóriahibák után?</value>
     <value>Házirendek eltávolítása...</value>
   </data>
     <data name="PoliciesPage_RemovePartialContent" xml:space="preserve">
-    <value>Eltávolítottam {0} /{1} háziren felülbírálását. Néhányat nem lehetett eltávolítani.</value>
+    <value>Eltávolítottam {0} /{1} házirend felülbírálását. Néhányat nem lehetett eltávolítani.</value>
   </data>
     <data name="PoliciesPage_RestartExplorerTitle" xml:space="preserve">
     <value>Explorer újraindítása</value>
