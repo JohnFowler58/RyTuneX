@@ -1,110 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -118,7 +59,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Shell_Home.Content" xml:space="preserve">
-    <value>RyTuneX</value>
+    <value>Beranda</value>
   </data>
   <data name="Shell_Debloat.Content" xml:space="preserve">
     <value>Debloat</value>
@@ -180,26 +121,35 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>Bergabung dengan Sever Kami</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
-    <value>Info Lanjut</value>
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
+    <value>Info Lebih Lanjut</value>
   </data>
-  <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
-    <value>Kirim umpat balik</value>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>Ikhtisar Sistem</value>
   </data>
-  <data name="SystemInfoPage_CPU.Text" xml:space="preserve">
-    <value>Prosesor</value>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>Sistem</value>
   </data>
-  <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
-    <value>Kartu Grafis</value>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>Aplikasi Terinstal</value>
   </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>Sistem Operasi</value>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>Proses</value>
   </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>RAM</value>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>Layanan</value>
   </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>Penyimpanan</value>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>Tindakan Cepat</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>Optimalkan Sistem</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>Perbaiki Masalah</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>Bersihkan File Sementara</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>Debloat</value>
@@ -297,20 +247,11 @@
   <data name="Version" xml:space="preserve">
     <value>Versi</value>
   </data>
-  <data name="VideoArchitecture" xml:space="preserve">
-    <value>Arsitektur Video</value>
-  </data>
   <data name="WindowsDirectory" xml:space="preserve">
     <value>Direktori Windows</value>
   </data>
   <data name="ErrTempDel" xml:space="preserve">
     <value>Terjadi Kesalahaan Menghapus Berkas Sementara (Temp)</value>
-  </data>
-  <data name="FeaturesPage_SysFeat.Text" xml:space="preserve">
-    <value>Fitur Sistem</value>
-  </data>
-  <data name="FeaturesPage_Win11.Text" xml:space="preserve">
-    <value>Eksklusif untuk Windows 11</value>
   </data>
   <data name="SystemInfoPage_FolderPathText.Text" xml:space="preserve">
     <value>Pilih sebuah folder</value>
@@ -335,12 +276,6 @@
   </data>
   <data name="SystemInfoPage_Drivers.Text" xml:space="preserve">
     <value>Driver</value>
-  </data>
-  <data name="SystemInfoPage_ExtractButton.Content" xml:space="preserve">
-    <value>Ekstrak</value>
-  </data>
-  <data name="SystemInfoPage_ExtractDrivers.Text" xml:space="preserve">
-    <value>Ekstrak driver Anda ke folder eksternal untuk cadangan yang mudah</value>
   </data>
   <data name="SystemInfoPage_ExtractingStatusText.Text" xml:space="preserve">
     <value>Sedang mengekstrak driver</value>
@@ -401,12 +336,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>Mematikan fitur My People di taskbar</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>Nonaktifkan Layanan Sensor</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>Mematikan layanan sensor untuk privasi dan penghematan daya. Tidak direkomendasikan untuk laptop dengan sensor terkait</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>Nonaktifkan Windows Ink</value>
@@ -504,12 +433,6 @@
   <data name="Feature_DisableCoPilotAI.Description" xml:space="preserve">
     <value>Menonaktifkan fitur CoPilot AI di Windows untuk bantuan menulis kode. Tidak direkomendasikan untuk pengembang</value>
   </data>
-  <data name="OptimizeBasic.Text" xml:space="preserve">
-    <value>Optimisasi Dasar</value>
-  </data>
-  <data name="Feature_PerformanceTweaks.Header" xml:space="preserve">
-    <value>Penyesuaian Performa</value>
-  </data>
   <data name="Feature_DisableSysMain.Header" xml:space="preserve">
     <value>Nonaktifkan SysMain</value>
   </data>
@@ -522,14 +445,23 @@
   <data name="Feature_EnableGamingMode.Description" xml:space="preserve">
     <value>Mengaktifkan Gaming Mode, yang mengoptimalkan sumber daya sistem untuk pengalaman bermain game yang lebih lancar. Mungkin memengaruhi proses di latar belakang.</value>
   </data>
+  <data name="Feature_EnableFullscreenOptimizations.Header" xml:space="preserve">
+    <value>Aktifkan Optimasi Layar Penuh</value>
+  </data>
+  <data name="Feature_EnableFullscreenOptimizations.Description" xml:space="preserve">
+    <value>Memungkinkan Windows menggunakan jalur optimasi layar penuh untuk game. Nonaktifkan opsi ini hanya untuk game yang memerlukan mode layar penuh eksklusif.</value>
+  </data>
+  <data name="Feature_GpuDriverTweaks.Header" xml:space="preserve">
+    <value>Penyesuaian Performa Driver GPU</value>
+  </data>
+  <data name="Feature_GpuDriverTweaks.Description" xml:space="preserve">
+    <value>Menerapkan penyesuaian registri untuk AMD, NVIDIA, dan Intel guna mengurangi perpindahan status daya GPU serta latensi tampilan.</value>
+  </data>
   <data name="Feature_ExcludeDriversFromWindowsUpdates.Header" xml:space="preserve">
     <value>Kecualikan Driver Dari Pembaruan Windows</value>
   </data>
   <data name="Feature_ExcludeDriversFromWindowsUpdates.Description" xml:space="preserve">
     <value>Mengecualikan pembaruan driver dari Windows Update. Mungkin menyebabkan driver kedaluwarsa dengan potensi risiko keamanan atau masalah kompatibilitas. Gunakan dengan hati-hati.</value>
-  </data>
-  <data name="OptimizeAdvanced.Text" xml:space="preserve">
-    <value>Optimisasi Lanjutan</value>
   </data>
   <data name="Feature_DisableSystemRestore.Header" xml:space="preserve">
     <value>Nonaktifkan System Restore</value>
@@ -548,12 +480,6 @@
   </data>
   <data name="Feature_DisableStoreUpdates.Description" xml:space="preserve">
     <value>Menonaktifkan pembaruan otomatis untuk aplikasi yang diunduh dari Microsoft Store. Mungkin membuat aplikasi rentan terhadap risiko keamanan atau kehilangan fitur baru.</value>
-  </data>
-  <data name="Privacy_Telemetry.Text" xml:space="preserve">
-    <value>Telemetri</value>
-  </data>
-  <data name="Feature_EnhancePrivacy.Header" xml:space="preserve">
-    <value>Tingkatkan Privasi</value>
   </data>
   <data name="Feature_DisableSMBv1.Header" xml:space="preserve">
     <value>Nonaktifkan SMBv1</value>
@@ -621,15 +547,6 @@
   <data name="Network_ApplyDNS.Content" xml:space="preserve">
     <value>Terapkan DNS</value>
   </data>
-  <data name="Network_IPv4Title.Text" xml:space="preserve">
-    <value>Server DNS IPv4</value>
-  </data>
-  <data name="Network_IPv6Title.Text" xml:space="preserve">
-    <value>Server DNS IPv6</value>
-  </data>
-  <data name="Network_NicTitle.Text" xml:space="preserve">
-    <value>Antarmuka Jaringan</value>
-  </data>
   <data name="Network_Primary.Text" xml:space="preserve">
     <value>Primer</value>
   </data>
@@ -639,9 +556,6 @@
   <data name="Network_Secondary.Text" xml:space="preserve">
     <value>Sekunder</value>
   </data>
-  <data name="Network_SetDNSTitle.Text" xml:space="preserve">
-    <value>Atur DNS Kustom</value>
-  </data>
   <data name="NoIPv4" xml:space="preserve">
     <value>Tidak ditemukan alamat DNS IPv4</value>
   </data>
@@ -650,6 +564,12 @@
   </data>
   <data name="NoNic" xml:space="preserve">
     <value>Tidak ada antarmuka jaringan yang dipilih</value>
+  </data>
+  <data name="NoInterfaceTitle" xml:space="preserve">
+    <value>Tidak Ada Antarmuka yang Dipilih</value>
+  </data>
+  <data name="NoInterfaceMessage" xml:space="preserve">
+    <value>Silakan pilih antarmuka jaringan sebelum menerapkan pengaturan DNS.</value>
   </data>
   <data name="NotSet" xml:space="preserve">
     <value>Belum diatur</value>
@@ -669,38 +589,14 @@
   <data name="AppDescription" xml:space="preserve">
     <value>RyTuneX adalah pengoptimal mutakhir yang dibangun dengan kerangka WinUI 3, dirancang untuk memperkuat kinerja perangkat Windows. Dibuat untuk Windows 10 dan 11, RyTuneX memberdayakan pengguna untuk dengan mudah menghapus aplikasi prapasang yang membandel dan mengoptimalkan sumber daya sistem</value>
   </data>
-  <data name="SettingsPage_UpdateButton.Content" xml:space="preserve">
-    <value>Periksa pembaruan</value>
-  </data>
-  <data name="AvailableUpdateContent0" xml:space="preserve">
-    <value>Versi yang lebih baru (</value>
-  </data>
-  <data name="AvailableUpdateContent1" xml:space="preserve">
-    <value>) telah tersedia. Harap perbarui ke versi terbaru untuk menikmati fitur dan peningkatan baru.</value>
-  </data>
   <data name="UpdateTitle" xml:space="preserve">
     <value>Pembaruan RyTuneX</value>
-  </data>
-  <data name="NetworkError" xml:space="preserve">
-    <value>Terjadi kesalahan. Pastikan untuk memeriksa koneksi internet Anda dan coba lagi nanti.</value>
-  </data>
-  <data name="UnavailableUpdate0" xml:space="preserve">
-    <value>Anda sudah menjalankan versi terbaru (</value>
-  </data>
-  <data name="UnavailableUpdate1" xml:space="preserve">
-    <value>). Tidak ada pembaruan yang tersedia saat ini.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Tutup</value>
   </data>
   <data name="Update" xml:space="preserve">
     <value>Perbarui</value>
-  </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>Jaringan</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>Baterai</value>
   </data>
   <data name="MACAddress" xml:space="preserve">
     <value>Alamat MAC</value>
@@ -714,17 +610,11 @@
   <data name="BatteryStatus" xml:space="preserve">
     <value>Status Baterai</value>
   </data>
-  <data name="Chemistry" xml:space="preserve">
-    <value>Kimia</value>
-  </data>
   <data name="Shell_Security.Content" xml:space="preserve">
     <value>Keamanan</value>
   </data>
   <data name="UnexpectedError" xml:space="preserve">
     <value>Terjadi kesalahan tak terduga</value>
-  </data>
-  <data name="SettingsPage_LogsLink.Content" xml:space="preserve">
-    <value>Lihat Log</value>
   </data>
   <data name="TotalApps" xml:space="preserve">
     <value>Total: {0} Aplikasi</value>
@@ -780,23 +670,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>Penggunaan RAM</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>Penggunaan GPU</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>Penggunaan Disk</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>Penggunaan Jaringan</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>Aplikasi Terinstal</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>Proses</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>Layanan</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>Nonaktifkan Smart Screen</value>
@@ -876,12 +754,6 @@
   <data name="Feature_DisableSafeSearchMode.Description" xml:space="preserve">
     <value>Mematikan Mode Pencarian Aman, yang menyaring konten yang berpotensi berbahaya atau tidak pantas dari hasil pencarian. Menonaktifkan ini meningkatkan risiko terpapar konten yang tidak aman.</value>
   </data>
-  <data name="Feature_DisableActivityUploads.Header" xml:space="preserve">
-    <value>Nonaktifkan Unggahan Aktivitas</value>
-  </data>
-  <data name="Feature_DisableActivityUploads.Description" xml:space="preserve">
-    <value>Menonaktifkan pengunggahan data aktivitas, mencegah Microsoft mengumpulkan data penggunaan Anda untuk meningkatkan layanan. Hal ini membantu menjaga privasi.</value>
-  </data>
   <data name="Feature_DisableClipboardSync.Header" xml:space="preserve">
     <value>Nonaktifkan Sinkronisasi Papan Klip</value>
   </data>
@@ -912,23 +784,11 @@
   <data name="Feature_DisableFindMyDevice.Description" xml:space="preserve">
     <value>Menonaktifkan fitur Temukan Perangkat Saya, yang membantu menemukan lokasi perangkat Anda jika hilang. Menonaktifkan ini mengurangi kemampuan Anda untuk memulihkan perangkat yang hilang tetapi meningkatkan privasi.</value>
   </data>
-  <data name="Feature_DisableActivityFeed.Header" xml:space="preserve">
-    <value>Nonaktifkan Umpan Aktivitas</value>
-  </data>
-  <data name="Feature_DisableActivityFeed.Description" xml:space="preserve">
-    <value>Mematikan umpan aktivitas yang menunjukkan aktivitas terbaru Anda, membantu melindungi privasi Anda dengan mencegah orang lain melihat apa yang telah Anda lakukan di perangkat Anda.</value>
-  </data>
   <data name="Feature_DisableCdp.Header" xml:space="preserve">
     <value>Nonaktifkan CDP (Platform Data Pelanggan)</value>
   </data>
   <data name="Feature_DisableCdp.Description" xml:space="preserve">
     <value>Menonaktifkan CDP, mencegah pengumpulan dan penggunaan data Anda oleh platform data pelanggan untuk analisis dan rekomendasi yang ditargetkan. Ini meningkatkan privasi tetapi dapat membatasi personalisasi.</value>
-  </data>
-  <data name="Feature_DisableTailoredExperiencesInPrivacy.Header" xml:space="preserve">
-    <value>Nonaktifkan Pengalaman yang Disesuaikan di Privasi</value>
-  </data>
-  <data name="Feature_DisableTailoredExperiencesInPrivacy.Description" xml:space="preserve">
-    <value>Menonaktifkan fitur pengalaman yang disesuaikan dalam pengaturan privasi, menghentikan Windows dari menggunakan data Anda untuk menyesuaikan pengalaman Anda. Hal ini mungkin mengurangi fitur personalisasi.</value>
   </data>
   <data name="Feature_DisableDiagnosticsToast.Header" xml:space="preserve">
     <value>Nonaktifkan Pemberitahuan Diagnostik</value>
@@ -941,12 +801,6 @@
   </data>
   <data name="Feature_DisableOnlineSpeechPrivacy.Description" xml:space="preserve">
     <value>Menonaktifkan privasi ucapan daring, mencegah Windows menyimpan atau memproses perintah suara. Tindakan ini meningkatkan privasi tetapi membatasi fitur suara seperti pencarian suara dan perintah.</value>
-  </data>
-  <data name="Feature_DisableLocationAccess.Header" xml:space="preserve">
-    <value>Nonaktifkan Akses Lokasi</value>
-  </data>
-  <data name="Feature_DisableLocationAccess.Description" xml:space="preserve">
-    <value>Mematikan akses lokasi untuk aplikasi dan layanan, mencegahnya menggunakan GPS perangkat atau lokasi jaringan Anda. Tindakan ini meningkatkan privasi tetapi mungkin membatasi layanan berbasis lokasi.</value>
   </data>
   <data name="Feature_DisableLocationFeatures.Header" xml:space="preserve">
     <value>Nonaktifkan Fitur Lokasi</value>
@@ -965,6 +819,18 @@
   </data>
   <data name="Feature_MouseHoverTime.Description" xml:space="preserve">
     <value>Menyesuaikan waktu tunggu sistem sebelum memicu kejadian hover. Menonaktifkan ini mungkin mempercepat interaksi tetapi dapat menyebabkan aktivasi yang tidak disengaja.</value>
+  </data>
+  <data name="Feature_KeyboardLatency.Header" xml:space="preserve">
+    <value>Optimalkan Latensi Keyboard</value>
+  </data>
+  <data name="Feature_KeyboardLatency.Description" xml:space="preserve">
+    <value>Mengatur jeda pengulangan keyboard ke nilai terendah dan mempertahankan kecepatan pengulangan pada maksimum agar input lebih responsif.</value>
+  </data>
+  <data name="Feature_DisableMouseAcceleration.Header" xml:space="preserve">
+    <value>Nonaktifkan Akselerasi Mouse</value>
+  </data>
+  <data name="Feature_DisableMouseAcceleration.Description" xml:space="preserve">
+    <value>Menonaktifkan akselerasi penunjuk Windows agar pergerakan mouse tetap konsisten untuk bermain game dan input presisi.</value>
   </data>
   <data name="Feature_AutoComplete.Header" xml:space="preserve">
     <value>Nonaktifkan Pelengkapan Otomatis</value>
@@ -1038,9 +904,6 @@
   <data name="Feature_SystemProfile.Description" xml:space="preserve">
     <value>Meningkatkan kinerja sistem Anda dengan menyesuaikan pengaturan profil sistem. Fitur ini memprioritaskan kecepatan dan efisiensi, meningkatkan responsivitas sistem dan manajemen sumber daya secara keseluruhan.</value>
   </data>
-  <data name="SystemInfoPage_DeviceInfo.Text" xml:space="preserve">
-    <value>Informasi Perangkat</value>
-  </data>
   <data name="Feature_EnableClassicContextMenu.Header" xml:space="preserve">
     <value>Aktifkan Menu Konteks Klasik</value>
   </data>
@@ -1050,17 +913,11 @@
   <data name="DoNotShowCheckBox" xml:space="preserve">
     <value>Jangan tampilkan pesan ini lagi</value>
   </data>
-  <data name="RestorePointDialogTitle" xml:space="preserve">
-    <value>Buat Titik Pemulihan</value>
-  </data>
   <data name="RestorePointDialogText" xml:space="preserve">
     <value>Sangat disarankan untuk membuat titik pemulihan sebelum membuat perubahan apa pun pada sistem Anda.
   
   
   Apakah Anda ingin membuat titik pemulihan sistem sebelum melanjutkan?</value>
-  </data>
-  <data name="CreatingRestorePoint" xml:space="preserve">
-    <value>Membuat Titik Pemulihan</value>
   </data>
   <data name="Settings_RevertChanges.Header" xml:space="preserve">
     <value>Kembalikan semua perubahan</value>
@@ -1075,9 +932,6 @@
     <value>Anda akan membatalkan semua perubahan yang dibuat oleh RyTuneX ke sistem Anda (Kecuali untuk aplikasi yang dicopot pemasangannya) dan mengatur ulang preferensi aplikasi.
     
     Apakah Anda yakin ingin melanjutkan?</value>
-  </data>
-  <data name="NoChangesFound" xml:space="preserve">
-    <value>Tidak ditemukan perubahan yang berarti.</value>
   </data>
   <data name="OperationStopped" xml:space="preserve">
     <value>Operasi dihentikan</value>
@@ -1105,20 +959,8 @@
   <data name="ScheduledLater" xml:space="preserve">
     <value>Dijadwalkan untuk proses mulai ulang berikutnya</value>
   </data>
-  <data name="RepairPage_ScanButton.Content" xml:space="preserve">
-    <value>Pindai</value>
-  </data>
-  <data name="RepairPage_RepairButton.Content" xml:space="preserve">
-    <value>Perbaiki</value>
-  </data>
   <data name="RepairPage_StopButton.Content" xml:space="preserve">
     <value>Hentikan</value>
-  </data>
-  <data name="RepairPage_StatusTextBlock.Text" xml:space="preserve">
-    <value>Pilih setidaknya satu opsi untuk dipindai/diperbaiki</value>
-  </data>
-  <data name="StatusTextBlockDefault" xml:space="preserve">
-    <value>Pilih setidaknya satu opsi untuk dipindai/diperbaiki</value>
   </data>
   <data name="RepairPage_BatteryHealth.Header" xml:space="preserve">
     <value>Kesehatan Baterai</value>
@@ -1156,11 +998,14 @@
   <data name="RepairPage_RepairOptions.Text" xml:space="preserve">
     <value>Opsi Perbaikan</value>
   </data>
-  <data name="RepairPage_DiagnoseOptions.Text" xml:space="preserve">
-    <value>Opsi Diagnosis</value>
-  </data>
   <data name="OperationCompleted" xml:space="preserve">
     <value>Operasi Selesai</value>
+  </data>
+  <data name="CheckCompleted" xml:space="preserve">
+    <value>Check completed successfully</value>
+  </data>
+  <data name="RepairedFiles" xml:space="preserve">
+    <value>Repaired files (from CBS.log):</value>
   </data>
   <data name="RestorePointTitle" xml:space="preserve">
     <value>Titik Pemulihan</value>
@@ -1176,12 +1021,6 @@
   </data>
   <data name="OtherSettings.Text" xml:space="preserve">
     <value>Pengaturan Lainnya</value>
-  </data>
-  <data name="OptimizeSystemPage_BasicOptimization.Text" xml:space="preserve">
-    <value>Optimisasi Sistem Dasar</value>
-  </data>
-  <data name="OptimizeSystemPage_AdvancedOptimization.Text" xml:space="preserve">
-    <value>Optimisasi Sistem Lanjutan</value>
   </data>
   <data name="DebloatSystemPage_NoAppFound.Text" xml:space="preserve">
     <value>Tidak ada aplikasi yang cocok dengan pencarian Anda</value>
@@ -1270,9 +1109,6 @@
   <data name="Feature_WPBT.Description" xml:space="preserve">
     <value>Hentikan firmware dari menjalankan program (misalnya, bloatware OEM) selama startup.</value>
   </data>
-  <data name="Settings_RevertTitle.Text" xml:space="preserve">
-    <value>Kembalikan perubahan</value>
-  </data>
   <data name="SettingsPageImportButton.Text" xml:space="preserve">
     <value>Impor</value>
   </data>
@@ -1305,12 +1141,6 @@
   </data>
   <data name="KeepAppData" xml:space="preserve">
     <value>Simpan data aplikasi</value>
-  </data>
-  <data name="IsAdminIcon.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Anda menjalankan sebagai admin</value>
-  </data>
-  <data name="NotAdminIcon.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Mulai ulang aplikasi sebagai admin agar perubahan Anda diterapkan</value>
   </data>
   <data name="SecurityPage_RefreshButton.Text" xml:space="preserve">
     <value>Segarkan</value>
@@ -1417,14 +1247,20 @@
   <data name="Feature_AddUltimatePowerPlan.Header" xml:space="preserve">
     <value>Tambahkan Paket Daya Ultimate Performance</value>
   </data>
+  <data name="Feature_DisableUsbPowerSaving.Header" xml:space="preserve">
+    <value>Nonaktifkan Penghematan Daya USB</value>
+  </data>
+  <data name="Feature_DisableUsbPowerSaving.Description" xml:space="preserve">
+    <value>Menonaktifkan USB Selective Suspend dan penghematan daya USB Root Hub untuk mengurangi latensi aktif kembali pengontrol saat bermain game.</value>
+  </data>
+  <data name="Feature_DisablePowerThrottling.Header" xml:space="preserve">
+    <value>Nonaktifkan Pembatasan Daya</value>
+  </data>
+  <data name="Feature_DisablePowerThrottling.Description" xml:space="preserve">
+    <value>Menonaktifkan pembatasan daya Windows dan perilaku pemulihan hemat daya USB agar aplikasi di latar depan tetap responsif.</value>
+  </data>
   <data name="AddUltimatePowerPlanTitle" xml:space="preserve">
     <value>Tambahkan Paket Daya Ultimate Performance</value>
-  </data>
-  <data name="PoliciesPage_Warning" xml:space="preserve">
-    <value>Fitur ini hanya mendeteksi entri registri yang didukung kebijakan. Fitur ini tidak mendeteksi perubahan layanan atau penyesuaian registri non-kebijakan.</value>
-  </data>
-  <data name="PoliciesPage_InfoMessage" xml:space="preserve">
-    <value>Halaman ini mendeteksi dan memungkinkan Anda menghapus pengabaian Kebijakan Grup Lokal (Local Group Policy). Menghapus pengabaian kebijakan akan mengembalikannya ke status Belum Dikonfigurasi.</value>
   </data>
   <data name="PoliciesPage_PolicySummary" xml:space="preserve">
     <value>Ringkasan Kebijakan</value>
@@ -1449,12 +1285,6 @@
   </data>
   <data name="PoliciesPage_NoPoliciesDetected" xml:space="preserve">
     <value>Tidak ada pengabaian kebijakan yang terdeteksi.</value>
-  </data>
-  <data name="PoliciesPage_RemoveAllOverrides" xml:space="preserve">
-    <value>Hapus Semua Pengabaian</value>
-  </data>
-  <data name="PoliciesPage_Title" xml:space="preserve">
-    <value>Deteksi Pengabaian Kebijakan Grup</value>
   </data>
   <data name="PoliciesPage_ScanningPolicies" xml:space="preserve">
     <value>Memindai kebijakan...</value>
@@ -1612,15 +1442,6 @@
   <data name="Feature_WindowsUpdates_Default.Content" xml:space="preserve">
     <value>Bawaan</value>
   </data>
-  <data name="ScanResults" xml:space="preserve">
-    <value>Hasil Pemindaian</value>
-  </data>
-  <data name="MicrosoftAccount" xml:space="preserve">
-    <value>Akun Microsoft</value>
-  </data>
-  <data name="LocalAccount" xml:space="preserve">
-    <value>Akun lokal</value>
-  </data>
   <data name="Feature_DisableWindowsAI.Header" xml:space="preserve">
     <value>Nonaktifkan Windows AI</value>
   </data>
@@ -1638,6 +1459,27 @@
   </data>
   <data name="Settings_ThemeSettingsCard.Description" xml:space="preserve">
     <value>Pilih tema warna aplikasi</value>
+  </data>
+  <data name="Settings_AccentColorExpander.Header" xml:space="preserve">
+    <value>Warna Aksen</value>
+  </data>
+  <data name="Settings_AccentColorExpander.Description" xml:space="preserve">
+    <value>Pilih antara gaya RyTuneX, warna sistem, atau warna kustom</value>
+  </data>
+  <data name="Settings_AccentColor_RyTuneX.Text" xml:space="preserve">
+    <value>Gaya RyTuneX</value>
+  </data>
+  <data name="Settings_AccentColor_System.Text" xml:space="preserve">
+    <value>Warna Sistem Saat Ini</value>
+  </data>
+  <data name="Settings_AccentColor_Custom.Text" xml:space="preserve">
+    <value>Warna Kustom</value>
+  </data>
+  <data name="Settings_CustomColorSettingsCard.Header" xml:space="preserve">
+    <value>Warna Aksen Kustom</value>
+  </data>
+  <data name="Settings_CustomColorSettingsCard.Description" xml:space="preserve">
+    <value>Pilih warna aksen yang Anda inginkan</value>
   </data>
   <data name="Settings_NavigationStyle.Header" xml:space="preserve">
     <value>Gaya Navigasi</value>
@@ -1671,5 +1513,1882 @@
   </data>
   <data name="Loading.Text" xml:space="preserve">
     <value>Memuat...</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Produsen</value>
+  </data>
+  <data name="DedicatedVRAM" xml:space="preserve">
+    <value>VRAM khusus</value>
+  </data>
+  <data name="SharedMemory" xml:space="preserve">
+    <value>Memori Bersama</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Jenis</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cari...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Paket</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>Jelajahi</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>Pembaruan</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Cari paket WinGet...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>Instal yang Dipilih</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>Terinstal</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>Nama Paket</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>ID Paket</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>Versi</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>Penerbit</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>Memuat paket…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>Pilih paket untuk diinstal</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Cari layanan...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>Semua</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>Berjalan</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>Dihentikan</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Dinonaktifkan</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>Nama Layanan</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>Startup</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>Dinonaktifkan</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Cari proses...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>Memori</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>Thread</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>Akhiri Tugas</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>Sistem Operasi</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>Salin</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>Prosesor</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>Grafis</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>Penyimpanan</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>Jaringan</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>Baterai</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>Driver untuk Cadangan</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>Bahasa Sistem</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>Kiri</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>Atas</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>Perbarui yang Dipilih</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>Pilih paket untuk diperbarui</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>Memuat paket, harap tunggu…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>Tidak ada pembaruan yang tersedia. Semua paket sudah terbaru.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>{0} paket dipilih untuk instalasi</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>{0} paket dipilih untuk pembaruan</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>Versi</value>
+  </data>
+  <data name="RepairPage_SystemHealthTitle.Text" xml:space="preserve">
+    <value>Kesehatan Sistem</value>
+  </data>
+  <data name="RepairPage_SystemHealthSubtitle.Text" xml:space="preserve">
+    <value>Periksa Windows untuk masalah sistem dan penyimpanan umum.</value>
+  </data>
+  <data name="RepairPage_LastCheckedNever.Text" xml:space="preserve">
+    <value>Terakhir diperiksa: Tidak pernah</value>
+  </data>
+  <data name="RepairPage_CheckSystemButton.Content" xml:space="preserve">
+    <value>Periksa sistem</value>
+  </data>
+  <data name="RepairPage_WindowsImage.Text" xml:space="preserve">
+    <value>Citra Windows</value>
+  </data>
+  <data name="RepairPage_WindowsImageDescription.Text" xml:space="preserve">
+    <value>Penyimpanan komponen Windows</value>
+  </data>
+  <data name="RepairPage_SystemFiles.Text" xml:space="preserve">
+    <value>File sistem</value>
+  </data>
+  <data name="RepairPage_SystemFilesDescription.Text" xml:space="preserve">
+    <value>File sistem Windows yang dilindungi</value>
+  </data>
+  <data name="RepairPage_SystemDrive.Text" xml:space="preserve">
+    <value>Drive sistem</value>
+  </data>
+  <data name="RepairPage_SystemDriveDescription.Text" xml:space="preserve">
+    <value>Integritas sistem file</value>
+  </data>
+  <data name="RepairPage_TechnicalDetails.Header" xml:space="preserve">
+    <value>Detail teknis</value>
+  </data>
+  <data name="RepairPage_MoreTroubleshooting.Text" xml:space="preserve">
+    <value>Pemecahan masalah lainnya</value>
+  </data>
+  <data name="RepairPage_StateIdle_Title" xml:space="preserve">
+    <value>Kesehatan Sistem</value>
+  </data>
+  <data name="RepairPage_StateIdle_Subtitle" xml:space="preserve">
+    <value>Periksa Windows untuk masalah sistem dan penyimpanan umum.</value>
+  </data>
+  <data name="RepairPage_StateIdle_Button" xml:space="preserve">
+    <value>Periksa sistem</value>
+  </data>
+  <data name="RepairPage_StateChecking_Title" xml:space="preserve">
+    <value>Memeriksa sistem Anda...</value>
+  </data>
+  <data name="RepairPage_StateChecking_Subtitle" xml:space="preserve">
+    <value>Ini mungkin memakan waktu beberapa menit.</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Title" xml:space="preserve">
+    <value>Sistem Anda sehat</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Subtitle" xml:space="preserve">
+    <value>Tidak ada masalah yang ditemukan.</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Button" xml:space="preserve">
+    <value>Periksa lagi</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Title" xml:space="preserve">
+    <value>Masalah ditemukan</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Subtitle" xml:space="preserve">
+    <value>RyTuneX dapat memperbaiki masalah ini secara otomatis.</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Button" xml:space="preserve">
+    <value>Perbaiki sistem</value>
+  </data>
+  <data name="RepairPage_StateRepairing_Title" xml:space="preserve">
+    <value>Memperbaiki sistem Anda...</value>
+  </data>
+  <data name="RepairPage_StateRepairing_Subtitle" xml:space="preserve">
+    <value>Ini mungkin memakan waktu beberapa menit. Jangan matikan PC Anda.</value>
+  </data>
+  <data name="RepairPage_StateRepairCompleted_Title" xml:space="preserve">
+    <value>Perbaikan selesai</value>
+  </data>
+  <data name="RepairPage_StateRepairCompleted_Subtitle" xml:space="preserve">
+    <value>Sistem Anda telah diperbaiki.</value>
+  </data>
+  <data name="RepairPage_RowStatus_Healthy" xml:space="preserve">
+    <value>Sehat</value>
+  </data>
+  <data name="RepairPage_RowStatus_NeedsAttention" xml:space="preserve">
+    <value>Perlu perhatian</value>
+  </data>
+  <data name="RepairPage_RowStatus_Scheduled" xml:space="preserve">
+    <value>Dijadwalkan saat restart</value>
+  </data>
+  <data name="RepairPage_RowStatus_Unknown" xml:space="preserve">
+    <value>Tidak diketahui</value>
+  </data>
+  <data name="RepairPage_RowStatus_Checking" xml:space="preserve">
+    <value>Memeriksa...</value>
+  </data>
+  <data name="RepairPage_StatusChecking" xml:space="preserve">
+    <value>Memeriksa {friendlyName}... ({current}/{total})</value>
+  </data>
+  <data name="RepairPage_StatusRepairing" xml:space="preserve">
+    <value>Memperbaiki {friendlyName}... ({current}/{total})</value>
+  </data>
+  <data name="RepairPage_LastCheckedFormat" xml:space="preserve">
+    <value>Terakhir diperiksa: {time}</value>
+  </data>
+  <data name="RepairPage_ChkdskScheduledNote" xml:space="preserve">
+    <value>Perbaikan drive sistem dijadwalkan untuk restart berikutnya.</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupChangedTitle" xml:space="preserve">
+    <value>Tipe Startup Diubah</value>
+  </data>
+  <data name="ServicesPage_TotalServices.Text" xml:space="preserve">
+    <value>Total Layanan</value>
+  </data>
+  <data name="ServicesPage_StartServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Mulai layanan</value>
+  </data>
+  <data name="ServicesPage_Action_Restarted" xml:space="preserve">
+    <value>mulai ulang</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlError" xml:space="preserve">
+    <value>Gagal mengontrol layanan: {error}</value>
+  </data>
+  <data name="ServicesPage_StopServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Hentikan layanan</value>
+  </data>
+  <data name="ServicesPage_StoppedServices.Text" xml:space="preserve">
+    <value>Layanan Berhenti</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupError" xml:space="preserve">
+    <value>Gagal mengubah tipe startup: {error}</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupChanged" xml:space="preserve">
+    <value>Tipe startup layanan '{name}' diatur ke {type}.</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlErrorTitle" xml:space="preserve">
+    <value>Kesalahan Kontrol Layanan</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupErrorTitle" xml:space="preserve">
+    <value>Kesalahan</value>
+  </data>
+  <data name="ServicesPage_RunningServices.Text" xml:space="preserve">
+    <value>Layanan Berjalan</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlSuccess" xml:space="preserve">
+    <value>Layanan '{name}' berhasil di-{action}.</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlTitle" xml:space="preserve">
+    <value>Kontrol Layanan</value>
+  </data>
+  <data name="ServicesPage_Action_Stopped" xml:space="preserve">
+    <value>hentikan</value>
+  </data>
+  <data name="ServicesPage_Action_Started" xml:space="preserve">
+    <value>mulai</value>
+  </data>
+  <data name="ServicesPage_ResultsText" xml:space="preserve">
+    <value>Menampilkan {count} dari {total} layanan</value>
+  </data>
+  <data name="ServicesPage_RestartServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Mulai ulang layanan</value>
+  </data>
+  <data name="ServicesPage_Notification_Title" xml:space="preserve">
+    <value>Layanan</value>
+  </data>
+  <data name="ServicesPage_LoadError" xml:space="preserve">
+    <value>Gagal memuat daftar layanan. Hak akses administrator mungkin diperlukan.</value>
+  </data>
+  <data name="ServicesPage_Notification_ServiceTimeout" xml:space="preserve">
+    <value>Layanan tidak merespons tepat waktu. Silakan coba lagi.</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupTypeAdminRequired" xml:space="preserve">
+    <value>Hak akses administrator diperlukan untuk mengubah jenis startup layanan.</value>
+  </data>
+  <data name="StartupPage_Notification_FileNotFound" xml:space="preserve">
+    <value>File tidak ditemukan di '{0}'. File akan tetap ditambahkan ke startup, namun mungkin tidak akan berjalan.</value>
+  </data>
+  <data name="StartupPage_Notification_EnabledCountFailed" xml:space="preserve">
+    <value>{0} aplikasi startup diaktifkan. {1} gagal.</value>
+  </data>
+  <data name="StartupPage_Notification_DisabledCountFailed" xml:space="preserve">
+    <value>{0} aplikasi startup dinonaktifkan. {1} gagal.</value>
+  </data>
+  <data name="SystemInfoPage_ExportButton.Content" xml:space="preserve">
+    <value>Ekspor</value>
+  </data>
+  <data name="Shell_Startup.Content" xml:space="preserve">
+    <value>Aplikasi Startup</value>
+  </data>
+  <data name="StartupPage_TotalApps.Text" xml:space="preserve">
+    <value>Total Aplikasi Startup</value>
+  </data>
+  <data name="StartupPage_EnabledApps.Text" xml:space="preserve">
+    <value>Diaktifkan</value>
+  </data>
+  <data name="StartupPage_DisabledApps.Text" xml:space="preserve">
+    <value>Dinonaktifkan</value>
+  </data>
+  <data name="StartupPage_HighImpactApps.Text" xml:space="preserve">
+    <value>Dampak Tinggi</value>
+  </data>
+  <data name="StartupPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Cari aplikasi startup berdasarkan nama, perintah, atau penerbit...</value>
+  </data>
+  <data name="StartupPage_FilterAll.Content" xml:space="preserve">
+    <value>Semua Status</value>
+  </data>
+  <data name="StartupPage_FilterEnabled.Content" xml:space="preserve">
+    <value>Hanya Diaktifkan</value>
+  </data>
+  <data name="StartupPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Hanya Dinonaktifkan</value>
+  </data>
+  <data name="StartupPage_FilterHighImpact.Content" xml:space="preserve">
+    <value>Dampak Tinggi</value>
+  </data>
+  <data name="StartupPage_FilterBroken.Content" xml:space="preserve">
+    <value>Rusak / Hilang</value>
+  </data>
+  <data name="StartupPage_FilterUser.Content" xml:space="preserve">
+    <value>Cakupan Pengguna (HKCU)</value>
+  </data>
+  <data name="StartupPage_FilterSystem.Content" xml:space="preserve">
+    <value>Cakupan Sistem (HKLM)</value>
+  </data>
+  <data name="StartupPage_AddAppButton.Text" xml:space="preserve">
+    <value>Tambah Aplikasi</value>
+  </data>
+  <data name="StartupPage_EnableAllButton.Text" xml:space="preserve">
+    <value>Aktifkan Semua</value>
+  </data>
+  <data name="StartupPage_DisableAllButton.Text" xml:space="preserve">
+    <value>Nonaktifkan Semua</value>
+  </data>
+  <data name="StartupPage_RefreshButtonTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Segarkan daftar aplikasi startup</value>
+  </data>
+  <data name="StartupPage_ColName.Text" xml:space="preserve">
+    <value>Nama Aplikasi</value>
+  </data>
+  <data name="StartupPage_ColPublisher.Text" xml:space="preserve">
+    <value>Penerbit</value>
+  </data>
+  <data name="StartupPage_ColLocation.Text" xml:space="preserve">
+    <value>Lokasi</value>
+  </data>
+  <data name="StartupPage_ColImpact.Text" xml:space="preserve">
+    <value>Dampak</value>
+  </data>
+  <data name="StartupPage_ColStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StartupPage_ColActions.Text" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="StartupPage_OpenFolderTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Buka lokasi berkas</value>
+  </data>
+  <data name="StartupPage_DetailsTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Lihat detail aplikasi</value>
+  </data>
+  <data name="StartupPage_DeleteTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Hapus aplikasi startup</value>
+  </data>
+  <data name="StartupPage_ResultsText" xml:space="preserve">
+    <value>Menampilkan {0} dari {1} item startup</value>
+  </data>
+  <data name="StartupPage_Notification_ToggledMessage" xml:space="preserve">
+    <value>Mengaktifkan '{0}' saat startup</value>
+  </data>
+  <data name="StartupPage_Notification_ToggledMessageDisabled" xml:space="preserve">
+    <value>Menonaktifkan '{0}' dari startup</value>
+  </data>
+  <data name="StartupPage_Notification_AdminRequired" xml:space="preserve">
+    <value>Hak akses administrator diperlukan untuk mengubah item startup sistem.</value>
+  </data>
+  <data name="StartupPage_Impact_High" xml:space="preserve">
+    <value>Tinggi</value>
+  </data>
+  <data name="StartupPage_Impact_Medium" xml:space="preserve">
+    <value>Sedang</value>
+  </data>
+  <data name="StartupPage_Impact_Low" xml:space="preserve">
+    <value>Rendah</value>
+  </data>
+  <data name="StartupPage_Impact_Broken" xml:space="preserve">
+    <value>Berkas Hilang</value>
+  </data>
+  <data name="StartupPage_Title" xml:space="preserve">
+    <value>Manajer Startup</value>
+  </data>
+  <data name="StartupPage_AddDialog_Title" xml:space="preserve">
+    <value>Tambah Aplikasi Startup</value>
+  </data>
+  <data name="StartupPage_AddDialog_AppNameHeader" xml:space="preserve">
+    <value>Nama Aplikasi</value>
+  </data>
+  <data name="StartupPage_AddDialog_AppPathHeader" xml:space="preserve">
+    <value>Jalur Eksekusi atau Skrip</value>
+  </data>
+  <data name="StartupPage_AddDialog_ArgsHeader" xml:space="preserve">
+    <value>Argumen (Opsional)</value>
+  </data>
+  <data name="StartupPage_AddDialog_BrowseButton" xml:space="preserve">
+    <value>Telusuri...</value>
+  </data>
+  <data name="StartupPage_AddDialog_ScopeHeader" xml:space="preserve">
+    <value>Cakupan Startup:</value>
+  </data>
+  <data name="StartupPage_AddDialog_CurrentUser" xml:space="preserve">
+    <value>Pengguna Saat Ini (HKCU)</value>
+  </data>
+  <data name="StartupPage_AddDialog_AllUsers" xml:space="preserve">
+    <value>Semua Pengguna (HKLM - Butuh Admin)</value>
+  </data>
+  <data name="StartupPage_AddDialog_PrimaryButton" xml:space="preserve">
+    <value>Tambahkan ke Startup</value>
+  </data>
+  <data name="StartupPage_AddDialog_CancelButton" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Title" xml:space="preserve">
+    <value>Detail Aplikasi Startup</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_CloseButton" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Name" xml:space="preserve">
+    <value>Nama:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Publisher" xml:space="preserve">
+    <value>Penerbit:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Description" xml:space="preserve">
+    <value>Deskripsi:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Command" xml:space="preserve">
+    <value>Perintah:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_TargetPath" xml:space="preserve">
+    <value>Jalur Target:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Location" xml:space="preserve">
+    <value>Lokasi:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Impact" xml:space="preserve">
+    <value>Dampak:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_FileSize" xml:space="preserve">
+    <value>Ukuran Berkas:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_FileExists" xml:space="preserve">
+    <value>Berkas Ada:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Yes" xml:space="preserve">
+    <value>Ya</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_NoMissing" xml:space="preserve">
+    <value>Tidak (Hilang)</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_Title" xml:space="preserve">
+    <value>Hapus Aplikasi Startup</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_Content" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menghapus '{0}' dari startup? Tindakan ini akan menghapus entri.</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_PrimaryButton" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_CancelButton" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="StartupPage_Notification_ItemRemoved" xml:space="preserve">
+    <value>Menghapus '{0}' dari startup.</value>
+  </data>
+  <data name="StartupPage_Notification_RemoveFailed" xml:space="preserve">
+    <value>Gagal menghapus item. Hak akses administrator mungkin diperlukan.</value>
+  </data>
+  <data name="StartupPage_Notification_EmptyAppError" xml:space="preserve">
+    <value>Nama dan jalur aplikasi tidak boleh kosong.</value>
+  </data>
+  <data name="StartupPage_Notification_ItemAdded" xml:space="preserve">
+    <value>Menambahkan '{0}' ke startup.</value>
+  </data>
+  <data name="StartupPage_Notification_AddFailed" xml:space="preserve">
+    <value>Gagal menambahkan item startup. Hak akses administrator mungkin diperlukan.</value>
+  </data>
+  <data name="StartupPage_Notification_EnabledCount" xml:space="preserve">
+    <value>Mengaktifkan {0} aplikasi startup.</value>
+  </data>
+  <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
+    <value>Menonaktifkan {0} aplikasi startup.</value>
+  </data>
+  <data name="StartupPage_SelectionCount" xml:space="preserve">
+    <value>{0} item dipilih</value>
+  </data>
+  <data name="StartupPage_RemoveSelectedButtonText.Text" xml:space="preserve">
+    <value>Hapus yang Dipilih</value>
+  </data>
+  <data name="StartupPage_RemoveSelectedButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Hapus semua item startup yang dipilih</value>
+  </data>
+  <data name="StartupPage_ClearSelectionButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Batalkan pilihan</value>
+  </data>
+  <data name="StartupPage_BatchRemoveDialog_Title" xml:space="preserve">
+    <value>Hapus Aplikasi Startup</value>
+  </data>
+  <data name="StartupPage_BatchRemoveDialog_Content" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menghapus {0} item dari startup?</value>
+  </data>
+  <data name="StartupPage_Notification_BatchRemoved" xml:space="preserve">
+    <value>{0} item startup berhasil dihapus.</value>
+  </data>
+  <data name="StartupPage_Notification_BatchRemovedFailed" xml:space="preserve">
+    <value>{0} item dihapus. {1} gagal.</value>
+  </data>
+  <data name="StartupPage_SelectAllCheckBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Pilih semua</value>
+  </data>
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>Skor Optimasi</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>Memindai...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ Luar Biasa</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B Bagus</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C Cukup</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D Perlu Penyesuaian</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F Belum Dioptimalkan</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>Pusat Diagnostik Cerdas</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>Pilih kategori untuk melihat rekomendasi cerdas, mengurangi latensi sistem, dan menyesuaikan konfigurasi Anda.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>Mesin Performa</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>Mengoptimalkan penjadwalan perangkat keras GPU, pembagian waktu CPU, pengindeksan buffer NTFS, dan menghilangkan keterlambatan menu desktop.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>Perisai Privasi &amp; Telemetri</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>Memblokir telemetri diagnostik latar belakang, pengumpulan data AI Windows, tangkapan layar Recall, dan pengunggahan aktivitas cloud.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>Kegunaan &amp; Fitur Shell</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>Memulihkan menu klik kanan klasik, mengaktifkan 'End Task' di taskbar, menampilkan file/ekstensi tersembunyi, dan merapikan Menu Mulai.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>Aktif: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>Optimasi Aktif: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>Potensi: +{0} poin</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>Direkomendasikan: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>Cadangan Rollback: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>Latensi Rendah &amp; UI Cepat</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>Pelindung Data &amp; Suara</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>Produktivitas 1-Klik</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>Performa</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>Privasi</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>Kegunaan</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>Rek.</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>Direkomendasikan: Penyesuaian berdampak tinggi &amp; 100% aman</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>Aman</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>Semua Aman: Semua optimasi 100% aman dan tidak mengganggu</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>Lanjutan</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>Lanjutan: Termasuk penyesuaian untuk pengguna mahir &amp; moderat</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>Terapkan {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} Aktif ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>Pratinjau</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>Rollback</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>Atur Berdasarkan Domain</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>Pratinjau: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>Tinjau perubahan optimasi yang diusulkan sebelum menerapkan. Titik pemulihan rollback akan disimpan secara otomatis.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>Terapkan Optimasi Terpilih</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>Semua optimasi di halaman ini sudah aktif! Tidak ada yang perlu dipratinjau.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>Langkah 5 [Terapkan] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>Langkah 6 [Verifikasi]: Memeriksa status sistem waktu nyata...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>Berhasil menerapkan dan memverifikasi {0} optimasi!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>Semua optimasi {0} di halaman ini sudah aktif!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>Mengembalikan {0} item di halaman ini...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>Berhasil mengembalikan {0} item ke kondisi sebelum diterapkan.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>Tidak ada cadangan pemulihan yang ditemukan untuk halaman ini.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>Optimal ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>Direkomendasikan</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>Aman</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>Moderat</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>Lanjutan</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>Perhatian</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} poin</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>Detail Teknis</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>Cadangan Pra-Terapkan: Disimpan pada {0} (Status awal: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>Cadangan Pra-Terapkan: Tidak ada (Alihkan untuk membuat titik pemulihan)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>Status Saat Ini: {0}</value>
+  </data>
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>Terverifikasi Aktif ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>Perlu Mulai Ulang 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>Verifikasi Gagal ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>Belum Diverifikasi</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>Umum</value>
+  </data>
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>Membebaskan siklus CPU latar belakang dan menghemat 200MB+ RAM.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>Mengurangi micro-stuttering dan meningkatkan konsistensi framerate.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>Meningkatkan responsivitas aplikasi aktif saat multitasking berat.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Aktifkan Mode Gaming Windows</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Mengonfigurasi Mode Game Windows dan Penjadwalan Perangkat Keras GPU untuk latensi sangat rendah.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>Mengunci inti CPU ke proses gaming dan mengoptimalkan penjadwalan thread.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>Aktifkan Optimasi Layar Penuh</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>Mengonfigurasi pipeline tampilan Windows untuk presentasi tanpa bingkai berkinerja tinggi.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Meminimalkan latensi tampilan sambil mempertahankan pergantian Alt+Tab yang cepat.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>Mencegah fluktuasi jam daya GPU selama gaming dan rendering 3D.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>Navigasi UI yang terasa instan di File Explorer dan desktop.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>Pratinjau tooltip dan thumbnail taskbar yang segera.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>Pengenalan input tombol yang instan dan pengulangan karakter yang lebih cepat.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>Nonaktifkan Akselerasi Mouse (Raw Input)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>Menonaktifkan kurva akselerasi mouse Windows untuk presisi kursor hardware 1:1 murni.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>Konsistensi pelacakan kursor yang sempurna untuk gaming dan pekerjaan desain presisi.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>Mempercepat pengindeksan direktori file dan pencarian metadata disk.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>Mengurangi overhead jumlah proses sebesar 30-50 proses pada sistem dengan RAM 8GB+.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>Nonaktifkan USB Selective Suspend</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Mencegah Windows mematikan pengontrol USB dan periferal ke status daya rendah.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>Mencegah dropout audio USB, lag pengontrol, dan pemutusan koneksi mouse.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>Nonaktifkan Power Throttling</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>Menonaktifkan algoritma power throttling Windows pada thread eksekusi latar belakang.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>Memastikan render latar belakang dan tugas kompilasi berjalan pada kecepatan clock CPU penuh.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>Menghentikan interupsi polling disk yang berulang.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>Mempercepat pembukaan pintasan rusak tanpa membekukan Explorer.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>Navigasi jalur bilah alamat yang lebih cepat.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Nonaktifkan Telemetri &amp; Diagnostik Windows</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>Sepenuhnya menonaktifkan DiagTrack dan dmwappushservice untuk pengumpulan diagnostik latar belakang.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>Menghentikan pelacakan latar belakang otomatis, pencatatan keystroke, dan pengunggahan telemetri.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Nonaktifkan Fitur AI &amp; Mining Windows</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Memblokir analisis AI latar belakang Windows, integrasi AI Notepad/Paint, dan pelaporan kueri model.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>Melindungi privasi file lokal dan menghentikan pengumpulan AI cloud yang berkelanjutan.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Nonaktifkan Snapshot Layar Windows Recall</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>Memblokir pengambilan screenshot berkesinambungan secara berkala dari desktop aktif dan pengindeksan OCR.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>Menjamin data perbankan sensitif, kata sandi, dan dokumen pribadi tidak pernah direkam.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Nonaktifkan Asisten AI Copilot</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Menonaktifkan sidebar Copilot Windows, tombol taskbar, dan kueri sinkronisasi cloud yang terus-menerus.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>Membebaskan ruang taskbar dan menghilangkan proses tampilan web latar belakang.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Nonaktifkan ID Iklan Windows</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Mencegah aplikasi Windows Store melacak aktivitas pengguna untuk iklan yang dipersonalisasi.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>Menghentikan pelacakan profil pengidentifikasi iklan unik.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>Nonaktifkan Sinkronisasi Cloud Riwayat Aktivitas</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>Mencegah pengunggahan riwayat peluncuran aplikasi dan riwayat penelusuran ke cloud Microsoft.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>Riwayat penggunaan perangkat tidak pernah disiarkan ke akun cloud yang tertaut.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>Nonaktifkan Sinkronisasi Cloud Clipboard Lintas Perangkat</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>Menghentikan buffer salinan clipboard agar tidak otomatis diunggah ke server cloud.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>Melindungi teks yang disalin sensitif, kata sandi, dan token dari paparan cloud.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>Nonaktifkan Akses Lokasi &amp; Sensor</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Menonaktifkan layanan penyedia lokasi Windows dan API sensor lokasi.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Mencegah browser web dan aplikasi desktop menentukan koordinat fisik.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Kembalikan Menu Klik Kanan Klasik Windows 10</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>Mengembalikan menu konteks klik kanan penuh yang instan di Windows 11 tanpa mengklik 'Tampilkan lebih banyak opsi'.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>Menghemat 1 klik untuk setiap tindakan klik kanan di Explorer.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>Aktifkan 'End Task' pada Ikon Aplikasi Taskbar</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>Menambahkan tindakan 'End Task' langsung klik kanan ke item taskbar untuk penghentian proses instan.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>Hentikan program yang membeku atau hang secara instan tanpa membuka Task Manager.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>Melindungi terhadap malware ekstensi ganda palsu (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>Nonaktifkan Prompt Sticky Keys</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>Menonaktifkan dialog popup saat menekan Shift 5 kali dalam game.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Menghentikan gangguan gaming dari ketukan tombol Shift.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>Sembunyikan Bagian Rekomendasi di Menu Mulai</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Menghapus panel file terbaru dan yang direkomendasikan di Menu Mulai Windows 11.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>Menu Mulai yang lebih bersih dengan lebih banyak ruang untuk aplikasi yang disematkan.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>Ratakan Ikon Taskbar ke Kiri</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Memindahkan tombol Start dan ikon taskbar Windows 11 ke posisi kiri bawah yang klasik.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>Penyelarasan memori otot klasik.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>Aktifkan Tampilan Kompak di File Explorer</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>Mengurangi padding vertikal antar baris di File Explorer untuk kepadatan file yang lebih tinggi.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>Lihat lebih banyak file per layar tanpa menggulir.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>Aktifkan Riwayat Clipboard yang Ditingkatkan</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>Mengonfigurasi riwayat clipboard lokal Win+V tanpa sinkronisasi cloud.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Riwayat clipboard multi-item yang dapat diakses dengan Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Nonaktifkan Sidebar &amp; Widget Edge</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Menonaktifkan tombol sidebar browser Edge dan widget pencarian mengambang.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Menghilangkan kekacauan di browser Edge.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Nonaktifkan Sinyal Iklan Bluetooth</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Mencegah Windows menyiarkan sinyal iklan Bluetooth ke perangkat keras terdekat.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>Meningkatkan privasi perangkat nirkabel di tempat umum.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Nonaktifkan Saran Windows Spotlight</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>Menonaktifkan saran promosi dan unduhan gambar cloud latar belakang di layar kunci.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>Menghentikan iklan layar kunci dan lalu lintas unduhan latar belakang.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>Nonaktifkan Kontainer Telemetri NVIDIA</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>Menonaktifkan tugas telemetri latar belakang driver NVIDIA dan layanan pelacakan.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>Menghentikan pengunggahan analitik GPU dan membebaskan 100MB+ RAM latar belakang.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Nonaktifkan Telemetri Microsoft Edge</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Menonaktifkan diagnostik browser Edge, pelaporan crash, dan dorongan latar belakang saat startup.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Mencegah Edge mempertahankan proses latar belakang yang persisten.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>Menutup kerentanan jaringan utama yang dieksploitasi oleh malware dan ransomware.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>Nonaktifkan Protokol Jaringan SMBv1 Lama</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>Menonaktifkan protokol berbagi file SMBv1 yang tidak aman berusia 30 tahun (vektor serangan EternalBlue/WannaCry).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>Pengerasan keamanan kritis terhadap eksploit worm jaringan.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Nonaktifkan Papan Widget Windows 11</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>Menonaktifkan umpan Widget taskbar dan proses Edge WebView latar belakang.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>Membebaskan 300MB+ RAM dan menghentikan rendering latar belakang Edge yang konstan.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>Optimalkan SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>Menyesuaikan atau menonaktifkan layanan SysMain untuk menghentikan pemuat awal yang tidak perlu pada SSD.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>Menghilangkan lonjakan penggunaan disk latar belakang yang tinggi dan siklus tulis SSD yang tidak perlu.</value>
+  </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Beri Nilai &amp; Ulasan</value>
+  </data>
+  <data name="Network_ToolsSection.Text" xml:space="preserve">
+    <value>Alat Jaringan</value>
+  </data>
+  <data name="Network_OptimizationSection.Text" xml:space="preserve">
+    <value>Optimalisasi Jaringan</value>
+  </data>
+  <data name="Network_CurrentDNSSection.Text" xml:space="preserve">
+    <value>Server DNS Saat Ini</value>
+  </data>
+  <data name="Network_SetDNSSection.Text" xml:space="preserve">
+    <value>Atur DNS Khusus</value>
+  </data>
+  <data name="Network_FlushDNS.Header" xml:space="preserve">
+    <value>Hapus Cache DNS</value>
+  </data>
+  <data name="Network_FlushDNS.Description" xml:space="preserve">
+    <value>Membersihkan cache resolver DNS lokal, memaksakan pencarian DNS baru untuk semua nama domain.</value>
+  </data>
+  <data name="Network_FlushDNS_Button.Content" xml:space="preserve">
+    <value>Flush DNS</value>
+  </data>
+  <data name="Network_ReleaseRenew.Header" xml:space="preserve">
+    <value>Lepas &amp; Perbarui IP</value>
+  </data>
+  <data name="Network_ReleaseRenew.Description" xml:space="preserve">
+    <value>Melepaskan alamat IP saat ini dan meminta yang baru dari server DHCP. Berguna saat mengalami masalah koneksi.</value>
+  </data>
+  <data name="Network_ReleaseRenew_Button.Content" xml:space="preserve">
+    <value>Lepas &amp; Perbarui</value>
+  </data>
+  <data name="Network_ResetTCPIP.Header" xml:space="preserve">
+    <value>Reset Stack TCP/IP</value>
+  </data>
+  <data name="Network_ResetTCPIP.Description" xml:space="preserve">
+    <value>Mereset stack TCP/IP dan katalog Winsock ke kondisi default. Diperlukan restart sistem.</value>
+  </data>
+  <data name="Network_ResetTCPIP_Button.Content" xml:space="preserve">
+    <value>Reset TCP/IP</value>
+  </data>
+  <data name="Network_OpenNetworkSettings.Header" xml:space="preserve">
+    <value>Buka Pengaturan Jaringan</value>
+  </data>
+  <data name="Network_OpenNetworkSettings.Description" xml:space="preserve">
+    <value>Membuka halaman pengaturan Jaringan &amp; Internet Windows.</value>
+  </data>
+  <data name="Network_OpenAdapterSettings.Header" xml:space="preserve">
+    <value>Pengaturan Adaptor Jaringan</value>
+  </data>
+  <data name="Network_OpenAdapterSettings.Description" xml:space="preserve">
+    <value>Membuka panel klasik Sambungan Jaringan untuk mengelola adaptor.</value>
+  </data>
+  <data name="Network_DisableThrottling.Header" xml:space="preserve">
+    <value>Nonaktifkan Pembatasan Jaringan</value>
+  </data>
+  <data name="Network_DisableThrottling.Description" xml:space="preserve">
+    <value>Menghapus batas 10 paket/md yang diterapkan Windows saat aplikasi multimedia berjalan, meningkatkan throughput.</value>
+  </data>
+  <data name="Network_DisableNagle.Header" xml:space="preserve">
+    <value>Nonaktifkan Algoritma Nagle</value>
+  </data>
+  <data name="Network_DisableNagle.Description" xml:space="preserve">
+    <value>Mengurangi latensi pada koneksi TCP dengan langsung mengirim paket tanpa buffering. Bermanfaat untuk game dan aplikasi real-time.</value>
+  </data>
+  <data name="Network_EnableRSS.Header" xml:space="preserve">
+    <value>Aktifkan Receive-Side Scaling (RSS)</value>
+  </data>
+  <data name="Network_EnableRSS.Description" xml:space="preserve">
+    <value>Mendistribusikan pemrosesan penerimaan jaringan ke beberapa inti CPU, meningkatkan throughput dan mengurangi latensi.</value>
+  </data>
+  <data name="Network_EnableECN.Header" xml:space="preserve">
+    <value>Aktifkan ECN (Explicit Congestion Notification)</value>
+  </data>
+  <data name="Network_EnableECN.Description" xml:space="preserve">
+    <value>Memungkinkan router memberi sinyal kepadatan jaringan tanpa menjatuhkan paket, mengurangi transmisi ulang.</value>
+  </data>
+  <data name="Network_EnableCTCP.Header" xml:space="preserve">
+    <value>Aktifkan Compound TCP (CTCP)</value>
+  </data>
+  <data name="Network_EnableCTCP.Description" xml:space="preserve">
+    <value>Menggunakan algoritma kepadatan yang lebih agresif untuk meningkatkan throughput pada koneksi berkecepatan tinggi dan latensi tinggi.</value>
+  </data>
+  <data name="Network_DisableIPv6.Header" xml:space="preserve">
+    <value>Nonaktifkan IPv6</value>
+  </data>
+  <data name="Network_DisableIPv6.Description" xml:space="preserve">
+    <value>Menonaktifkan stack protokol IPv6. Hanya disarankan saat memecahkan masalah terkait IPv6. Restart mungkin diperlukan.</value>
+  </data>
+  <data name="Network_NicSection.Text" xml:space="preserve">
+    <value>Antarmuka Jaringan</value>
+  </data>
+  <data name="Network_NicCard.Header" xml:space="preserve">
+    <value>Adaptor Aktif</value>
+  </data>
+  <data name="Network_NicCard.Description" xml:space="preserve">
+    <value>Pilih adaptor jaringan yang ingin dikonfigurasi pengaturan DNS-nya.</value>
+  </data>
+  <data name="Network_IPv4Card.Header" xml:space="preserve">
+    <value>Server DNS IPv4</value>
+  </data>
+  <data name="Network_IPv4Card.Description" xml:space="preserve">
+    <value>Server DNS yang saat ini dikonfigurasi untuk IPv4.</value>
+  </data>
+  <data name="Network_IPv6Card.Header" xml:space="preserve">
+    <value>Server DNS IPv6</value>
+  </data>
+  <data name="Network_IPv6Card.Description" xml:space="preserve">
+    <value>Server DNS yang saat ini dikonfigurasi untuk IPv6.</value>
+  </data>
+  <data name="Network_SetDNSCard.Header" xml:space="preserve">
+    <value>Preset DNS</value>
+  </data>
+  <data name="Network_SetDNSCard.Description" xml:space="preserve">
+    <value>Pilih penyedia DNS dan terapkan ke adaptor jaringan yang dipilih.</value>
+  </data>
+  <data name="Network_ResetTCPIPWarningTitle" xml:space="preserve">
+    <value>Perlu Memulai Ulang</value>
+  </data>
+  <data name="Network_ResetTCPIPWarningMessage" xml:space="preserve">
+    <value>Stack TCP/IP dan Winsock telah direset. Silakan mulai ulang komputer Anda agar perubahan diterapkan.</value>
+  </data>
+  <data name="Network_FlushDNSSuccess" xml:space="preserve">
+    <value>Cache DNS berhasil dibersihkan.</value>
+  </data>
+  <data name="Network_ReleaseRenewSuccess" xml:space="preserve">
+    <value>Alamat IP berhasil dilepas dan diperbarui.</value>
+  </data>
+  <data name="Network_SuccessTitle" xml:space="preserve">
+    <value>Berhasil</value>
+  </data>
+  <data name="OptimizeSystemPage_TimerResolution.Text" xml:space="preserve">
+    <value>Resolusi Timer &amp; Latensi</value>
+  </data>
+  <data name="Feature_GlobalTimerResolution.Header" xml:space="preserve">
+    <value>Aktifkan Resolusi Timer Global</value>
+  </data>
+  <data name="Feature_GlobalTimerResolution.Description" xml:space="preserve">
+    <value>Memungkinkan aplikasi meminta resolusi timer yang lebih tinggi secara global, mengurangi latensi penjadwalan untuk game dan audio real-time.</value>
+  </data>
+  <data name="Feature_DisableHPET.Header" xml:space="preserve">
+    <value>Nonaktifkan HPET</value>
+  </data>
+  <data name="Feature_DisableHPET.Description" xml:space="preserve">
+    <value>Menonaktifkan High Precision Event Timer dan beralih ke TSC untuk latensi yang lebih rendah. Memerlukan restart.</value>
+  </data>
+  <data name="Feature_DisableDynamicTick.Header" xml:space="preserve">
+    <value>Nonaktifkan Dynamic Tick</value>
+  </data>
+  <data name="Feature_DisableDynamicTick.Description" xml:space="preserve">
+    <value>Memaksa timer sistem untuk berjalan pada kecepatan konstan daripada menyesuaikan secara dinamis, mengurangi jitter pada beban kerja yang sensitif terhadap latensi.</value>
+  </data>
+  <data name="OptimizeSystemPage_MemoryOptimization.Text" xml:space="preserve">
+    <value>Optimasi Memori</value>
+  </data>
+  <data name="Feature_DisablePrefetch.Header" xml:space="preserve">
+    <value>Nonaktifkan Prefetch &amp; Superfetch</value>
+  </data>
+  <data name="Feature_DisablePrefetch.Description" xml:space="preserve">
+    <value>Menonaktifkan pramuat Windows Prefetcher dan Superfetch untuk mengosongkan RAM dan mengurangi I/O disk. Direkomendasikan untuk pengguna SSD.</value>
+  </data>
+  <data name="Feature_EnableLargeSystemCache.Header" xml:space="preserve">
+    <value>Aktifkan Cache Sistem Besar</value>
+  </data>
+  <data name="Feature_EnableLargeSystemCache.Description" xml:space="preserve">
+    <value>Mengalokasikan lebih banyak memori sistem untuk cache sistem berkas, meningkatkan performa baca disk untuk beban kerja berkas intensif.</value>
+  </data>
+  <data name="Feature_DisableNDU.Header" xml:space="preserve">
+    <value>Nonaktifkan Monitor Penggunaan Data Jaringan (NDU)</value>
+  </data>
+  <data name="Feature_DisableNDU.Description" xml:space="preserve">
+    <value>Menonaktifkan layanan NDU yang diketahui menyebabkan kebocoran memori non-paged pool pada beberapa sistem setelah waktu aktif yang lama.</value>
+  </data>
+  <data name="Feature_DisablePageFileEncryption.Header" xml:space="preserve">
+    <value>Nonaktifkan Enkripsi Berkas Halaman (Pagefile)</value>
+  </data>
+  <data name="Feature_DisablePageFileEncryption.Description" xml:space="preserve">
+    <value>Menonaktifkan enkripsi berkas halaman Windows untuk mengurangi beban CPU selama operasi paging.</value>
+  </data>
+  <data name="FeaturesPage_NotificationControls.Text" xml:space="preserve">
+    <value>Kontrol Notifikasi</value>
+  </data>
+  <data name="Feature_DisableLockScreenNotifications.Header" xml:space="preserve">
+    <value>Nonaktifkan Notifikasi Layar Kunci</value>
+  </data>
+  <data name="Feature_DisableLockScreenNotifications.Description" xml:space="preserve">
+    <value>Mencegah notifikasi toast muncul di layar kunci untuk meningkatkan privasi dan mengurangi gangguan.</value>
+  </data>
+  <data name="Feature_DisableToastNotifications.Header" xml:space="preserve">
+    <value>Nonaktifkan Semua Notifikasi Toast</value>
+  </data>
+  <data name="Feature_DisableToastNotifications.Description" xml:space="preserve">
+    <value>Menonaktifkan sepenuhnya semua notifikasi toast pop-up dari aplikasi dan sistem.</value>
+  </data>
+  <data name="Feature_DisableNotificationCenter.Header" xml:space="preserve">
+    <value>Nonaktifkan Pusat Notifikasi</value>
+  </data>
+  <data name="Feature_DisableNotificationCenter.Description" xml:space="preserve">
+    <value>Menghapus Pusat Notifikasi dan Aksi dari taskbar. Memerlukan restart Explorer.</value>
+  </data>
+  <data name="Feature_DisableSuggestedActions.Header" xml:space="preserve">
+    <value>Nonaktifkan Tindakan yang Disarankan</value>
+  </data>
+  <data name="Feature_DisableSuggestedActions.Description" xml:space="preserve">
+    <value>Menonaktifkan flyout tindakan yang disarankan papan klip pintar saat menyalin tanggal, nomor telepon, atau alamat.</value>
+  </data>
+  <data name="FeaturesPage_ContextMenu.Text" xml:space="preserve">
+    <value>Kustomisasi Menu Konteks</value>
+  </data>
+  <data name="Feature_AddTakeOwnership.Header" xml:space="preserve">
+    <value>Tambahkan "Ambil Kepemilikan" ke Menu Konteks</value>
+  </data>
+  <data name="Feature_AddTakeOwnership.Description" xml:space="preserve">
+    <value>Menambahkan opsi "Ambil Kepemilikan" ke menu klik kanan berkas dan folder untuk transfer izin cepat.</value>
+  </data>
+  <data name="Feature_AddOpenCmdHere.Header" xml:space="preserve">
+    <value>Tambahkan "Buka Command Prompt di Sini"</value>
+  </data>
+  <data name="Feature_AddOpenCmdHere.Description" xml:space="preserve">
+    <value>Menambahkan opsi untuk membuka Command Prompt di lokasi saat ini dari menu klik kanan latar belakang folder.</value>
+  </data>
+  <data name="Feature_AddCopyFilePath.Header" xml:space="preserve">
+    <value>Tambahkan "Salin Jalur Berkas" ke Menu Konteks</value>
+  </data>
+  <data name="Feature_AddCopyFilePath.Description" xml:space="preserve">
+    <value>Menambahkan opsi "Salin Jalur Berkas" ke menu klik kanan untuk menyalin jalur lengkap ke papan klip dengan satu klik.</value>
+  </data>
+  <data name="PrivacyPage_PrivacyHardening.Text" xml:space="preserve">
+    <value>Penguatan Privasi</value>
+  </data>
+  <data name="Feature_DisableWiFiSense.Header" xml:space="preserve">
+    <value>Nonaktifkan Wi-Fi Sense</value>
+  </data>
+  <data name="Feature_DisableWiFiSense.Description" xml:space="preserve">
+    <value>Menonaktifkan koneksi otomatis ke hotspot Wi-Fi terbuka yang disarankan dan jaringan yang dibagikan oleh kontak.</value>
+  </data>
+  <data name="Feature_DisableWebSearchResults.Header" xml:space="preserve">
+    <value>Nonaktifkan Hasil Web dalam Pencarian</value>
+  </data>
+  <data name="Feature_DisableWebSearchResults.Description" xml:space="preserve">
+    <value>Mencegah Windows Search mengirim kueri ke Bing dan menampilkan hasil web. Menjaga pencarian tetap lokal dan privat.</value>
+  </data>
+  <data name="Feature_DisableAppLaunchTracking.Header" xml:space="preserve">
+    <value>Nonaktifkan Pelacakan Peluncuran Aplikasi</value>
+  </data>
+  <data name="Feature_DisableAppLaunchTracking.Description" xml:space="preserve">
+    <value>Menghentikan Windows melacak aplikasi yang Anda buka untuk mempersonalisasi daftar yang paling sering digunakan di menu Mulai.</value>
+  </data>
+  <data name="Feature_DisableTimelineHistory.Header" xml:space="preserve">
+    <value>Nonaktifkan Linimasa &amp; Riwayat Aktivitas</value>
+  </data>
+  <data name="Feature_DisableTimelineHistory.Description" xml:space="preserve">
+    <value>Menonaktifkan umpan aktivitas Linimasa Windows dan mencegah data aktivitas dipublikasikan atau diunggah ke cloud.</value>
+  </data>
+  <data name="Network_DisableP2PDelivery.Header" xml:space="preserve">
+    <value>Nonaktifkan Pengiriman Pembaruan P2P</value>
+  </data>
+  <data name="Network_DisableP2PDelivery.Description" xml:space="preserve">
+    <value>Menonaktifkan pengoptimalan pengiriman peer-to-peer Windows Update, mencegah PC Anda berbagi data pembaruan dengan PC lain di internet.</value>
+  </data>
+  <data name="Network_DisableHotspot20.Header" xml:space="preserve">
+    <value>Nonaktifkan Hotspot 2.0</value>
+  </data>
+  <data name="Network_DisableHotspot20.Description" xml:space="preserve">
+    <value>Menonaktifkan penemuan dan koneksi otomatis hotspot Wi-Fi Hotspot 2.0 (Passpoint) untuk privasi yang lebih baik.</value>
+  </data>
+  <data name="Network_DisableNetBIOS.Header" xml:space="preserve">
+    <value>Nonaktifkan NetBIOS melalui TCP/IP</value>
+  </data>
+  <data name="Network_DisableNetBIOS.Description" xml:space="preserve">
+    <value>Menonaktifkan resolusi nama NetBIOS warisan melalui TCP/IP untuk mengurangi bidang serangan jaringan dan meningkatkan keamanan.</value>
+  </data>
+  <data name="OptimizeSystemPage_InputResponsiveness.Text" xml:space="preserve">
+    <value>Input &amp; Responsivitas</value>
+  </data>
+  <data name="OptimizeSystemPage_GamingGpu.Text" xml:space="preserve">
+    <value>Game &amp; GPU</value>
+  </data>
+  <data name="OptimizeSystemPage_DiskFileSystem.Text" xml:space="preserve">
+    <value>Disk &amp; Sistem Berkas</value>
+  </data>
+  <data name="OptimizeSystemPage_ServicesSystem.Text" xml:space="preserve">
+    <value>Layanan &amp; Sistem</value>
+  </data>
+  <data name="OptimizeSystemPage_WindowsComponents.Text" xml:space="preserve">
+    <value>Komponen Windows</value>
+  </data>
+  <data name="FeaturesPage_AppearanceUI.Text" xml:space="preserve">
+    <value>Tampilan &amp; Antarmuka</value>
+  </data>
+  <data name="FeaturesPage_SystemServices.Text" xml:space="preserve">
+    <value>Layanan Sistem</value>
+  </data>
+  <data name="FeaturesPage_InputAccessibility.Text" xml:space="preserve">
+    <value>Input &amp; Aksesibilitas</value>
+  </data>
+  <data name="FeaturesPage_ExplorerShell.Text" xml:space="preserve">
+    <value>File Explorer &amp; Shell</value>
+  </data>
+  <data name="FeaturesPage_Win11UI.Text" xml:space="preserve">
+    <value>Antarmuka Windows 11</value>
+  </data>
+  <data name="FeaturesPage_WindowsAIEdge.Text" xml:space="preserve">
+    <value>AI Windows &amp; Edge</value>
+  </data>
+  <data name="PrivacyPage_DataCollection.Text" xml:space="preserve">
+    <value>Pengumpulan Data &amp; Input</value>
+  </data>
+  <data name="PrivacyPage_CloudSync.Text" xml:space="preserve">
+    <value>Sinkronisasi Cloud &amp; Perangkat</value>
+  </data>
+  <data name="PrivacyPage_LocationSecurity.Text" xml:space="preserve">
+    <value>Lokasi &amp; Keamanan</value>
+  </data>
+  <data name="Shell_StressTest.Content" xml:space="preserve">
+    <value>Uji Stres</value>
+  </data>
+  <data name="StressTestPage_Title.Text" xml:space="preserve">
+    <value>Uji Stres</value>
+  </data>
+  <data name="StressTestPage_Description.Text" xml:space="preserve">
+    <value>Uji perangkat keras Anda hingga batas maksimal dan pantau performa waktu nyata di bawah beban.</value>
+  </data>
+  <data name="StressTestPage_StartAll.Text" xml:space="preserve">
+    <value>Mulai Semua</value>
+  </data>
+  <data name="StressTestPage_StopAll.Text" xml:space="preserve">
+    <value>Hentikan Semua</value>
+  </data>
+  <data name="StressTestPage_CPU.Text" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="StressTestPage_RAM.Text" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="StressTestPage_Disk.Text" xml:space="preserve">
+    <value>Disk</value>
+  </data>
+  <data name="StressTestPage_GPU.Text" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="StressTestPage_CpuStressTest.Text" xml:space="preserve">
+    <value>Uji Stres CPU</value>
+  </data>
+  <data name="StressTestPage_CpuStressTestDesc.Text" xml:space="preserve">
+    <value>Beban komputasi semua inti menggunakan beban kerja integer dan floating-point paralel</value>
+  </data>
+  <data name="StressTestPage_RamStressTest.Text" xml:space="preserve">
+    <value>Uji Stres RAM</value>
+  </data>
+  <data name="StressTestPage_RamStressTestDesc.Text" xml:space="preserve">
+    <value>Pola akses memori berurutan dan acak untuk mendeteksi masalah stabilitas</value>
+  </data>
+  <data name="StressTestPage_DiskStressTest.Text" xml:space="preserve">
+    <value>Uji Stres Disk</value>
+  </data>
+  <data name="StressTestPage_DiskStressTestDesc.Text" xml:space="preserve">
+    <value>Tolok ukur throughput baca/tulis berurutan pada drive sistem</value>
+  </data>
+  <data name="StressTestPage_GpuStressTest.Text" xml:space="preserve">
+    <value>Uji Stres GPU</value>
+  </data>
+  <data name="StressTestPage_GpuStressTestDesc.Text" xml:space="preserve">
+    <value>Jalur volumetrik &amp; fraktal raymarching 3D dengan akselerasi perangkat keras untuk membebani GPU hingga 100%</value>
+  </data>
+  <data name="StressTestPage_Start.Text" xml:space="preserve">
+    <value>Mulai</value>
+  </data>
+  <data name="StressTestPage_Stop.Text" xml:space="preserve">
+    <value>Berhenti</value>
+  </data>
+  <data name="StressTestPage_Usage.Text" xml:space="preserve">
+    <value>Penggunaan</value>
+  </data>
+  <data name="StressTestPage_Threads.Text" xml:space="preserve">
+    <value>Thread</value>
+  </data>
+  <data name="StressTestPage_Score.Text" xml:space="preserve">
+    <value>Skor</value>
+  </data>
+  <data name="StressTestPage_Status.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StressTestPage_Idle.Text" xml:space="preserve">
+    <value>Siaga</value>
+  </data>
+  <data name="StressTestPage_Running.Text" xml:space="preserve">
+    <value>Berjalan</value>
+  </data>
+  <data name="StressTestPage_Allocating.Text" xml:space="preserve">
+    <value>Mengalokasikan</value>
+  </data>
+  <data name="StressTestPage_RunningHlsl.Text" xml:space="preserve">
+    <value>Berjalan (HLSL Compute)</value>
+  </data>
+  <data name="StressTestPage_Allocated.Text" xml:space="preserve">
+    <value>Dialokasikan</value>
+  </data>
+  <data name="StressTestPage_Bandwidth.Text" xml:space="preserve">
+    <value>Bandwidth</value>
+  </data>
+  <data name="StressTestPage_WriteSpeed.Text" xml:space="preserve">
+    <value>Tulis</value>
+  </data>
+  <data name="StressTestPage_ReadSpeed.Text" xml:space="preserve">
+    <value>Baca</value>
+  </data>
+  <data name="StressTestPage_IOPS.Text" xml:space="preserve">
+    <value>IOPS</value>
+  </data>
+  <data name="StressTestPage_GFLOPS.Text" xml:space="preserve">
+    <value>GFLOPS</value>
+  </data>
+  <data name="StressTestPage_VRAM.Text" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="StressTestPage_Temperature.Text" xml:space="preserve">
+    <value>Suhu</value>
+  </data>
+  <data name="StressTestPage_FPS.Text" xml:space="preserve">
+    <value>FPS</value>
+  </data>
+  <data name="StressTestPage_RamPercentCombo.Header" xml:space="preserve">
+    <value>% dari RAM</value>
+  </data>
+  <data name="StressTestPage_AllCores.Text" xml:space="preserve">
+    <value>Semua Inti</value>
+  </data>
+  <data name="StressTestPage_AllCoresWithCount" xml:space="preserve">
+    <value>Semua Inti ({0})</value>
+  </data>
+  <data name="StressTestPage_SelectedCoresCount" xml:space="preserve">
+    <value>{0} dari {1} Inti</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Title" xml:space="preserve">
+    <value>Pilih Inti CPU</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Apply" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Warning" xml:space="preserve">
+    <value>Pilih setidaknya satu inti.</value>
+  </data>
+  <data name="Intelligent_Domain_Optimizer" xml:space="preserve">
+    <value>Pengoptimal Sistem</value>
+  </data>
+  <data name="Intelligent_DetectingHardware" xml:space="preserve">
+    <value>Mendeteksi Perangkat Keras...</value>
+  </data>
+  <data name="Intelligent_StatusMessageDefault" xml:space="preserve">
+    <value>Memindai, menganalisis, melihat pratinjau, menerapkan, memverifikasi, dan mendukung pemulihan per item untuk semua pengaturan.</value>
+  </data>
+  <data name="Intelligent_Metric_NonIntrusive" xml:space="preserve">
+    <value>Aman / Non-Intrusif</value>
+  </data>
+  <data name="Intelligent_Btn_Apply" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="Intelligent_Preview_DialogDefaultTitle" xml:space="preserve">
+    <value>Pratinjau Optimasi Cerdas</value>
+  </data>
+  <data name="Intelligent_State_On" xml:space="preserve">
+    <value>AKTIF</value>
+  </data>
+  <data name="Intelligent_State_Off" xml:space="preserve">
+    <value>NONAKTIF</value>
+  </data>
+  <data name="Intelligent_Status_Optional" xml:space="preserve">
+    <value>Opsional</value>
+  </data>
+  <data name="Intelligent_General_Optimization" xml:space="preserve">
+    <value>Optimasi</value>
+  </data>
+  <data name="Intelligent_Flyout_CategoryRisk" xml:space="preserve">
+    <value>Kategori: {0} • Risiko: {1}</value>
+  </data>
+  <data name="Intelligent_Flyout_Impact" xml:space="preserve">
+    <value>Dampak: {0}</value>
+  </data>
+  <data name="Intelligent_Flyout_RollbackPoint" xml:space="preserve">
+    <value>Titik Pemulihan: {0} • Awal: {1}</value>
+  </data>
+  <data name="OptimizeInspector_ConfiguresCount" xml:space="preserve">
+    <value>Mengonfigurasi {0} pengaturan sistem untuk {1}.</value>
+  </data>
+  <data name="OptimizeInspector_OptimizesDefault" xml:space="preserve">
+    <value>Mengoptimalkan {0} dalam konfigurasi Windows.</value>
+  </data>
+  <data name="OptimizeInspector_SafetyLine" xml:space="preserve">
+    <value>Keamanan: {0} • Bobot: +{1} poin • Status: {2}</value>
+  </data>
+  <data name="OptimizeInspector_SafetyNote" xml:space="preserve">
+    <value>Catatan Keamanan: {0}</value>
+  </data>
+  <data name="OptimizeInspector_ActionsRegistry" xml:space="preserve">
+    <value>Tindakan &amp; Registri:</value>
+  </data>
+  <data name="OptimizeInspector_Commands" xml:space="preserve">
+    <value>Perintah:</value>
+  </data>
+  <data name="OptimizeInspector_ReasonCaution" xml:space="preserve">
+    <value>Perhatian: Fitur lanjutan Windows yang hanya boleh diubah oleh pengguna ahli.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonModerateRec" xml:space="preserve">
+    <value>Disarankan (Moderat): Optimasi performa tinggi yang telah diverifikasi dalam alat tuning.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonModerate" xml:space="preserve">
+    <value>Moderat: Optimasi pengguna tingkat lanjut. Termasuk dalam preset Moderat.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonPersonalPref" xml:space="preserve">
+    <value>Opsional (Aman): Tata letak visual atau preferensi pengguna. Termasuk dalam preset Semua Aman.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonSafeRec" xml:space="preserve">
+    <value>Disarankan: Optimasi aman dan tidak mengganggu untuk meningkatkan privasi dan responsivitas.</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Title" xml:space="preserve">
+    <value>Operasi sedang berlangsung</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Content" xml:space="preserve">
+    <value>Operasi optimasi latar belakang sedang berjalan. Apakah Anda ingin menunggu hingga selesai atau keluar sekarang?</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Wait" xml:space="preserve">
+    <value>Tunggu</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Exit" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="LogViewer_Title" xml:space="preserve">
+    <value>Penampil Log</value>
+  </data>
+  <data name="LogViewer_FilterPlaceholder" xml:space="preserve">
+    <value>Filter berdasarkan tingkat</value>
+  </data>
+  <data name="LogViewer_FilterAll" xml:space="preserve">
+    <value>Semua</value>
+  </data>
+  <data name="LogViewer_FilterInfo" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="LogViewer_FilterWarn" xml:space="preserve">
+    <value>Peringatan</value>
+  </data>
+  <data name="LogViewer_FilterError" xml:space="preserve">
+    <value>Kesalahan</value>
+  </data>
+  <data name="LogViewer_FilterCritical" xml:space="preserve">
+    <value>Kritis</value>
+  </data>
+  <data name="LogViewer_EntriesCount" xml:space="preserve">
+    <value>{0} dari {1} entri</value>
+  </data>
+  <data name="LogViewer_SearchPlaceholder" xml:space="preserve">
+    <value>Cari log...</value>
+  </data>
+  <data name="LogViewer_NoEntries" xml:space="preserve">
+    <value>Tidak ada entri log yang ditemukan.</value>
+  </data>
+  <data name="LogViewer_NewSession" xml:space="preserve">
+    <value>Sesi Baru</value>
+  </data>
+  <data name="LogViewer_CopyButton" xml:space="preserve">
+    <value>Salin</value>
+  </data>
+  <data name="LogViewer_OpenFileButton" xml:space="preserve">
+    <value>Buka File</value>
+  </data>
+  <data name="ProcessesPage_TotalProcesses.Text" xml:space="preserve">
+    <value>Total Proses</value>
+  </data>
+  <data name="ProcessesPage_TotalMemory.Text" xml:space="preserve">
+    <value>Total Memori</value>
+  </data>
+  <data name="ProcessesPage_TotalThreads.Text" xml:space="preserve">
+    <value>Total Thread</value>
+  </data>
+  <data name="ProcessesPage_EndTaskTooltip.Text" xml:space="preserve">
+    <value>Akhiri Tugas</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessEndedTitle" xml:space="preserve">
+    <value>Proses Diakhiri</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessEndedMessage" xml:space="preserve">
+    <value>Proses '{0}' (PID: {1}) berhasil dihentikan.</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessNotFoundTitle" xml:space="preserve">
+    <value>Proses Tidak Ditemukan</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessNotFoundMessage" xml:space="preserve">
+    <value>Proses dengan PID {0} sudah tidak ada.</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessErrorTitle" xml:space="preserve">
+    <value>Kesalahan</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessErrorMessage" xml:space="preserve">
+    <value>Gagal mengakhiri proses: {0}</value>
+  </data>
+  <data name="PackagesPage_Notification_Title" xml:space="preserve">
+    <value>Paket</value>
+  </data>
+  <data name="PackagesPage_Notification_NoPackagesInstall" xml:space="preserve">
+    <value>Tidak ada paket yang dipilih untuk dipasang.</value>
+  </data>
+  <data name="PackagesPage_Notification_NoPackagesUpdate" xml:space="preserve">
+    <value>Tidak ada paket yang dipilih untuk diperbarui.</value>
+  </data>
+  <data name="PackagesPage_Notification_InstallCompleted" xml:space="preserve">
+    <value>Pemasangan selesai: {0} berhasil, {1} gagal.</value>
+  </data>
+  <data name="PackagesPage_Notification_UpdateCompleted" xml:space="preserve">
+    <value>Pembaruan selesai: {0} berhasil, {1} gagal.</value>
+  </data>
+  <data name="DebloatPage_ClearedSize" xml:space="preserve">
+    <value> (Dibersihkan: {0})</value>
+  </data>
+  <data name="Feature_CreatePowerPlanButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Buat Skema Daya</value>
+  </data>
+  <data name="Search_Category_Navigation" xml:space="preserve">
+    <value>Navigasi</value>
+  </data>
+  <data name="StartupPage_Notification_LoadFailed" xml:space="preserve">
+    <value>Gagal memuat item startup: {0}</value>
+  </data>
+  <data name="StartupPage_Notification_ToggleFailed" xml:space="preserve">
+    <value>Gagal memperbarui status item startup untuk '{0}'.</value>
+  </data>
+  <data name="CopilotPlusPC" xml:space="preserve">
+    <value>PC Copilot+</value>
+  </data>
+  <data name="Supported" xml:space="preserve">
+    <value>Didukung</value>
+  </data>
+  <data name="NotSupported" xml:space="preserve">
+    <value>Tidak didukung</value>
+  </data>
+  <data name="SystemUpdate_DialogTitle" xml:space="preserve">
+    <value>Pembaruan Windows Terdeteksi</value>
+  </data>
+  <data name="SystemUpdate_DialogContent" xml:space="preserve">
+    <value>Windows telah diperbarui dari build {0} ke {1}.
+
+Pembaruan Windows sering kali mengembalikan penyesuaian sistem ke nilai default.
+
+Apakah Anda ingin RyTuneX menerapkan ulang semua optimasi, fitur, dan privasi yang disimpan ({2} item)?</value>
+  </data>
+  <data name="SystemUpdate_DialogContentWithBreakdown" xml:space="preserve">
+    <value>Windows telah diperbarui dari build {0} ke {1}.
+
+Pembaruan Windows sering kali mengembalikan penyesuaian sistem ke nilai default.
+
+Apakah Anda ingin RyTuneX menerapkan ulang semua pengaturan yang disimpan ({2} total: {3} optimasi, {4} fitur, {5} privasi)?</value>
+  </data>
+  <data name="SystemUpdate_ReapplyButton" xml:space="preserve">
+    <value>Terapkan Ulang Semua Pengaturan</value>
+  </data>
+  <data name="SystemUpdate_ReapplyingMessage" xml:space="preserve">
+    <value>Sedang menerapkan ulang optimasi, fitur, dan pengaturan privasi...</value>
+  </data>
+  <data name="SystemUpdate_ReappliedSuccess" xml:space="preserve">
+    <value>Berhasil menerapkan ulang {0} pengaturan.</value>
+  </data>
+  <data name="SystemUpdate_ReappliedSuccessWithBreakdown" xml:space="preserve">
+    <value>Berhasil menerapkan ulang {0} pengaturan ({1} optimasi, {2} fitur, {3} privasi).</value>
+  </data>
+  <data name="Settings_DetectSystemUpdates.Header" xml:space="preserve">
+    <value>Deteksi pembaruan Windows</value>
+  </data>
+  <data name="Settings_DetectSystemUpdates.Description" xml:space="preserve">
+    <value>Minta untuk menerapkan ulang optimasi, fitur, dan privasi setelah pembaruan Windows</value>
+  </data>
+  <data name="Settings_ReapplyOptimizations.Header" xml:space="preserve">
+    <value>Terapkan ulang semua pengaturan</value>
+  </data>
+  <data name="Settings_ReapplyOptimizations.Description" xml:space="preserve">
+    <value>Terapkan ulang semua optimasi, fitur, dan privasi yang saat ini dikonfigurasi di RyTuneX</value>
+  </data>
+  <data name="ReapplyingOptimizations" xml:space="preserve">
+    <value>Sedang menerapkan ulang optimasi, fitur, dan pengaturan privasi...</value>
+  </data>
+  <data name="ReapplyOptimizationsDialogContent" xml:space="preserve">
+    <value>Terapkan ulang {0} pengaturan tersimpan ({1} optimasi, {2} fitur, {3} privasi) ke sistem Anda sekarang?</value>
+  </data>
+  <data name="ReapplyOptimizationsDialogContentSimple" xml:space="preserve">
+    <value>Terapkan ulang {0} pengaturan tersimpan ke sistem Anda sekarang?</value>
+  </data>
+  <data name="NoSavedOptimizations" xml:space="preserve">
+    <value>Tidak ada optimasi, fitur, atau pengaturan privasi yang saat ini disimpan di RyTuneX untuk diterapkan ulang.</value>
+  </data>
+  <data name="DeepClean_Title" xml:space="preserve">
+    <value>Pembersihan Mendalam</value>
+  </data>
+  <data name="DeepClean_Description" xml:space="preserve">
+    <value>Pilih kategori yang ingin dibersihkan. Ukuran dipindai secara otomatis.</value>
+  </data>
+  <data name="DeepClean_Scanning" xml:space="preserve">
+    <value>Memindai sistem...</value>
+  </data>
+  <data name="DeepClean_TotalSelected" xml:space="preserve">
+    <value>Total dipilih: {0}</value>
+  </data>
+  <data name="DeepClean_CleanButton" xml:space="preserve">
+    <value>Bersihkan yang Dipilih</value>
+  </data>
+  <data name="DeepClean_CompleteDesc" xml:space="preserve">
+    <value>Berhasil membersihkan {0} data.</value>
+  </data>
+  <data name="DeepClean_Error" xml:space="preserve">
+    <value>Beberapa item tidak dapat dibersihkan. Periksa log untuk detailnya.</value>
+  </data>
+  <data name="DeepClean_SelectAll" xml:space="preserve">
+    <value>Pilih Semua</value>
+  </data>
+  <data name="DeepClean_DeselectAll" xml:space="preserve">
+    <value>Batalkan Semua</value>
+  </data>
+  <data name="DeepClean_Cat_TempFiles" xml:space="preserve">
+    <value>File Sementara</value>
+  </data>
+  <data name="DeepClean_Cat_TempFiles_Desc" xml:space="preserve">
+    <value>File sementara pengguna dan sistem, cache Store dan Xbox</value>
+  </data>
+  <data name="DeepClean_Cat_UpdateCache" xml:space="preserve">
+    <value>Cache Windows Update</value>
+  </data>
+  <data name="DeepClean_Cat_UpdateCache_Desc" xml:space="preserve">
+    <value>Cache unduhan Windows Update dan optimasi pengiriman</value>
+  </data>
+  <data name="DeepClean_Cat_ExplorerCache" xml:space="preserve">
+    <value>Cache Windows Explorer</value>
+  </data>
+  <data name="DeepClean_Cat_ExplorerCache_Desc" xml:space="preserve">
+    <value>Thumbnail, ikon, cache internet, dan item terbaru</value>
+  </data>
+  <data name="DeepClean_Cat_CrashDumps" xml:space="preserve">
+    <value>Dump Crash &amp; Laporan Kesalahan</value>
+  </data>
+  <data name="DeepClean_Cat_CrashDumps_Desc" xml:space="preserve">
+    <value>Laporan kesalahan Windows, dump crash, dan diagnostik</value>
+  </data>
+  <data name="DeepClean_Cat_BrowserCache" xml:space="preserve">
+    <value>Cache Browser</value>
+  </data>
+  <data name="DeepClean_Cat_BrowserCache_Desc" xml:space="preserve">
+    <value>Data cache Chrome, Edge, Brave, dan Firefox</value>
+  </data>
+  <data name="DeepClean_Cat_ShaderCache" xml:space="preserve">
+    <value>Cache Shader GPU</value>
+  </data>
+  <data name="DeepClean_Cat_ShaderCache_Desc" xml:space="preserve">
+    <value>Cache kompilasi shader NVIDIA, AMD, dan DirectX</value>
+  </data>
+  <data name="DeepClean_Cat_SystemLogs" xml:space="preserve">
+    <value>Log Sistem</value>
+  </data>
+  <data name="DeepClean_Cat_SystemLogs_Desc" xml:space="preserve">
+    <value>Log CBS, DISM, penginstalan, dan data indeks pencarian</value>
+  </data>
+  <data name="DeepClean_Cat_OEMLogs" xml:space="preserve">
+    <value>Log OEM &amp; Vendor</value>
+  </data>
+  <data name="DeepClean_Cat_OEMLogs_Desc" xml:space="preserve">
+    <value>Log dukungan Dell, HP, Lenovo, ASUS, dan Acer</value>
+  </data>
+  <data name="DeepClean_Cat_Prefetch" xml:space="preserve">
+    <value>Windows Prefetch</value>
+  </data>
+  <data name="DeepClean_Cat_Prefetch_Desc" xml:space="preserve">
+    <value>Data prefetch dan optimasi peluncuran aplikasi</value>
+  </data>
+  <data name="DeepClean_Cat_NetworkCache" xml:space="preserve">
+    <value>Cache Jaringan</value>
+  </data>
+  <data name="DeepClean_Cat_NetworkCache_Desc" xml:space="preserve">
+    <value>Cache resolver DNS dan reset katalog Winsock</value>
+  </data>
+  <data name="DeepClean_Cat_RecycleBin" xml:space="preserve">
+    <value>Tempat Sampah</value>
+  </data>
+  <data name="DeepClean_Cat_RecycleBin_Desc" xml:space="preserve">
+    <value>Semua item yang saat ini ada di Tempat Sampah</value>
+  </data>
+  <data name="DeepClean_Cat_FontCache" xml:space="preserve">
+    <value>Cache Font</value>
+  </data>
+  <data name="DeepClean_Cat_FontCache_Desc" xml:space="preserve">
+    <value>File cache rendering font Windows</value>
   </data>
 </root>

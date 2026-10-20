@@ -1,110 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -118,7 +59,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Shell_Home.Content" xml:space="preserve">
-    <value>RyTuneX</value>
+    <value>Home</value>
   </data>
   <data name="Shell_Debloat.Content" xml:space="preserve">
     <value>Debloat</value>
@@ -180,26 +121,35 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>Join Our Server</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
     <value>More Info</value>
   </data>
-  <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
-    <value>Send feedback</value>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>System Overview</value>
   </data>
-  <data name="SystemInfoPage_CPU.Text" xml:space="preserve">
-    <value>Processor</value>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>System</value>
   </data>
-  <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
-    <value>Graphics Card</value>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>Installed Apps</value>
   </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>Operating System</value>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>Processes</value>
   </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>RAM</value>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>Services</value>
   </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>Storage</value>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>Quick Actions</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>Optimize System</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>Repair Issues</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>Clean Temporary Files</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>Debloat</value>
@@ -297,20 +247,11 @@
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
-  <data name="VideoArchitecture" xml:space="preserve">
-    <value>Video Architecture</value>
-  </data>
   <data name="WindowsDirectory" xml:space="preserve">
     <value>Windows Directory</value>
   </data>
   <data name="ErrTempDel" xml:space="preserve">
     <value>Error Deleting Temp Files</value>
-  </data>
-  <data name="FeaturesPage_SysFeat.Text" xml:space="preserve">
-    <value>System Features</value>
-  </data>
-  <data name="FeaturesPage_Win11.Text" xml:space="preserve">
-    <value>Windows 11 Exclusive</value>
   </data>
   <data name="SystemInfoPage_FolderPathText.Text" xml:space="preserve">
     <value>Select a folder</value>
@@ -335,12 +276,6 @@
   </data>
   <data name="SystemInfoPage_Drivers.Text" xml:space="preserve">
     <value>Drivers</value>
-  </data>
-  <data name="SystemInfoPage_ExtractButton.Content" xml:space="preserve">
-    <value>Extract</value>
-  </data>
-  <data name="SystemInfoPage_ExtractDrivers.Text" xml:space="preserve">
-    <value>Extract your drivers to an external folder for easy backup</value>
   </data>
   <data name="SystemInfoPage_ExtractingStatusText.Text" xml:space="preserve">
     <value>Extracting Drivers</value>
@@ -401,12 +336,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>Turns off My People feature in the taskbar</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>Disable Sensor Services</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>Turns off sensor services for privacy and power savings. Not recommended for laptops with relevant sensors</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>Disable Windows Ink</value>
@@ -504,12 +433,6 @@
   <data name="Feature_DisableCoPilotAI.Description" xml:space="preserve">
     <value>Disables the CoPilot AI feature in Windows for assistance with code writing. Not recommended for developers</value>
   </data>
-  <data name="OptimizeBasic.Text" xml:space="preserve">
-    <value>Basic Optimizations</value>
-  </data>
-  <data name="Feature_PerformanceTweaks.Header" xml:space="preserve">
-    <value>Performance Tweaks</value>
-  </data>
   <data name="Feature_DisableSysMain.Header" xml:space="preserve">
     <value>Disable SysMain</value>
   </data>
@@ -522,14 +445,23 @@
   <data name="Feature_EnableGamingMode.Description" xml:space="preserve">
     <value>Enables Gaming Mode, which optimizes system resources for a smoother gaming experience. May affect background processes.</value>
   </data>
+  <data name="Feature_EnableFullscreenOptimizations.Header" xml:space="preserve">
+    <value>Enable Fullscreen Optimizations</value>
+  </data>
+  <data name="Feature_EnableFullscreenOptimizations.Description" xml:space="preserve">
+    <value>Lets Windows use its fullscreen optimization path for games. Disable this toggle only for games that need exclusive fullscreen behavior.</value>
+  </data>
+  <data name="Feature_GpuDriverTweaks.Header" xml:space="preserve">
+    <value>GPU Driver Performance Tweaks</value>
+  </data>
+  <data name="Feature_GpuDriverTweaks.Description" xml:space="preserve">
+    <value>Applies AMD, NVIDIA, and Intel registry tweaks to reduce GPU power-state switching and display latency.</value>
+  </data>
   <data name="Feature_ExcludeDriversFromWindowsUpdates.Header" xml:space="preserve">
     <value>Exclude Drivers From Windows Updates</value>
   </data>
   <data name="Feature_ExcludeDriversFromWindowsUpdates.Description" xml:space="preserve">
     <value>Excludes driver updates from Windows Update. May lead to outdated drivers with potential security risks or compatibility issues. Use with caution.</value>
-  </data>
-  <data name="OptimizeAdvanced.Text" xml:space="preserve">
-    <value>Advanced Optimizations</value>
   </data>
   <data name="Feature_DisableSystemRestore.Header" xml:space="preserve">
     <value>Disable System Restore</value>
@@ -548,12 +480,6 @@
   </data>
   <data name="Feature_DisableStoreUpdates.Description" xml:space="preserve">
     <value>Disables automatic updates for apps downloaded from the Microsoft Store. May leave apps vulnerable to security risks or lacking new features.</value>
-  </data>
-  <data name="Privacy_Telemetry.Text" xml:space="preserve">
-    <value>Telemetry</value>
-  </data>
-  <data name="Feature_EnhancePrivacy.Header" xml:space="preserve">
-    <value>Enhance Privacy</value>
   </data>
   <data name="Feature_DisableSMBv1.Header" xml:space="preserve">
     <value>Disable SMBv1</value>
@@ -621,15 +547,6 @@
   <data name="Network_ApplyDNS.Content" xml:space="preserve">
     <value>Apply DNS</value>
   </data>
-  <data name="Network_IPv4Title.Text" xml:space="preserve">
-    <value>IPv4 DNS Servers</value>
-  </data>
-  <data name="Network_IPv6Title.Text" xml:space="preserve">
-    <value>IPv6 DNS Servers</value>
-  </data>
-  <data name="Network_NicTitle.Text" xml:space="preserve">
-    <value>Network Interface</value>
-  </data>
   <data name="Network_Primary.Text" xml:space="preserve">
     <value>Primary</value>
   </data>
@@ -639,9 +556,6 @@
   <data name="Network_Secondary.Text" xml:space="preserve">
     <value>Secondary</value>
   </data>
-  <data name="Network_SetDNSTitle.Text" xml:space="preserve">
-    <value>Set Custom DNS</value>
-  </data>
   <data name="NoIPv4" xml:space="preserve">
     <value>No IPv4 DNS addresses found</value>
   </data>
@@ -650,6 +564,12 @@
   </data>
   <data name="NoNic" xml:space="preserve">
     <value>No network interface selected</value>
+  </data>
+  <data name="NoInterfaceTitle" xml:space="preserve">
+    <value>No Interface Selected</value>
+  </data>
+  <data name="NoInterfaceMessage" xml:space="preserve">
+    <value>Please select a network interface before applying DNS settings.</value>
   </data>
   <data name="NotSet" xml:space="preserve">
     <value>Not set</value>
@@ -669,38 +589,14 @@
   <data name="AppDescription" xml:space="preserve">
     <value>RyTuneX is a cutting-edge optimizer built with the WinUI 3 framework, designed to amplify the performance of Windows devices. Crafted for both Windows 10 and 11, RyTuneX empowers users to effortlessly remove stubborn pre-installed apps and optimize system resources</value>
   </data>
-  <data name="SettingsPage_UpdateButton.Content" xml:space="preserve">
-    <value>Check for updates</value>
-  </data>
-  <data name="AvailableUpdateContent0" xml:space="preserve">
-    <value>A newer version (</value>
-  </data>
-  <data name="AvailableUpdateContent1" xml:space="preserve">
-    <value>) is available. Please update to the latest version to enjoy new features and improvements.</value>
-  </data>
   <data name="UpdateTitle" xml:space="preserve">
     <value>RyTuneX updates</value>
-  </data>
-  <data name="NetworkError" xml:space="preserve">
-    <value>There was an error. Make sure to check your internet connection and try again later.</value>
-  </data>
-  <data name="UnavailableUpdate0" xml:space="preserve">
-    <value>You are already running the latest version (</value>
-  </data>
-  <data name="UnavailableUpdate1" xml:space="preserve">
-    <value>). No updates are available at this time.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
   <data name="Update" xml:space="preserve">
     <value>Update</value>
-  </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>Network</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>Battery</value>
   </data>
   <data name="MACAddress" xml:space="preserve">
     <value>MAC Address</value>
@@ -714,17 +610,11 @@
   <data name="BatteryStatus" xml:space="preserve">
     <value>Battery Status</value>
   </data>
-  <data name="Chemistry" xml:space="preserve">
-    <value>Chemistry</value>
-  </data>
   <data name="Shell_Security.Content" xml:space="preserve">
     <value>Security</value>
   </data>
   <data name="UnexpectedError" xml:space="preserve">
     <value>There was an unexpected error</value>
-  </data>
-  <data name="SettingsPage_LogsLink.Content" xml:space="preserve">
-    <value>View Logs</value>
   </data>
   <data name="TotalApps" xml:space="preserve">
     <value>Total: {0} App(s)</value>
@@ -780,23 +670,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>RAM Usage</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>GPU Usage</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>Disk Usage</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>Network Usage</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>Installed Apps</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>Processes</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>Services</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>Disable Smart Screen</value>
@@ -876,12 +754,6 @@
   <data name="Feature_DisableSafeSearchMode.Description" xml:space="preserve">
     <value>Turns off Safe Search Mode, which filters out potentially harmful or inappropriate content from search results. Disabling this increases the risk of exposure to unsafe content.</value>
   </data>
-  <data name="Feature_DisableActivityUploads.Header" xml:space="preserve">
-    <value>Disable Activity Uploads</value>
-  </data>
-  <data name="Feature_DisableActivityUploads.Description" xml:space="preserve">
-    <value>Disables the uploading of activity data, preventing Microsoft from collecting your usage data for improving services. This helps maintain privacy.</value>
-  </data>
   <data name="Feature_DisableClipboardSync.Header" xml:space="preserve">
     <value>Disable Clipboard Sync</value>
   </data>
@@ -912,23 +784,11 @@
   <data name="Feature_DisableFindMyDevice.Description" xml:space="preserve">
     <value>Disables the Find My Device feature, which helps locate your device if lost. Disabling this reduces your ability to recover a lost device but enhances privacy.</value>
   </data>
-  <data name="Feature_DisableActivityFeed.Header" xml:space="preserve">
-    <value>Disable Activity Feed</value>
-  </data>
-  <data name="Feature_DisableActivityFeed.Description" xml:space="preserve">
-    <value>Turns off the activity feed that shows your recent activities, helping to protect your privacy by preventing others from seeing what you've been doing on your device.</value>
-  </data>
   <data name="Feature_DisableCdp.Header" xml:space="preserve">
     <value>Disable CDP (Customer Data Platform)</value>
   </data>
   <data name="Feature_DisableCdp.Description" xml:space="preserve">
     <value>Disables CDP, preventing the collection and use of your data by the customer data platform for analysis and targeted recommendations. This increases privacy but may limit personalization.</value>
-  </data>
-  <data name="Feature_DisableTailoredExperiencesInPrivacy.Header" xml:space="preserve">
-    <value>Disable Tailored Experiences in Privacy</value>
-  </data>
-  <data name="Feature_DisableTailoredExperiencesInPrivacy.Description" xml:space="preserve">
-    <value>Disables the tailored experiences feature in privacy settings, stopping Windows from using your data to customize your experiences. This may reduce personalization features.</value>
   </data>
   <data name="Feature_DisableDiagnosticsToast.Header" xml:space="preserve">
     <value>Disable Diagnostics Toast</value>
@@ -941,12 +801,6 @@
   </data>
   <data name="Feature_DisableOnlineSpeechPrivacy.Description" xml:space="preserve">
     <value>Disables online speech privacy, preventing Windows from storing or processing voice commands. This increases privacy but limits voice features like voice search and commands.</value>
-  </data>
-  <data name="Feature_DisableLocationAccess.Header" xml:space="preserve">
-    <value>Disable Location Access</value>
-  </data>
-  <data name="Feature_DisableLocationAccess.Description" xml:space="preserve">
-    <value>Turns off location access for apps and services, preventing them from using your device's GPS or network location. This improves privacy but may limit location-based services.</value>
   </data>
   <data name="Feature_DisableLocationFeatures.Header" xml:space="preserve">
     <value>Disable Location Features</value>
@@ -965,6 +819,18 @@
   </data>
   <data name="Feature_MouseHoverTime.Description" xml:space="preserve">
     <value>Adjusts the time the system waits before triggering a hover event. Disabling this may speed up interactions but can lead to unintentional activations.</value>
+  </data>
+  <data name="Feature_KeyboardLatency.Header" xml:space="preserve">
+    <value>Optimize Keyboard Latency</value>
+  </data>
+  <data name="Feature_KeyboardLatency.Description" xml:space="preserve">
+    <value>Sets the keyboard repeat delay to the lowest value and keeps repeat speed at maximum for more responsive input.</value>
+  </data>
+  <data name="Feature_DisableMouseAcceleration.Header" xml:space="preserve">
+    <value>Disable Mouse Acceleration</value>
+  </data>
+  <data name="Feature_DisableMouseAcceleration.Description" xml:space="preserve">
+    <value>Turns off Windows pointer acceleration so mouse movement stays consistent for games and precision input.</value>
   </data>
   <data name="Feature_AutoComplete.Header" xml:space="preserve">
     <value>Disable Auto Complete</value>
@@ -1038,9 +904,6 @@
   <data name="Feature_SystemProfile.Description" xml:space="preserve">
     <value>Enhances your system's performance by adjusting system profile settings. This feature prioritize speed and efficiency, improving overall system responsiveness and resource management.</value>
   </data>
-  <data name="SystemInfoPage_DeviceInfo.Text" xml:space="preserve">
-    <value>Device Information</value>
-  </data>
   <data name="Feature_EnableClassicContextMenu.Header" xml:space="preserve">
     <value>Enable Classic Context Menu</value>
   </data>
@@ -1050,17 +913,11 @@
   <data name="DoNotShowCheckBox" xml:space="preserve">
     <value>Don't show this message again</value>
   </data>
-  <data name="RestorePointDialogTitle" xml:space="preserve">
-    <value>Create Restore Point</value>
-  </data>
   <data name="RestorePointDialogText" xml:space="preserve">
     <value>It's highly recommended to create a restore point before making any changes to your system.
 
 
 Would you like to create a system restore point before proceeding?</value>
-  </data>
-  <data name="CreatingRestorePoint" xml:space="preserve">
-    <value>Creating Restore Point</value>
   </data>
   <data name="Settings_RevertChanges.Header" xml:space="preserve">
     <value>Revert all changes</value>
@@ -1076,9 +933,6 @@ Would you like to create a system restore point before proceeding?</value>
 
 
 Are you sure you want to continue?</value>
-  </data>
-  <data name="NoChangesFound" xml:space="preserve">
-    <value>No notable changes found.</value>
   </data>
   <data name="OperationStopped" xml:space="preserve">
     <value>Operation stopped</value>
@@ -1107,20 +961,8 @@ Check your computer for memory problems</value>
   <data name="ScheduledLater" xml:space="preserve">
     <value>Scheduled for next restart</value>
   </data>
-  <data name="RepairPage_ScanButton.Content" xml:space="preserve">
-    <value>Scan</value>
-  </data>
-  <data name="RepairPage_RepairButton.Content" xml:space="preserve">
-    <value>Repair</value>
-  </data>
   <data name="RepairPage_StopButton.Content" xml:space="preserve">
     <value>Stop</value>
-  </data>
-  <data name="RepairPage_StatusTextBlock.Text" xml:space="preserve">
-    <value>Select at least one option to scan/repair</value>
-  </data>
-  <data name="StatusTextBlockDefault" xml:space="preserve">
-    <value>Select at least one option to scan/repair</value>
   </data>
   <data name="RepairPage_BatteryHealth.Header" xml:space="preserve">
     <value>Battery Health</value>
@@ -1158,11 +1000,14 @@ Check your computer for memory problems</value>
   <data name="RepairPage_RepairOptions.Text" xml:space="preserve">
     <value>Repair Options</value>
   </data>
-  <data name="RepairPage_DiagnoseOptions.Text" xml:space="preserve">
-    <value>Diagnose Options</value>
-  </data>
   <data name="OperationCompleted" xml:space="preserve">
     <value>Operation Completed</value>
+  </data>
+  <data name="CheckCompleted" xml:space="preserve">
+    <value>Check completed successfully</value>
+  </data>
+  <data name="RepairedFiles" xml:space="preserve">
+    <value>Repaired files (from CBS.log):</value>
   </data>
   <data name="RestorePointTitle" xml:space="preserve">
     <value>Restore Point</value>
@@ -1178,12 +1023,6 @@ Check your computer for memory problems</value>
   </data>
   <data name="OtherSettings.Text" xml:space="preserve">
     <value>Other Settings</value>
-  </data>
-  <data name="OptimizeSystemPage_BasicOptimization.Text" xml:space="preserve">
-    <value>Basic System Optimizations</value>
-  </data>
-  <data name="OptimizeSystemPage_AdvancedOptimization.Text" xml:space="preserve">
-    <value>Advanced System Optimizations</value>
   </data>
   <data name="DebloatSystemPage_NoAppFound.Text" xml:space="preserve">
     <value>No apps match your search</value>
@@ -1272,9 +1111,6 @@ Check your computer for memory problems</value>
   <data name="Feature_WPBT.Description" xml:space="preserve">
     <value>Stop firmware from running programs (e.g., OEM bloatware) during startup.</value>
   </data>
-  <data name="Settings_RevertTitle.Text" xml:space="preserve">
-    <value>Revert changes</value>
-  </data>
   <data name="SettingsPageImportButton.Text" xml:space="preserve">
     <value>Import</value>
   </data>
@@ -1307,12 +1143,6 @@ Check your computer for memory problems</value>
   </data>
   <data name="KeepAppData" xml:space="preserve">
     <value>Keep app data</value>
-  </data>
-  <data name="IsAdminIcon.ToolTipService.ToolTip" xml:space="preserve">
-    <value>You're running as admin</value>
-  </data>
-  <data name="NotAdminIcon.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Restart the app as admin for your changes to take effect</value>
   </data>
   <data name="SecurityPage_RefreshButton.Text" xml:space="preserve">
     <value>Refresh</value>
@@ -1419,14 +1249,20 @@ Check your computer for memory problems</value>
   <data name="Feature_AddUltimatePowerPlan.Header" xml:space="preserve">
     <value>Add Ultimate Performance Plan</value>
   </data>
+  <data name="Feature_DisableUsbPowerSaving.Header" xml:space="preserve">
+    <value>Disable USB Power Saving</value>
+  </data>
+  <data name="Feature_DisableUsbPowerSaving.Description" xml:space="preserve">
+    <value>Disables USB selective suspend and USB root power saving to reduce controller wake latency during gaming.</value>
+  </data>
+  <data name="Feature_DisablePowerThrottling.Header" xml:space="preserve">
+    <value>Disable Power Throttling</value>
+  </data>
+  <data name="Feature_DisablePowerThrottling.Description" xml:space="preserve">
+    <value>Turns off Windows power throttling and USB power-drain recovery behavior so foreground workloads can stay responsive.</value>
+  </data>
   <data name="AddUltimatePowerPlanTitle" xml:space="preserve">
     <value>Add Ultimate Performance Plan</value>
-  </data>
-  <data name="PoliciesPage_Warning" xml:space="preserve">
-    <value>This feature only detects policy-backed registry entries. It does not detect service changes or non-policy registry tweaks.</value>
-  </data>
-  <data name="PoliciesPage_InfoMessage" xml:space="preserve">
-    <value>This page detects and allows you to remove Local Group Policy overrides. Removing a policy override returns it to Not Configured state.</value>
   </data>
   <data name="PoliciesPage_PolicySummary" xml:space="preserve">
     <value>Policy Summary</value>
@@ -1451,12 +1287,6 @@ Check your computer for memory problems</value>
   </data>
   <data name="PoliciesPage_NoPoliciesDetected" xml:space="preserve">
     <value>No policy overrides detected.</value>
-  </data>
-  <data name="PoliciesPage_RemoveAllOverrides" xml:space="preserve">
-    <value>Remove All Overrides</value>
-  </data>
-  <data name="PoliciesPage_Title" xml:space="preserve">
-    <value>Group Policy Override Detection</value>
   </data>
   <data name="PoliciesPage_ScanningPolicies" xml:space="preserve">
     <value>Scanning policies...</value>
@@ -1614,15 +1444,6 @@ Check your computer for memory problems</value>
   <data name="Feature_WindowsUpdates_Default.Content" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="ScanResults" xml:space="preserve">
-    <value>Scan Results</value>
-  </data>
-  <data name="MicrosoftAccount" xml:space="preserve">
-    <value>Microsoft account</value>
-  </data>
-  <data name="LocalAccount" xml:space="preserve">
-    <value>Local account</value>
-  </data>
   <data name="Feature_DisableWindowsAI.Header" xml:space="preserve">
     <value>Disable Windows AI</value>
   </data>
@@ -1640,6 +1461,27 @@ Check your computer for memory problems</value>
   </data>
   <data name="Settings_ThemeSettingsCard.Description" xml:space="preserve">
     <value>Choose the app color theme</value>
+  </data>
+  <data name="Settings_AccentColorExpander.Header" xml:space="preserve">
+    <value>Accent Color</value>
+  </data>
+  <data name="Settings_AccentColorExpander.Description" xml:space="preserve">
+    <value>Choose between RyTuneX style, Windows accent color, or a custom color</value>
+  </data>
+  <data name="Settings_AccentColor_RyTuneX.Text" xml:space="preserve">
+    <value>RyTuneX Style</value>
+  </data>
+  <data name="Settings_AccentColor_System.Text" xml:space="preserve">
+    <value>Current System Colors</value>
+  </data>
+  <data name="Settings_AccentColor_Custom.Text" xml:space="preserve">
+    <value>Custom Color</value>
+  </data>
+  <data name="Settings_CustomColorSettingsCard.Header" xml:space="preserve">
+    <value>Custom Accent Color</value>
+  </data>
+  <data name="Settings_CustomColorSettingsCard.Description" xml:space="preserve">
+    <value>Select your preferred accent color</value>
   </data>
   <data name="Settings_NavigationStyle.Header" xml:space="preserve">
     <value>Navigation Style</value>
@@ -1673,5 +1515,1888 @@ Check your computer for memory problems</value>
   </data>
   <data name="Loading.Text" xml:space="preserve">
     <value>Loading...</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Vendor</value>
+  </data>
+  <data name="DedicatedVRAM" xml:space="preserve">
+    <value>Dedicated VRAM</value>
+  </data>
+  <data name="SharedMemory" xml:space="preserve">
+    <value>Shared Memory</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Packages</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Search WinGet packages...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>Install Selected</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>Package Name</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>Package ID</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>Publisher</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>Loading packages…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>Select a package to install</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Search services...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>Service Name</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>Startup</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Search processes...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>Threads</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>End Task</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>Operating System</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>Processor</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>Graphics</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>Storage</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>Battery</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>Drivers for Backup</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>System Language</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>Update Selected</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>Select packages to update</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>Loading packages, please wait…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>No updates available. All packages are up to date.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>{0} package(s) selected for installation</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>{0} package(s) selected for update</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="RepairPage_SystemHealthTitle.Text" xml:space="preserve">
+    <value>System Health</value>
+  </data>
+  <data name="RepairPage_SystemHealthSubtitle.Text" xml:space="preserve">
+    <value>Check Windows for common system and storage issues.</value>
+  </data>
+  <data name="RepairPage_LastCheckedNever.Text" xml:space="preserve">
+    <value>Last checked: Never</value>
+  </data>
+  <data name="RepairPage_CheckSystemButton.Content" xml:space="preserve">
+    <value>Check system</value>
+  </data>
+  <data name="RepairPage_WindowsImage.Text" xml:space="preserve">
+    <value>Windows image</value>
+  </data>
+  <data name="RepairPage_WindowsImageDescription.Text" xml:space="preserve">
+    <value>Windows component store</value>
+  </data>
+  <data name="RepairPage_SystemFiles.Text" xml:space="preserve">
+    <value>System files</value>
+  </data>
+  <data name="RepairPage_SystemFilesDescription.Text" xml:space="preserve">
+    <value>Protected Windows system files</value>
+  </data>
+  <data name="RepairPage_SystemDrive.Text" xml:space="preserve">
+    <value>System drive</value>
+  </data>
+  <data name="RepairPage_SystemDriveDescription.Text" xml:space="preserve">
+    <value>File system integrity</value>
+  </data>
+  <data name="RepairPage_TechnicalDetails.Header" xml:space="preserve">
+    <value>Technical details</value>
+  </data>
+  <data name="RepairPage_MoreTroubleshooting.Text" xml:space="preserve">
+    <value>More troubleshooting</value>
+  </data>
+  <data name="RepairPage_StateIdle_Title" xml:space="preserve">
+    <value>System Health</value>
+  </data>
+  <data name="RepairPage_StateIdle_Subtitle" xml:space="preserve">
+    <value>Check Windows for common system and storage issues.</value>
+  </data>
+  <data name="RepairPage_StateIdle_Button" xml:space="preserve">
+    <value>Check system</value>
+  </data>
+  <data name="RepairPage_StateChecking_Title" xml:space="preserve">
+    <value>Checking your system...</value>
+  </data>
+  <data name="RepairPage_StateChecking_Subtitle" xml:space="preserve">
+    <value>This can take a few minutes.</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Title" xml:space="preserve">
+    <value>Your system is healthy</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Subtitle" xml:space="preserve">
+    <value>No issues were found.</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Button" xml:space="preserve">
+    <value>Check again</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Title" xml:space="preserve">
+    <value>Issues found</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Subtitle" xml:space="preserve">
+    <value>RyTuneX can repair these issues automatically.</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Button" xml:space="preserve">
+    <value>Repair system</value>
+  </data>
+  <data name="RepairPage_StateRepairing_Title" xml:space="preserve">
+    <value>Repairing your system...</value>
+  </data>
+  <data name="RepairPage_StateRepairing_Subtitle" xml:space="preserve">
+    <value>This can take several minutes. Don't turn off your PC.</value>
+  </data>
+  <data name="RepairPage_StateRepairCompleted_Title" xml:space="preserve">
+    <value>Repair completed</value>
+  </data>
+  <data name="RepairPage_StateRepairCompleted_Subtitle" xml:space="preserve">
+    <value>Your system has been repaired.</value>
+  </data>
+  <data name="RepairPage_RowStatus_Healthy" xml:space="preserve">
+    <value>Healthy</value>
+  </data>
+  <data name="RepairPage_RowStatus_NeedsAttention" xml:space="preserve">
+    <value>Needs attention</value>
+  </data>
+  <data name="RepairPage_RowStatus_Scheduled" xml:space="preserve">
+    <value>Scheduled on restart</value>
+  </data>
+  <data name="RepairPage_RowStatus_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="RepairPage_RowStatus_Checking" xml:space="preserve">
+    <value>Checking...</value>
+  </data>
+  <data name="RepairPage_StatusChecking" xml:space="preserve">
+    <value>Checking {friendlyName}... ({current}/{total})</value>
+  </data>
+  <data name="RepairPage_StatusRepairing" xml:space="preserve">
+    <value>Repairing {friendlyName}... ({current}/{total})</value>
+  </data>
+  <data name="RepairPage_LastCheckedFormat" xml:space="preserve">
+    <value>Last checked: {time}</value>
+  </data>
+  <data name="RepairPage_ChkdskScheduledNote" xml:space="preserve">
+    <value>System drive repair is scheduled for the next restart.</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupChangedTitle" xml:space="preserve">
+    <value>Startup Type Changed</value>
+  </data>
+  <data name="ServicesPage_TotalServices.Text" xml:space="preserve">
+    <value>Total Services</value>
+  </data>
+  <data name="ServicesPage_StartServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Start service</value>
+  </data>
+  <data name="ServicesPage_Action_Restarted" xml:space="preserve">
+    <value>restarted</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlError" xml:space="preserve">
+    <value>Failed to control service: {error}</value>
+  </data>
+  <data name="ServicesPage_StopServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Stop service</value>
+  </data>
+  <data name="ServicesPage_StoppedServices.Text" xml:space="preserve">
+    <value>Stopped Services</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupError" xml:space="preserve">
+    <value>Failed to change startup type: {error}</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupChanged" xml:space="preserve">
+    <value>Service '{name}' startup type set to {type}.</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlErrorTitle" xml:space="preserve">
+    <value>Service Control Error</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ServicesPage_RunningServices.Text" xml:space="preserve">
+    <value>Running Services</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlSuccess" xml:space="preserve">
+    <value>Service '{name}' {action} successfully.</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlTitle" xml:space="preserve">
+    <value>Service Control</value>
+  </data>
+  <data name="ServicesPage_Action_Stopped" xml:space="preserve">
+    <value>stopped</value>
+  </data>
+  <data name="ServicesPage_Action_Started" xml:space="preserve">
+    <value>started</value>
+  </data>
+  <data name="ServicesPage_ResultsText" xml:space="preserve">
+    <value>Showing {count} of {total} services</value>
+  </data>
+  <data name="ServicesPage_RestartServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Restart service</value>
+  </data>
+  <data name="ServicesPage_Notification_Title" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="ServicesPage_LoadError" xml:space="preserve">
+    <value>Failed to load services list. Administrator privileges may be required.</value>
+  </data>
+  <data name="ServicesPage_Notification_ServiceTimeout" xml:space="preserve">
+    <value>Service did not respond in time. Please try again.</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupTypeAdminRequired" xml:space="preserve">
+    <value>Administrator privileges required to change service startup type.</value>
+  </data>
+  <data name="StartupPage_Notification_FileNotFound" xml:space="preserve">
+    <value>File not found at '{0}'. It will still be added to startup, but may not launch.</value>
+  </data>
+  <data name="StartupPage_Notification_EnabledCountFailed" xml:space="preserve">
+    <value>Enabled {0} startup apps. {1} failed.</value>
+  </data>
+  <data name="StartupPage_Notification_DisabledCountFailed" xml:space="preserve">
+    <value>Disabled {0} startup apps. {1} failed.</value>
+  </data>
+  <data name="SystemInfoPage_ExportButton.Content" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Shell_Startup.Content" xml:space="preserve">
+    <value>Startup Apps</value>
+  </data>
+  <data name="StartupPage_TotalApps.Text" xml:space="preserve">
+    <value>Total Startup Apps</value>
+  </data>
+  <data name="StartupPage_EnabledApps.Text" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="StartupPage_DisabledApps.Text" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="StartupPage_HighImpactApps.Text" xml:space="preserve">
+    <value>High Impact</value>
+  </data>
+  <data name="StartupPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Search startup apps by name, command, or publisher...</value>
+  </data>
+  <data name="StartupPage_FilterAll.Content" xml:space="preserve">
+    <value>All Statuses</value>
+  </data>
+  <data name="StartupPage_FilterEnabled.Content" xml:space="preserve">
+    <value>Enabled Only</value>
+  </data>
+  <data name="StartupPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Disabled Only</value>
+  </data>
+  <data name="StartupPage_FilterHighImpact.Content" xml:space="preserve">
+    <value>High Impact</value>
+  </data>
+  <data name="StartupPage_FilterBroken.Content" xml:space="preserve">
+    <value>Broken / Missing</value>
+  </data>
+  <data name="StartupPage_FilterUser.Content" xml:space="preserve">
+    <value>User Scope (HKCU)</value>
+  </data>
+  <data name="StartupPage_FilterSystem.Content" xml:space="preserve">
+    <value>System Scope (HKLM)</value>
+  </data>
+  <data name="StartupPage_AddAppButton.Text" xml:space="preserve">
+    <value>Add App</value>
+  </data>
+  <data name="StartupPage_EnableAllButton.Text" xml:space="preserve">
+    <value>Enable All</value>
+  </data>
+  <data name="StartupPage_DisableAllButton.Text" xml:space="preserve">
+    <value>Disable All</value>
+  </data>
+  <data name="StartupPage_RefreshButtonTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Refresh startup items list</value>
+  </data>
+  <data name="StartupPage_ColName.Text" xml:space="preserve">
+    <value>App Name</value>
+  </data>
+  <data name="StartupPage_ColPublisher.Text" xml:space="preserve">
+    <value>Publisher</value>
+  </data>
+  <data name="StartupPage_ColLocation.Text" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="StartupPage_ColImpact.Text" xml:space="preserve">
+    <value>Impact</value>
+  </data>
+  <data name="StartupPage_ColStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StartupPage_ColActions.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="StartupPage_OpenFolderTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Open file location</value>
+  </data>
+  <data name="StartupPage_DetailsTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>View app details</value>
+  </data>
+  <data name="StartupPage_DeleteTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Remove startup app</value>
+  </data>
+  <data name="StartupPage_ResultsText" xml:space="preserve">
+    <value>Showing {0} of {1} startup items</value>
+  </data>
+  <data name="StartupPage_Notification_ToggledMessage" xml:space="preserve">
+    <value>Enabled '{0}' for startup</value>
+  </data>
+  <data name="StartupPage_Notification_ToggledMessageDisabled" xml:space="preserve">
+    <value>Disabled '{0}' from startup</value>
+  </data>
+  <data name="StartupPage_Notification_AdminRequired" xml:space="preserve">
+    <value>Administrator privileges are required to modify system startup items.</value>
+  </data>
+  <data name="StartupPage_Impact_High" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="StartupPage_Impact_Medium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="StartupPage_Impact_Low" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="StartupPage_Impact_Broken" xml:space="preserve">
+    <value>Missing File</value>
+  </data>
+  <data name="StartupPage_Title" xml:space="preserve">
+    <value>Startup Manager</value>
+  </data>
+  <data name="StartupPage_AddDialog_Title" xml:space="preserve">
+    <value>Add Startup App</value>
+  </data>
+  <data name="StartupPage_AddDialog_AppNameHeader" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="StartupPage_AddDialog_AppPathHeader" xml:space="preserve">
+    <value>Executable or Script Path</value>
+  </data>
+  <data name="StartupPage_AddDialog_ArgsHeader" xml:space="preserve">
+    <value>Arguments (Optional)</value>
+  </data>
+  <data name="StartupPage_AddDialog_BrowseButton" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="StartupPage_AddDialog_ScopeHeader" xml:space="preserve">
+    <value>Startup Scope:</value>
+  </data>
+  <data name="StartupPage_AddDialog_CurrentUser" xml:space="preserve">
+    <value>Current User (HKCU)</value>
+  </data>
+  <data name="StartupPage_AddDialog_AllUsers" xml:space="preserve">
+    <value>All Users (HKLM - Requires Admin)</value>
+  </data>
+  <data name="StartupPage_AddDialog_PrimaryButton" xml:space="preserve">
+    <value>Add to Startup</value>
+  </data>
+  <data name="StartupPage_AddDialog_CancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Title" xml:space="preserve">
+    <value>Startup App Details</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_CloseButton" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Publisher" xml:space="preserve">
+    <value>Publisher:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Command" xml:space="preserve">
+    <value>Command:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_TargetPath" xml:space="preserve">
+    <value>Target Path:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Location" xml:space="preserve">
+    <value>Location:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Impact" xml:space="preserve">
+    <value>Impact:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_FileSize" xml:space="preserve">
+    <value>File Size:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_FileExists" xml:space="preserve">
+    <value>File Exists:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_NoMissing" xml:space="preserve">
+    <value>No (Missing)</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_Title" xml:space="preserve">
+    <value>Remove Startup App</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_Content" xml:space="preserve">
+    <value>Are you sure you want to remove '{0}' from startup? This action will delete the entry.</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_PrimaryButton" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_CancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="StartupPage_Notification_ItemRemoved" xml:space="preserve">
+    <value>Removed '{0}' from startup.</value>
+  </data>
+  <data name="StartupPage_Notification_RemoveFailed" xml:space="preserve">
+    <value>Failed to remove item. Administrator privileges may be required.</value>
+  </data>
+  <data name="StartupPage_Notification_EmptyAppError" xml:space="preserve">
+    <value>App name and path cannot be empty.</value>
+  </data>
+  <data name="StartupPage_Notification_ItemAdded" xml:space="preserve">
+    <value>Added '{0}' to startup.</value>
+  </data>
+  <data name="StartupPage_Notification_AddFailed" xml:space="preserve">
+    <value>Failed to add startup item. Administrator privileges may be required.</value>
+  </data>
+  <data name="StartupPage_Notification_EnabledCount" xml:space="preserve">
+    <value>Enabled {0} startup apps.</value>
+  </data>
+  <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
+    <value>Disabled {0} startup apps.</value>
+  </data>
+  <data name="StartupPage_SelectionCount" xml:space="preserve">
+    <value>{0} item(s) selected</value>
+  </data>
+  <data name="StartupPage_RemoveSelectedButtonText.Text" xml:space="preserve">
+    <value>Remove Selected</value>
+  </data>
+  <data name="StartupPage_RemoveSelectedButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Remove all selected startup items</value>
+  </data>
+  <data name="StartupPage_ClearSelectionButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Clear selection</value>
+  </data>
+  <data name="StartupPage_BatchRemoveDialog_Title" xml:space="preserve">
+    <value>Remove Startup Apps</value>
+  </data>
+  <data name="StartupPage_BatchRemoveDialog_Content" xml:space="preserve">
+    <value>Are you sure you want to remove {0} item(s) from startup?</value>
+  </data>
+  <data name="StartupPage_Notification_BatchRemoved" xml:space="preserve">
+    <value>Removed {0} startup item(s).</value>
+  </data>
+  <data name="StartupPage_Notification_BatchRemovedFailed" xml:space="preserve">
+    <value>Removed {0} item(s). {1} failed.</value>
+  </data>
+  <data name="StartupPage_SelectAllCheckBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>Optimization Score</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>Scanning...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ Excellent</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B Good</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C Fair</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D Needs Tuning</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F Unoptimized</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>Intelligent Diagnostic Center</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>Select a category to preview smart recommendations, reduce system latency, and fine-tune your configuration.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>Performance Engine</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>Optimizes GPU hardware scheduling, CPU quantum slicing, NTFS buffer indexing, and eliminates desktop menu delays.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>Privacy &amp; Telemetry Shield</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>Blocks background diagnostic telemetry, Windows AI data scraping, Recall screen snapshots, and cloud activity uploads.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>Usability &amp; Shell Features</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>Restores classic right-click menus, enables taskbar 'End Task', reveals hidden files/extensions, and declutters Start Menu.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>Active: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>Optimizations Active: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>Gain: +{0} pts</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>Recommended: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>Rollbacks: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>Low Latency &amp; Fast UI</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>Data &amp; Voice Shield</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>1-Click Productivity</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>Performance</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>Usability</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>Rec</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>Recommended: High-impact, verified 100% safe tweaks</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>Safe</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>All Safe: All 100% safe, non-intrusive optimizations</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>Adv</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>Advanced: Includes power-user &amp; moderate tweaks</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>Apply {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} Active ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>Rollback</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>Tune By Domain</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>Preview: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>Review the proposed optimization changes before applying. Pre-apply rollback points will be automatically saved.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>Apply Selected Optimizations</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>All optimizations on this page are already active! Nothing to preview.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>Step 5 [Apply] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>Step 6 [Verify]: Querying real-time system state...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>Successfully applied and verified {0} optimizations!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>All {0} optimizations on this page are already active!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>Rolling back {0} items on this page...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>Rolled back {0} page items to pre-apply state.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>No per-item rollback backups found for this page.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>Optimal ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>Recommended</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>Safe</value>
+  </data>
+  <data name="Intelligent_Badge_Cosmetic" xml:space="preserve">
+    <value>Cosmetic</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>Moderate</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>Caution</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} pts</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>Technical Details</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>Pre-Apply Backup: Saved at {0} (Initial state: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>Pre-Apply Backup: None (Toggle to create rollback point)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>Current State: {0}</value>
+  </data>
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>Verified Active ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>Requires Restart 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>Verification Failed ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>Not Verified</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>Frees background CPU cycles and saves 200MB+ RAM.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>Reduces micro-stuttering and improves framerate consistency.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>Enhances active app responsiveness under heavy background multitasking.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Enable Windows Gaming Mode</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Configures Windows Game Mode and GPU Hardware Scheduling for ultra-low latency.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>Locks CPU cores to gaming processes and optimizes thread scheduling.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>Enable Fullscreen Optimizations</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>Configures Windows display pipeline for high performance borderless presentation.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Minimizes display latency while retaining rapid Alt+Tab switching.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>Prevents GPU power clock fluctuations during gaming and 3D rendering.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>Instantaneous UI navigation feel across File Explorer and desktop.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>Immediate tooltip and taskbar thumbnail previews.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>Instantaneous key input recognition and faster character repeat.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>Disable Mouse Acceleration (Raw Input)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>Disables Windows mouse curve acceleration for pure 1:1 hardware cursor precision.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>Flawless cursor tracking consistency for gaming and precise design work.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>Accelerates file directory indexing and disk metadata lookups.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>Reduces total process count overhead by 30-50 processes on systems with 8GB+ RAM.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>Disable USB Selective Suspend</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Prevents Windows from powering down USB controllers and peripherals into low-power states.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>Prevents USB audio dropouts, controller lag, and mouse disconnects.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>Disable Power Throttling</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>Disables Windows power throttling algorithm on background execution threads.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>Ensures background renders and compile jobs run at full CPU clock speeds.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>Stops recurring disk polling interrupts.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>Speeds up broken shortcut opening without freezing Explorer.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>Faster address bar path navigation.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Disable Windows Telemetry &amp; Diagnostics</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>Completely disables DiagTrack and dmwappushservice background diagnostic collection.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>Stops automated background tracking, keystroke logging, and telemetry uploads.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Disable Windows AI Features &amp; Mining</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Blocks Windows background AI analysis, Notepad/Paint AI integrations, and model query reporting.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>Protects local file privacy and stops continuous cloud AI scraping.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Disable Windows Recall Screen Snapshotting</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>Blocks periodic continuous screenshotting of active desktops and OCR indexing.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>Guarantees sensitive banking, passwords, and private documents are never recorded.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Disable Copilot AI Assistant</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Disables Windows Copilot sidebar, taskbar button, and continuous cloud sync queries.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>Frees taskbar space and eliminates background web view processes.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Disable Windows Advertising ID</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Prevents Windows Store applications from tracking user activity for personalized advertising.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>Stops unique advertising identifier profile tracking.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>Disable Activity History Cloud Sync</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>Prevents uploading user app launch history and browsing history to Microsoft cloud.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>Device usage history is never broadcast across linked cloud accounts.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>Disable Cross-Device Clipboard Cloud Sync</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>Stops clipboard copy buffer from automatically uploading to cloud servers.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>Protects sensitive copied text, passwords, and tokens from cloud exposure.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>Disable Location Access &amp; Sensors</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Disables Windows location provider service and location sensor APIs.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Prevents web browsers and desktop apps from pinpointing physical coordinates.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Restore Classic Windows 10 Right-Click Menu</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>Restores the full instant right-click context menu in Windows 11 without clicking 'Show more options'.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>Saves 1 click on every right-click action in Explorer.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>Enable 'End Task' on Taskbar App Icons</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>Adds direct right-click 'End Task' action to taskbar items for instant process termination.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>Instantly terminate frozen or hung programs without opening Task Manager.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>Protects against spoofed double-extension malware (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>Disable Sticky Keys Prompt</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>Disables the popup dialog when pressing Shift 5 times in games.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Stops gaming interruptions from Shift key tapping.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>Hide Recommended Section in Start Menu</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Removes the recent files and recommended pane in the Windows 11 Start Menu.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>Cleaner, uncluttered Start Menu with more room for pinned apps.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>Align Taskbar Icons to the Left</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Moves Windows 11 Start button and taskbar icons to the classic bottom-left position.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>Classic muscle memory alignment.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>Enable Compact View in File Explorer</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>Reduces vertical padding between rows in File Explorer for higher file density.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>View more files per screen without scrolling.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>Enable Enhanced Clipboard History</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>Configures local Win+V clipboard history without cloud sync.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Multi-item clipboard history accessible with Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Disable Edge Discover Sidebar &amp; Widgets</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Disables the Edge browser sidebar button and floating search widget.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Removes clutter in Edge browser.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Disable Bluetooth Advertising Beacons</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Prevents Windows from broadcasting Bluetooth advertising beacons to nearby hardware.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>Enhances wireless device privacy in public locations.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Disable Windows Spotlight Suggestions</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>Disables promotional suggestions and background cloud image downloads on lockscreen.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>Stops lock screen advertisements and background download traffic.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>Disable NVIDIA Telemetry Container</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>Disables NVIDIA driver background telemetry tasks and tracking services.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>Stops GPU analytics uploads and frees 100MB+ background RAM.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Disable Microsoft Edge Telemetry</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Disables Edge browser diagnostics, crash reporting, and startup background boost.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Prevents Edge from keeping persistent background processes alive.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>Closes major network vulnerability exploited by malware and ransomware.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>Disable Legacy SMBv1 Network Protocol</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>Disables insecure 30-year-old SMBv1 file sharing protocol (EternalBlue / WannaCry attack vector).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>Critical security hardening against network worm exploits.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Disable Windows 11 Widgets Board</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>Disables the taskbar Widgets feed and background Edge WebView processes.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>Frees 300MB+ RAM and stops constant Edge background rendering.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>Optimize SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>Adjusts or disables SysMain service to stop unnecessary preloading on SSDs.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>Eliminates high background disk usage spikes and unnecessary SSD write cycles.</value>
+  </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Rate &amp; Review</value>
+  </data>
+  <data name="Network_ToolsSection.Text" xml:space="preserve">
+    <value>Network Tools</value>
+  </data>
+  <data name="Network_OptimizationSection.Text" xml:space="preserve">
+    <value>Network Optimization</value>
+  </data>
+  <data name="Network_CurrentDNSSection.Text" xml:space="preserve">
+    <value>Current DNS Servers</value>
+  </data>
+  <data name="Network_SetDNSSection.Text" xml:space="preserve">
+    <value>Set Custom DNS</value>
+  </data>
+  <data name="Network_FlushDNS.Header" xml:space="preserve">
+    <value>Flush DNS Cache</value>
+  </data>
+  <data name="Network_FlushDNS.Description" xml:space="preserve">
+    <value>Clears the local DNS resolver cache, forcing fresh DNS lookups for all domain names.</value>
+  </data>
+  <data name="Network_FlushDNS_Button.Content" xml:space="preserve">
+    <value>Flush DNS</value>
+  </data>
+  <data name="Network_ReleaseRenew.Header" xml:space="preserve">
+    <value>Release &amp; Renew IP</value>
+  </data>
+  <data name="Network_ReleaseRenew.Description" xml:space="preserve">
+    <value>Releases the current IP address and requests a new one from the DHCP server. Use if experiencing connectivity issues.</value>
+  </data>
+  <data name="Network_ReleaseRenew_Button.Content" xml:space="preserve">
+    <value>Release &amp; Renew</value>
+  </data>
+  <data name="Network_ResetTCPIP.Header" xml:space="preserve">
+    <value>Reset TCP/IP Stack</value>
+  </data>
+  <data name="Network_ResetTCPIP.Description" xml:space="preserve">
+    <value>Resets the TCP/IP stack and Winsock catalog to their default state. A system restart is required after this operation.</value>
+  </data>
+  <data name="Network_ResetTCPIP_Button.Content" xml:space="preserve">
+    <value>Reset TCP/IP</value>
+  </data>
+  <data name="Network_OpenNetworkSettings.Header" xml:space="preserve">
+    <value>Open Network Settings</value>
+  </data>
+  <data name="Network_OpenNetworkSettings.Description" xml:space="preserve">
+    <value>Opens the Windows Network &amp; Internet settings page.</value>
+  </data>
+  <data name="Network_OpenAdapterSettings.Header" xml:space="preserve">
+    <value>Network Adapter Settings</value>
+  </data>
+  <data name="Network_OpenAdapterSettings.Description" xml:space="preserve">
+    <value>Opens the classic Network Connections panel to manage network adapters.</value>
+  </data>
+  <data name="Network_DisableThrottling.Header" xml:space="preserve">
+    <value>Disable Network Throttling</value>
+  </data>
+  <data name="Network_DisableThrottling.Description" xml:space="preserve">
+    <value>Removes the 10 packets/ms throttle that Windows applies to network traffic when multimedia applications are running, improving throughput.</value>
+  </data>
+  <data name="Network_DisableNagle.Header" xml:space="preserve">
+    <value>Disable Nagle's Algorithm</value>
+  </data>
+  <data name="Network_DisableNagle.Description" xml:space="preserve">
+    <value>Reduces latency in TCP connections by sending packets immediately instead of buffering small ones. Beneficial for gaming and real-time applications.</value>
+  </data>
+  <data name="Network_EnableRSS.Header" xml:space="preserve">
+    <value>Enable Receive-Side Scaling (RSS)</value>
+  </data>
+  <data name="Network_EnableRSS.Description" xml:space="preserve">
+    <value>Distributes network receive processing across multiple CPU cores, improving throughput and reducing latency on multi-core systems.</value>
+  </data>
+  <data name="Network_EnableECN.Header" xml:space="preserve">
+    <value>Enable ECN (Explicit Congestion Notification)</value>
+  </data>
+  <data name="Network_EnableECN.Description" xml:space="preserve">
+    <value>Allows routers to signal network congestion without dropping packets, reducing retransmissions and improving throughput.</value>
+  </data>
+  <data name="Network_EnableCTCP.Header" xml:space="preserve">
+    <value>Enable Compound TCP (CTCP)</value>
+  </data>
+  <data name="Network_EnableCTCP.Description" xml:space="preserve">
+    <value>Uses a more aggressive congestion algorithm that increases throughput on high-bandwidth, high-latency connections.</value>
+  </data>
+  <data name="Network_DisableIPv6.Header" xml:space="preserve">
+    <value>Disable IPv6</value>
+  </data>
+  <data name="Network_DisableIPv6.Description" xml:space="preserve">
+    <value>Disables the IPv6 protocol stack. Only recommended if you are troubleshooting IPv6-related issues. A restart may be required.</value>
+  </data>
+  <data name="Network_NicSection.Text" xml:space="preserve">
+    <value>Network Interface</value>
+  </data>
+  <data name="Network_NicCard.Header" xml:space="preserve">
+    <value>Active Adapter</value>
+  </data>
+  <data name="Network_NicCard.Description" xml:space="preserve">
+    <value>Select the network adapter to configure DNS settings for.</value>
+  </data>
+  <data name="Network_IPv4Card.Header" xml:space="preserve">
+    <value>IPv4 DNS Servers</value>
+  </data>
+  <data name="Network_IPv4Card.Description" xml:space="preserve">
+    <value>Currently configured DNS servers for IPv4.</value>
+  </data>
+  <data name="Network_IPv6Card.Header" xml:space="preserve">
+    <value>IPv6 DNS Servers</value>
+  </data>
+  <data name="Network_IPv6Card.Description" xml:space="preserve">
+    <value>Currently configured DNS servers for IPv6.</value>
+  </data>
+  <data name="Network_SetDNSCard.Header" xml:space="preserve">
+    <value>DNS Preset</value>
+  </data>
+  <data name="Network_SetDNSCard.Description" xml:space="preserve">
+    <value>Choose a DNS provider and apply it to the selected network adapter.</value>
+  </data>
+  <data name="Network_ResetTCPIPWarningTitle" xml:space="preserve">
+    <value>Restart Required</value>
+  </data>
+  <data name="Network_ResetTCPIPWarningMessage" xml:space="preserve">
+    <value>TCP/IP stack and Winsock have been reset. Please restart your computer for the changes to take effect.</value>
+  </data>
+  <data name="Network_FlushDNSSuccess" xml:space="preserve">
+    <value>DNS cache flushed successfully.</value>
+  </data>
+  <data name="Network_ReleaseRenewSuccess" xml:space="preserve">
+    <value>IP address released and renewed successfully.</value>
+  </data>
+  <data name="Network_SuccessTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="OptimizeSystemPage_TimerResolution.Text" xml:space="preserve">
+    <value>Timer Resolution &amp; Latency</value>
+  </data>
+  <data name="Feature_GlobalTimerResolution.Header" xml:space="preserve">
+    <value>Enable Global Timer Resolution</value>
+  </data>
+  <data name="Feature_GlobalTimerResolution.Description" xml:space="preserve">
+    <value>Allows applications to request higher timer resolution globally, reducing scheduling latency for games and real-time audio.</value>
+  </data>
+  <data name="Feature_DisableHPET.Header" xml:space="preserve">
+    <value>Disable HPET</value>
+  </data>
+  <data name="Feature_DisableHPET.Description" xml:space="preserve">
+    <value>Disables the High Precision Event Timer and switches to TSC for lower latency timing. Requires a reboot.</value>
+  </data>
+  <data name="Feature_DisableDynamicTick.Header" xml:space="preserve">
+    <value>Disable Dynamic Tick</value>
+  </data>
+  <data name="Feature_DisableDynamicTick.Description" xml:space="preserve">
+    <value>Forces the system timer to fire at a constant rate instead of dynamically adjusting, reducing jitter in latency-sensitive workloads.</value>
+  </data>
+  <data name="OptimizeSystemPage_MemoryOptimization.Text" xml:space="preserve">
+    <value>Memory Optimization</value>
+  </data>
+  <data name="Feature_DisablePrefetch.Header" xml:space="preserve">
+    <value>Disable Prefetch &amp; Superfetch</value>
+  </data>
+  <data name="Feature_DisablePrefetch.Description" xml:space="preserve">
+    <value>Disables Windows Prefetcher and Superfetch preloading to free RAM and reduce disk I/O. Recommended for SSD users.</value>
+  </data>
+  <data name="Feature_EnableLargeSystemCache.Header" xml:space="preserve">
+    <value>Enable Large System Cache</value>
+  </data>
+  <data name="Feature_EnableLargeSystemCache.Description" xml:space="preserve">
+    <value>Allocates more system memory for file caching, improving disk read performance for file-heavy workloads.</value>
+  </data>
+  <data name="Feature_DisableNDU.Header" xml:space="preserve">
+    <value>Disable Network Data Usage Monitor</value>
+  </data>
+  <data name="Feature_DisableNDU.Description" xml:space="preserve">
+    <value>Disables the NDU service which is known to cause non-paged pool memory leaks on some systems over extended uptime.</value>
+  </data>
+  <data name="Feature_DisablePageFileEncryption.Header" xml:space="preserve">
+    <value>Disable Page File Encryption</value>
+  </data>
+  <data name="Feature_DisablePageFileEncryption.Description" xml:space="preserve">
+    <value>Disables encryption of the Windows page file to reduce CPU overhead during paging operations.</value>
+  </data>
+  <data name="FeaturesPage_NotificationControls.Text" xml:space="preserve">
+    <value>Notification Controls</value>
+  </data>
+  <data name="Feature_DisableLockScreenNotifications.Header" xml:space="preserve">
+    <value>Disable Lock Screen Notifications</value>
+  </data>
+  <data name="Feature_DisableLockScreenNotifications.Description" xml:space="preserve">
+    <value>Prevents toast notifications from appearing on the lock screen for improved privacy and fewer distractions.</value>
+  </data>
+  <data name="Feature_DisableToastNotifications.Header" xml:space="preserve">
+    <value>Disable All Toast Notifications</value>
+  </data>
+  <data name="Feature_DisableToastNotifications.Description" xml:space="preserve">
+    <value>Completely disables all pop-up toast notifications from apps and the system.</value>
+  </data>
+  <data name="Feature_DisableNotificationCenter.Header" xml:space="preserve">
+    <value>Disable Notification Center</value>
+  </data>
+  <data name="Feature_DisableNotificationCenter.Description" xml:space="preserve">
+    <value>Removes the Notification Center (Action Center) from the taskbar. Requires Explorer restart.</value>
+  </data>
+  <data name="Feature_DisableSuggestedActions.Header" xml:space="preserve">
+    <value>Disable Suggested Actions</value>
+  </data>
+  <data name="Feature_DisableSuggestedActions.Description" xml:space="preserve">
+    <value>Disables the smart clipboard suggested actions flyout that appears when copying dates, phone numbers, or addresses.</value>
+  </data>
+  <data name="FeaturesPage_ContextMenu.Text" xml:space="preserve">
+    <value>Context Menu Customization</value>
+  </data>
+  <data name="Feature_AddTakeOwnership.Header" xml:space="preserve">
+    <value>Add "Take Ownership" to Context Menu</value>
+  </data>
+  <data name="Feature_AddTakeOwnership.Description" xml:space="preserve">
+    <value>Adds a "Take Ownership" option to the right-click context menu for files and folders, allowing quick ownership transfer.</value>
+  </data>
+  <data name="Feature_AddOpenCmdHere.Header" xml:space="preserve">
+    <value>Add "Open Command Prompt Here"</value>
+  </data>
+  <data name="Feature_AddOpenCmdHere.Description" xml:space="preserve">
+    <value>Adds an "Open Command Prompt Here" option to the folder background right-click context menu.</value>
+  </data>
+  <data name="Feature_AddCopyFilePath.Header" xml:space="preserve">
+    <value>Add "Copy File Path" to Context Menu</value>
+  </data>
+  <data name="Feature_AddCopyFilePath.Description" xml:space="preserve">
+    <value>Adds a "Copy File Path" option to the right-click context menu for quick path copying to clipboard.</value>
+  </data>
+  <data name="PrivacyPage_PrivacyHardening.Text" xml:space="preserve">
+    <value>Privacy Hardening</value>
+  </data>
+  <data name="Feature_DisableWiFiSense.Header" xml:space="preserve">
+    <value>Disable Wi-Fi Sense</value>
+  </data>
+  <data name="Feature_DisableWiFiSense.Description" xml:space="preserve">
+    <value>Disables automatic connection to suggested open Wi-Fi hotspots and shared networks from contacts.</value>
+  </data>
+  <data name="Feature_DisableWebSearchResults.Header" xml:space="preserve">
+    <value>Disable Web Results in Search</value>
+  </data>
+  <data name="Feature_DisableWebSearchResults.Description" xml:space="preserve">
+    <value>Prevents Windows Search from sending queries to Bing and displaying web results. Keeps search local and private.</value>
+  </data>
+  <data name="Feature_DisableAppLaunchTracking.Header" xml:space="preserve">
+    <value>Disable App Launch Tracking</value>
+  </data>
+  <data name="Feature_DisableAppLaunchTracking.Description" xml:space="preserve">
+    <value>Stops Windows from tracking which apps you launch for personalization of the Start menu's Most Used list.</value>
+  </data>
+  <data name="Feature_DisableTimelineHistory.Header" xml:space="preserve">
+    <value>Disable Timeline &amp; Activity History</value>
+  </data>
+  <data name="Feature_DisableTimelineHistory.Description" xml:space="preserve">
+    <value>Disables Windows Timeline activity feed and prevents activity data from being published or uploaded to the cloud.</value>
+  </data>
+  <data name="Network_DisableP2PDelivery.Header" xml:space="preserve">
+    <value>Disable P2P Update Delivery</value>
+  </data>
+  <data name="Network_DisableP2PDelivery.Description" xml:space="preserve">
+    <value>Disables peer-to-peer delivery of Windows Updates, preventing your PC from sharing update data with other PCs on the internet.</value>
+  </data>
+  <data name="Network_DisableHotspot20.Header" xml:space="preserve">
+    <value>Disable Hotspot 2.0</value>
+  </data>
+  <data name="Network_DisableHotspot20.Description" xml:space="preserve">
+    <value>Disables Hotspot 2.0 (Passpoint) automatic Wi-Fi hotspot discovery and connection for improved privacy.</value>
+  </data>
+  <data name="Network_DisableNetBIOS.Header" xml:space="preserve">
+    <value>Disable NetBIOS over TCP/IP</value>
+  </data>
+  <data name="Network_DisableNetBIOS.Description" xml:space="preserve">
+    <value>Disables legacy NetBIOS name resolution over TCP/IP to reduce network attack surface and improve security.</value>
+  </data>
+  <data name="OptimizeSystemPage_InputResponsiveness.Text" xml:space="preserve">
+    <value>Input &amp; Responsiveness</value>
+  </data>
+  <data name="OptimizeSystemPage_GamingGpu.Text" xml:space="preserve">
+    <value>Gaming &amp; GPU</value>
+  </data>
+  <data name="OptimizeSystemPage_DiskFileSystem.Text" xml:space="preserve">
+    <value>Disk &amp; File System</value>
+  </data>
+  <data name="OptimizeSystemPage_ServicesSystem.Text" xml:space="preserve">
+    <value>Services &amp; System</value>
+  </data>
+  <data name="OptimizeSystemPage_WindowsComponents.Text" xml:space="preserve">
+    <value>Windows Components</value>
+  </data>
+  <data name="FeaturesPage_AppearanceUI.Text" xml:space="preserve">
+    <value>Appearance &amp; UI</value>
+  </data>
+  <data name="FeaturesPage_SystemServices.Text" xml:space="preserve">
+    <value>System Services</value>
+  </data>
+  <data name="FeaturesPage_InputAccessibility.Text" xml:space="preserve">
+    <value>Input &amp; Accessibility</value>
+  </data>
+  <data name="FeaturesPage_ExplorerShell.Text" xml:space="preserve">
+    <value>Explorer &amp; Shell</value>
+  </data>
+  <data name="FeaturesPage_Win11UI.Text" xml:space="preserve">
+    <value>Windows 11 UI</value>
+  </data>
+  <data name="FeaturesPage_WindowsAIEdge.Text" xml:space="preserve">
+    <value>Windows AI &amp; Edge</value>
+  </data>
+  <data name="PrivacyPage_DataCollection.Text" xml:space="preserve">
+    <value>Data Collection &amp; Input</value>
+  </data>
+  <data name="PrivacyPage_CloudSync.Text" xml:space="preserve">
+    <value>Cloud &amp; Device Sync</value>
+  </data>
+  <data name="PrivacyPage_LocationSecurity.Text" xml:space="preserve">
+    <value>Location &amp; Security</value>
+  </data>
+  <data name="Shell_StressTest.Content" xml:space="preserve">
+    <value>Stress Test</value>
+  </data>
+  <data name="StressTestPage_Title.Text" xml:space="preserve">
+    <value>Stress Test</value>
+  </data>
+  <data name="StressTestPage_Description.Text" xml:space="preserve">
+    <value>Push your hardware to its limits and monitor real-time performance under load.</value>
+  </data>
+  <data name="StressTestPage_StartAll.Text" xml:space="preserve">
+    <value>Start All</value>
+  </data>
+  <data name="StressTestPage_StopAll.Text" xml:space="preserve">
+    <value>Stop All</value>
+  </data>
+  <data name="StressTestPage_CPU.Text" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="StressTestPage_RAM.Text" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="StressTestPage_Disk.Text" xml:space="preserve">
+    <value>Disk</value>
+  </data>
+  <data name="StressTestPage_GPU.Text" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="StressTestPage_CpuStressTest.Text" xml:space="preserve">
+    <value>CPU Stress Test</value>
+  </data>
+  <data name="StressTestPage_CpuStressTestDesc.Text" xml:space="preserve">
+    <value>All-core computational load using parallel integer and floating-point workloads</value>
+  </data>
+  <data name="StressTestPage_RamStressTest.Text" xml:space="preserve">
+    <value>RAM Stress Test</value>
+  </data>
+  <data name="StressTestPage_RamStressTestDesc.Text" xml:space="preserve">
+    <value>Sequential and random memory access patterns to detect stability issues</value>
+  </data>
+  <data name="StressTestPage_DiskStressTest.Text" xml:space="preserve">
+    <value>Disk Stress Test</value>
+  </data>
+  <data name="StressTestPage_DiskStressTestDesc.Text" xml:space="preserve">
+    <value>Sequential read/write throughput benchmark on the system drive</value>
+  </data>
+  <data name="StressTestPage_GpuStressTest.Text" xml:space="preserve">
+    <value>GPU Stress Test</value>
+  </data>
+  <data name="StressTestPage_GpuStressTestDesc.Text" xml:space="preserve">
+    <value>Hardware-accelerated 3D raymarching fractal &amp; volumetric pipeline to stress GPU up to 100%</value>
+  </data>
+  <data name="StressTestPage_Start.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="StressTestPage_Stop.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="StressTestPage_Usage.Text" xml:space="preserve">
+    <value>Usage</value>
+  </data>
+  <data name="StressTestPage_Threads.Text" xml:space="preserve">
+    <value>Threads</value>
+  </data>
+  <data name="StressTestPage_Score.Text" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="StressTestPage_Status.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StressTestPage_Idle.Text" xml:space="preserve">
+    <value>Idle</value>
+  </data>
+  <data name="StressTestPage_Running.Text" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="StressTestPage_Allocating.Text" xml:space="preserve">
+    <value>Allocating</value>
+  </data>
+  <data name="StressTestPage_RunningHlsl.Text" xml:space="preserve">
+    <value>Running (HLSL Compute)</value>
+  </data>
+  <data name="StressTestPage_Allocated.Text" xml:space="preserve">
+    <value>Allocated</value>
+  </data>
+  <data name="StressTestPage_Bandwidth.Text" xml:space="preserve">
+    <value>Bandwidth</value>
+  </data>
+  <data name="StressTestPage_WriteSpeed.Text" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="StressTestPage_ReadSpeed.Text" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="StressTestPage_IOPS.Text" xml:space="preserve">
+    <value>IOPS</value>
+  </data>
+  <data name="StressTestPage_GFLOPS.Text" xml:space="preserve">
+    <value>GFLOPS</value>
+  </data>
+  <data name="StressTestPage_VRAM.Text" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="StressTestPage_Temperature.Text" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="StressTestPage_FPS.Text" xml:space="preserve">
+    <value>FPS</value>
+  </data>
+  <data name="StressTestPage_RamPercentCombo.Header" xml:space="preserve">
+    <value>% of RAM</value>
+  </data>
+  <data name="StressTestPage_AllCores.Text" xml:space="preserve">
+    <value>All Cores</value>
+  </data>
+  <data name="StressTestPage_AllCoresWithCount" xml:space="preserve">
+    <value>All Cores ({0})</value>
+  </data>
+  <data name="StressTestPage_SelectedCoresCount" xml:space="preserve">
+    <value>{0} of {1} Cores</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Title" xml:space="preserve">
+    <value>Select CPU Cores</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Warning" xml:space="preserve">
+    <value>Select at least one core.</value>
+  </data>
+  <data name="Intelligent_Domain_Optimizer" xml:space="preserve">
+    <value>System Optimizer</value>
+  </data>
+  <data name="Intelligent_DetectingHardware" xml:space="preserve">
+    <value>Detecting Hardware...</value>
+  </data>
+  <data name="Intelligent_StatusMessageDefault" xml:space="preserve">
+    <value>Scans, analyzes, previews, applies, verifies, and supports per-item rollback for all optimization settings.</value>
+  </data>
+  <data name="Intelligent_Metric_NonIntrusive" xml:space="preserve">
+    <value>Safe / Non-Intrusive</value>
+  </data>
+  <data name="Intelligent_Btn_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Intelligent_Preview_DialogDefaultTitle" xml:space="preserve">
+    <value>Intelligent Optimization Preview</value>
+  </data>
+  <data name="Intelligent_State_On" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="Intelligent_State_Off" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="Intelligent_Status_Optional" xml:space="preserve">
+    <value>Optional</value>
+  </data>
+  <data name="Intelligent_General_Optimization" xml:space="preserve">
+    <value>Optimization</value>
+  </data>
+  <data name="Intelligent_Flyout_CategoryRisk" xml:space="preserve">
+    <value>Category: {0} • Risk: {1}</value>
+  </data>
+  <data name="Intelligent_Flyout_Impact" xml:space="preserve">
+    <value>Impact: {0}</value>
+  </data>
+  <data name="Intelligent_Flyout_RollbackPoint" xml:space="preserve">
+    <value>Rollback Point: {0} • Original: {1}</value>
+  </data>
+  <data name="OptimizeInspector_ConfiguresCount" xml:space="preserve">
+    <value>Configures {0} system settings for {1}.</value>
+  </data>
+  <data name="OptimizeInspector_OptimizesDefault" xml:space="preserve">
+    <value>Optimizes {0} in Windows configuration.</value>
+  </data>
+  <data name="OptimizeInspector_SafetyLine" xml:space="preserve">
+    <value>Safety: {0} • Weight: +{1} pts • Status: {2}</value>
+  </data>
+  <data name="OptimizeInspector_SafetyNote" xml:space="preserve">
+    <value>Safety Note: {0}</value>
+  </data>
+  <data name="OptimizeInspector_ActionsRegistry" xml:space="preserve">
+    <value>Actions &amp; Registry:</value>
+  </data>
+  <data name="OptimizeInspector_Commands" xml:space="preserve">
+    <value>Commands:</value>
+  </data>
+  <data name="OptimizeInspector_ReasonCaution" xml:space="preserve">
+    <value>Caution: Advanced Windows feature that should only be adjusted by power users.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonModerateRec" xml:space="preserve">
+    <value>Recommended (Moderate): High-impact performance optimization verified in tuning tools.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonModerate" xml:space="preserve">
+    <value>Moderate: Power-user optimization. Included in Advanced / Moderate preset for deep system tuning.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonPersonalPref" xml:space="preserve">
+    <value>Optional (Safe): Visual layout or subjective user preference. Included in All Safe preset.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonCosmetic" xml:space="preserve">
+    <value>Optional (Cosmetic): Visual layout, appearance, or personal workflow preference.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonSafeRec" xml:space="preserve">
+    <value>Recommended: Safe, non-intrusive optimization to boost privacy and responsiveness.</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Title" xml:space="preserve">
+    <value>Operations in progress</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Content" xml:space="preserve">
+    <value>There are background optimization operations running. Do you want to wait for them to finish or exit now?</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Wait" xml:space="preserve">
+    <value>Wait</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="LogViewer_Title" xml:space="preserve">
+    <value>Log Viewer</value>
+  </data>
+  <data name="LogViewer_FilterPlaceholder" xml:space="preserve">
+    <value>Filter by level</value>
+  </data>
+  <data name="LogViewer_FilterAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="LogViewer_FilterInfo" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="LogViewer_FilterWarn" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="LogViewer_FilterError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="LogViewer_FilterCritical" xml:space="preserve">
+    <value>Critical</value>
+  </data>
+  <data name="LogViewer_EntriesCount" xml:space="preserve">
+    <value>{0} of {1} entries</value>
+  </data>
+  <data name="LogViewer_SearchPlaceholder" xml:space="preserve">
+    <value>Search logs...</value>
+  </data>
+  <data name="LogViewer_NoEntries" xml:space="preserve">
+    <value>No log entries found.</value>
+  </data>
+  <data name="LogViewer_NewSession" xml:space="preserve">
+    <value>New Session</value>
+  </data>
+  <data name="LogViewer_CopyButton" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="LogViewer_OpenFileButton" xml:space="preserve">
+    <value>Open File</value>
+  </data>
+  <data name="ProcessesPage_TotalProcesses.Text" xml:space="preserve">
+    <value>Total Processes</value>
+  </data>
+  <data name="ProcessesPage_TotalMemory.Text" xml:space="preserve">
+    <value>Total Memory</value>
+  </data>
+  <data name="ProcessesPage_TotalThreads.Text" xml:space="preserve">
+    <value>Total Threads</value>
+  </data>
+  <data name="ProcessesPage_EndTaskTooltip.Text" xml:space="preserve">
+    <value>End Task</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessEndedTitle" xml:space="preserve">
+    <value>Process Ended</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessEndedMessage" xml:space="preserve">
+    <value>Process '{0}' (PID: {1}) was terminated successfully.</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessNotFoundTitle" xml:space="preserve">
+    <value>Process Not Found</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessNotFoundMessage" xml:space="preserve">
+    <value>Process with PID {0} no longer exists.</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessErrorMessage" xml:space="preserve">
+    <value>Failed to end process: {0}</value>
+  </data>
+  <data name="PackagesPage_Notification_Title" xml:space="preserve">
+    <value>Packages</value>
+  </data>
+  <data name="PackagesPage_Notification_NoPackagesInstall" xml:space="preserve">
+    <value>No packages selected for installation.</value>
+  </data>
+  <data name="PackagesPage_Notification_NoPackagesUpdate" xml:space="preserve">
+    <value>No packages selected for update.</value>
+  </data>
+  <data name="PackagesPage_Notification_InstallCompleted" xml:space="preserve">
+    <value>Installation completed: {0} succeeded, {1} failed.</value>
+  </data>
+  <data name="PackagesPage_Notification_UpdateCompleted" xml:space="preserve">
+    <value>Update completed: {0} succeeded, {1} failed.</value>
+  </data>
+  <data name="DebloatPage_ClearedSize" xml:space="preserve">
+    <value> (Cleared: {0})</value>
+  </data>
+  <data name="Feature_CreatePowerPlanButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Create Power Plan</value>
+  </data>
+  <data name="Search_Category_Navigation" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="StartupPage_Notification_LoadFailed" xml:space="preserve">
+    <value>Failed to load startup items: {0}</value>
+  </data>
+  <data name="StartupPage_Notification_ToggleFailed" xml:space="preserve">
+    <value>Failed to update startup item state for '{0}'.</value>
+  </data>
+  <data name="CopilotPlusPC" xml:space="preserve">
+    <value>Copilot+ PC</value>
+  </data>
+  <data name="Supported" xml:space="preserve">
+    <value>Supported</value>
+  </data>
+  <data name="NotSupported" xml:space="preserve">
+    <value>Not Supported</value>
+  </data>
+  <data name="SystemUpdate_DialogTitle" xml:space="preserve">
+    <value>Windows Update Detected</value>
+  </data>
+  <data name="SystemUpdate_DialogContent" xml:space="preserve">
+    <value>Windows was updated from build {0} to {1}.
+
+Windows updates frequently reset system tweaks back to default values.
+
+Would you like RyTuneX to re-apply all your saved optimizations, features, and privacy settings ({2} items)?</value>
+  </data>
+  <data name="SystemUpdate_DialogContentWithBreakdown" xml:space="preserve">
+    <value>Windows was updated from build {0} to {1}.
+
+Windows updates frequently reset system tweaks back to default values.
+
+Would you like RyTuneX to re-apply all your saved settings ({2} total: {3} optimizations, {4} features, {5} privacy settings)?</value>
+  </data>
+  <data name="SystemUpdate_ReapplyButton" xml:space="preserve">
+    <value>Re-apply All Settings</value>
+  </data>
+  <data name="SystemUpdate_ReapplyingMessage" xml:space="preserve">
+    <value>Currently re-applying optimizations, features, and privacy settings...</value>
+  </data>
+  <data name="SystemUpdate_ReappliedSuccess" xml:space="preserve">
+    <value>Successfully re-applied {0} setting(s).</value>
+  </data>
+  <data name="SystemUpdate_ReappliedSuccessWithBreakdown" xml:space="preserve">
+    <value>Successfully re-applied {0} setting(s) ({1} optimizations, {2} features, {3} privacy).</value>
+  </data>
+  <data name="Settings_DetectSystemUpdates.Header" xml:space="preserve">
+    <value>Detect Windows updates</value>
+  </data>
+  <data name="Settings_DetectSystemUpdates.Description" xml:space="preserve">
+    <value>Prompt to re-apply optimizations, features, and privacy settings after a Windows update</value>
+  </data>
+  <data name="Settings_ReapplyOptimizations.Header" xml:space="preserve">
+    <value>Re-apply all settings</value>
+  </data>
+  <data name="Settings_ReapplyOptimizations.Description" xml:space="preserve">
+    <value>Re-apply all optimizations, features, and privacy settings currently configured in RyTuneX</value>
+  </data>
+  <data name="ReapplyingOptimizations" xml:space="preserve">
+    <value>Currently re-applying optimizations, features, and privacy settings...</value>
+  </data>
+  <data name="ReapplyOptimizationsDialogContent" xml:space="preserve">
+    <value>Re-apply {0} saved setting(s) ({1} optimizations, {2} features, {3} privacy) to your system now?</value>
+  </data>
+  <data name="ReapplyOptimizationsDialogContentSimple" xml:space="preserve">
+    <value>Re-apply {0} saved setting(s) to your system now?</value>
+  </data>
+  <data name="NoSavedOptimizations" xml:space="preserve">
+    <value>No optimizations, features, or privacy settings are currently saved in RyTuneX to re-apply.</value>
+  </data>
+  <data name="DeepClean_Title" xml:space="preserve">
+    <value>Deep Clean</value>
+  </data>
+  <data name="DeepClean_Description" xml:space="preserve">
+    <value>Select the categories you want to clean. Sizes are scanned automatically.</value>
+  </data>
+  <data name="DeepClean_Scanning" xml:space="preserve">
+    <value>Scanning system...</value>
+  </data>
+  <data name="DeepClean_TotalSelected" xml:space="preserve">
+    <value>Total selected: {0}</value>
+  </data>
+  <data name="DeepClean_CleanButton" xml:space="preserve">
+    <value>Clean Selected</value>
+  </data>
+  <data name="DeepClean_CompleteDesc" xml:space="preserve">
+    <value>Successfully cleaned {0} of data.</value>
+  </data>
+  <data name="DeepClean_Error" xml:space="preserve">
+    <value>Some items could not be cleaned. Check the log for details.</value>
+  </data>
+  <data name="DeepClean_SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="DeepClean_DeselectAll" xml:space="preserve">
+    <value>Deselect All</value>
+  </data>
+  <data name="DeepClean_Cat_TempFiles" xml:space="preserve">
+    <value>Temporary Files</value>
+  </data>
+  <data name="DeepClean_Cat_TempFiles_Desc" xml:space="preserve">
+    <value>User and system temporary files, Store and Xbox cache</value>
+  </data>
+  <data name="DeepClean_Cat_UpdateCache" xml:space="preserve">
+    <value>Windows Update Cache</value>
+  </data>
+  <data name="DeepClean_Cat_UpdateCache_Desc" xml:space="preserve">
+    <value>Windows Update download and delivery optimization cache</value>
+  </data>
+  <data name="DeepClean_Cat_ExplorerCache" xml:space="preserve">
+    <value>Windows Explorer Cache</value>
+  </data>
+  <data name="DeepClean_Cat_ExplorerCache_Desc" xml:space="preserve">
+    <value>Thumbnail, icon, internet cache, and recent items</value>
+  </data>
+  <data name="DeepClean_Cat_CrashDumps" xml:space="preserve">
+    <value>Crash Dumps &amp; Error Reports</value>
+  </data>
+  <data name="DeepClean_Cat_CrashDumps_Desc" xml:space="preserve">
+    <value>Windows error reports, crash dumps, and diagnostics</value>
+  </data>
+  <data name="DeepClean_Cat_BrowserCache" xml:space="preserve">
+    <value>Browser Cache</value>
+  </data>
+  <data name="DeepClean_Cat_BrowserCache_Desc" xml:space="preserve">
+    <value>Chrome, Edge, Brave, and Firefox cache data</value>
+  </data>
+  <data name="DeepClean_Cat_ShaderCache" xml:space="preserve">
+    <value>GPU Shader Cache</value>
+  </data>
+  <data name="DeepClean_Cat_ShaderCache_Desc" xml:space="preserve">
+    <value>NVIDIA, AMD, and DirectX shader compilation cache</value>
+  </data>
+  <data name="DeepClean_Cat_SystemLogs" xml:space="preserve">
+    <value>System Logs</value>
+  </data>
+  <data name="DeepClean_Cat_SystemLogs_Desc" xml:space="preserve">
+    <value>CBS, DISM, setup logs, and search index data</value>
+  </data>
+  <data name="DeepClean_Cat_OEMLogs" xml:space="preserve">
+    <value>OEM &amp; Vendor Logs</value>
+  </data>
+  <data name="DeepClean_Cat_OEMLogs_Desc" xml:space="preserve">
+    <value>Dell, HP, Lenovo, ASUS, and Acer support logs</value>
+  </data>
+  <data name="DeepClean_Cat_Prefetch" xml:space="preserve">
+    <value>Windows Prefetch</value>
+  </data>
+  <data name="DeepClean_Cat_Prefetch_Desc" xml:space="preserve">
+    <value>Application prefetch and launch optimization data</value>
+  </data>
+  <data name="DeepClean_Cat_NetworkCache" xml:space="preserve">
+    <value>Network Cache</value>
+  </data>
+  <data name="DeepClean_Cat_NetworkCache_Desc" xml:space="preserve">
+    <value>DNS resolver cache and Winsock catalog reset</value>
+  </data>
+  <data name="DeepClean_Cat_RecycleBin" xml:space="preserve">
+    <value>Recycle Bin</value>
+  </data>
+  <data name="DeepClean_Cat_RecycleBin_Desc" xml:space="preserve">
+    <value>All items currently in the Recycle Bin</value>
+  </data>
+  <data name="DeepClean_Cat_FontCache" xml:space="preserve">
+    <value>Font Cache</value>
+  </data>
+  <data name="DeepClean_Cat_FontCache_Desc" xml:space="preserve">
+    <value>Windows font rendering cache files</value>
   </data>
 </root>

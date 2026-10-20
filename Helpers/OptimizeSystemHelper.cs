@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.InteropServices;
+using System.Text;
 
 namespace RyTuneX.Helpers;
 
@@ -16,6 +17,12 @@ public static partial class OptimizeSystemHelper
             var regCmd = $"reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\{serviceName}\" /v Start /t REG_DWORD /d {startValue} /f";
             await OptimizationOptions.StartInCmd(regCmd).ConfigureAwait(false);
         }
+    }
+
+    private static Task<int> RunEncodedPowerShell(string script)
+    {
+        var encodedCommand = Convert.ToBase64String(Encoding.Unicode.GetBytes(script));
+        return OptimizationOptions.StartInCmd($"PowerShell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand {encodedCommand}");
     }
 
     public static async Task DisableWindowsAI()
@@ -37,7 +44,6 @@ public static partial class OptimizeSystemHelper
             "reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\" /V HubsSidebarEnabled /T REG_DWORD /D 0 /F",
             "reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\" /V GenAILocalFoundationalModelSettings /T REG_DWORD /D 1 /F",
             "reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\" /V EnableDynamicContentInSearchBox /T REG_DWORD /D 0 /F",
-            "reg add \"HKCU\\Software\\Policies\\Microsoft\\Windows\\Explorer\" /V DisableSearchBoxSuggestions /T REG_DWORD /D 1 /F",
             "reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsAI\" /V DisableAgentConnectors /T REG_DWORD /D 1 /F"
         };
         foreach (var c in cmds) await OptimizationOptions.StartInCmd(c);
@@ -85,7 +91,6 @@ public static partial class OptimizeSystemHelper
             "reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\" /V HubsSidebarEnabled /F",
             "reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\" /V GenAILocalFoundationalModelSettings /F",
             "reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\" /V EnableDynamicContentInSearchBox /F",
-            "reg delete \"HKCU\\Software\\Policies\\Microsoft\\Windows\\Explorer\" /V DisableSearchBoxSuggestions /F",
             "reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsAI\" /V DisableAgentConnectors /F"
         };
         foreach (var c in cmds) await OptimizationOptions.StartInCmd(c);
@@ -334,7 +339,23 @@ public static partial class OptimizeSystemHelper
 
     public static async Task DisableServiceHostSplitting()
     {
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\" /v SvcHostSplitThresholdInKB /t REG_DWORD /d 4294967295 /f").ConfigureAwait(false);
+        ulong ramBytes = MemoryHelper.GetTotalPhysicalMemory();
+
+        // Convert to GB
+        double ramGbExact = ramBytes / (1024d * 1024d * 1024d);
+
+        // round UP to nearest GB
+        ulong ramGb = (ulong)Math.Ceiling(ramGbExact);
+
+        // GB * 1024 * 1024
+        ulong ramInKb = ramGb * 1024UL * 1024UL;
+
+        if (ramInKb > uint.MaxValue)
+            ramInKb = uint.MaxValue;
+
+        await OptimizationOptions.StartInCmd(
+            $"reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\" /v SvcHostSplitThresholdInKB /t REG_DWORD /d {ramInKb} /f"
+        );
     }
 
     public static async Task EnableServiceHostSplitting()
@@ -350,6 +371,29 @@ public static partial class OptimizeSystemHelper
     public static async Task DisableMouseHoverTime()
     {
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Mouse\" /v MouseHoverTime /t REG_SZ /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableKeyboardLatencyOptimization()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Keyboard\" /v KeyboardDelay /t REG_SZ /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Keyboard\" /v KeyboardSpeed /t REG_SZ /d 31 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKEY_USERS\\.DEFAULT\\Control Panel\\Keyboard\" /v KeyboardDelay /t REG_SZ /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKEY_USERS\\.DEFAULT\\Control Panel\\Keyboard\" /v KeyboardSpeed /t REG_SZ /d 31 /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableMouseAcceleration()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Mouse\" /v MouseSpeed /t REG_SZ /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Mouse\" /v MouseThreshold1 /t REG_SZ /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Mouse\" /v MouseThreshold2 /t REG_SZ /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableFullscreenOptimizations()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_DXGIHonorFSEWindowsCompatible /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_FSEBehavior /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_FSEBehaviorMode /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_HonorUserFSEBehaviorMode /t REG_DWORD /d 0 /f").ConfigureAwait(false);
     }
 
     public static async Task DisableBackgroundApps()
@@ -432,7 +476,7 @@ public static partial class OptimizeSystemHelper
     public static async Task HideFileExtensionsAndHiddenFiles()
     {
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v HideFileExt /t REG_DWORD /d 1 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v Hidden /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v Hidden /t REG_DWORD /d 2 /f").ConfigureAwait(false);
     }
 
     public static async Task OptimizeSystemProfile()
@@ -478,6 +522,29 @@ public static partial class OptimizeSystemHelper
     public static async Task EnableMouseHoverTime()
     {
         await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Control Panel\\Mouse\" /v MouseHoverTime /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableKeyboardLatencyOptimization()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Keyboard\" /v KeyboardDelay /t REG_SZ /d 1 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Keyboard\" /v KeyboardSpeed /t REG_SZ /d 31 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKEY_USERS\\.DEFAULT\\Control Panel\\Keyboard\" /v KeyboardDelay /t REG_SZ /d 1 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKEY_USERS\\.DEFAULT\\Control Panel\\Keyboard\" /v KeyboardSpeed /t REG_SZ /d 31 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableMouseAcceleration()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Mouse\" /v MouseSpeed /t REG_SZ /d 1 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Mouse\" /v MouseThreshold1 /t REG_SZ /d 6 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Control Panel\\Mouse\" /v MouseThreshold2 /t REG_SZ /d 10 /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableFullscreenOptimizations()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_DXGIHonorFSEWindowsCompatible /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_FSEBehavior /t REG_DWORD /d 2 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_FSEBehaviorMode /t REG_DWORD /d 2 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_HonorUserFSEBehaviorMode /t REG_DWORD /d 1 /f").ConfigureAwait(false);
     }
 
     public static async Task EnableBackgroundApps()
@@ -560,7 +627,7 @@ public static partial class OptimizeSystemHelper
     public static async Task ShowFileExtensionsAndHiddenFiles()
     {
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v HideFileExt /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v Hidden /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v Hidden /t REG_DWORD /d 1 /f").ConfigureAwait(false);
     }
 
     public static async Task RevertSystemProfile()
@@ -646,13 +713,10 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Microsoft\\PolicyManager\\default\\System\\AllowTelemetry\" /v value /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\SQMClient\\Windows\" /v CEIPEnable /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Siuf\\Rules\" /v NumberOfSIUFInPeriod /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\Software\\Microsoft\\PolicyManager\\default\\WiFi\\AllowAutoConnectToWiFiSenseHotspots\" /v value /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\Software\\Microsoft\\PolicyManager\\default\\WiFi\\AllowWiFiHotSpotReporting\" /v value /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Device Metadata\" /v PreventDeviceMetadataFromNetwork /t REG_DWORD /d 1 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\MRT\" /v DontOfferThroughWUAU /t REG_DWORD /d 1 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\SQMLogger\" /v Start /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\System\" /v AllowExperimentation /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v PublishUserActivities /t REG_DWORD /d 0 /f").ConfigureAwait(false);
 
         // Disable WMI Autologger telemetry sessions
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\ControlSet001\\Control\\WMI\\Autologger\\Diagtrack-Listener\" /v Start /t REG_DWORD /d 0 /f").ConfigureAwait(false);
@@ -779,7 +843,6 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection\" /v AllowTelemetry /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Microsoft\\PolicyManager\\default\\System\\AllowTelemetry\" /v value /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\SQMClient\\Windows\" /v CEIPEnable /t REG_DWORD /d 1 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v PublishUserActivities /t REG_DWORD /d 1 /f").ConfigureAwait(false);
 
         // Re-enable WMI Autologger telemetry sessions
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\ControlSet001\\Control\\WMI\\Autologger\\Diagtrack-Listener\" /v Start /t REG_DWORD /d 1 /f").ConfigureAwait(false);
@@ -907,7 +970,6 @@ public static partial class OptimizeSystemHelper
     {
         await SetServiceStatusAsync("SysMain", 4).ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnableSuperfetch /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnablePrefetcher /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v SfTracingState /t REG_DWORD /d 1 /f").ConfigureAwait(false);
     }
 
@@ -915,7 +977,6 @@ public static partial class OptimizeSystemHelper
     {
         await SetServiceStatusAsync("SysMain", 2).ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnableSuperfetch /t REG_DWORD /d 1 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnablePrefetcher /t REG_DWORD /d 1 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v SfTracingState /f").ConfigureAwait(false);
     }
 
@@ -1172,7 +1233,6 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers\" /v HwSchMode /t REG_DWORD /d 2 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\GameBar\" /v AllowAutoGameMode /t REG_DWORD /d 1 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\GameBar\" /v AutoGameModeEnabled /t REG_DWORD /d 1 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_FSEBehaviorMode /t REG_DWORD /d 2 /f").ConfigureAwait(false);
     }
 
     public static async Task DisableGamingMode()
@@ -1180,7 +1240,138 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers\" /v HwSchMode /t REG_DWORD /d 1 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\GameBar\" /v AllowAutoGameMode /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\GameBar\" /v AutoGameModeEnabled /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKCU\\System\\GameConfigStore\" /v GameDVR_FSEBehaviorMode /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableUsbPowerSaving()
+    {
+        await RunEncodedPowerShell("""
+            $devices = Get-CimInstance -Namespace root\wmi -ClassName MSPower_DeviceEnable -ErrorAction SilentlyContinue |
+                Where-Object { $_.InstanceName -match 'USB\\ROOT' }
+
+            foreach ($device in $devices) {
+                if ($device.Enable -ne $false) {
+                    Set-CimInstance -CimInstance $device -Property @{ Enable = $false } | Out-Null
+                }
+            }
+            """).ConfigureAwait(false);
+
+        await OptimizationOptions.StartInCmd("powercfg /SETACVALUEINDEX SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 0").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("powercfg /SETDCVALUEINDEX SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 0").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("powercfg /S SCHEME_CURRENT").ConfigureAwait(false);
+    }
+
+    public static async Task EnableUsbPowerSaving()
+    {
+        await RunEncodedPowerShell("""
+            $devices = Get-CimInstance -Namespace root\wmi -ClassName MSPower_DeviceEnable -ErrorAction SilentlyContinue |
+                Where-Object { $_.InstanceName -match 'USB\\ROOT' }
+
+            foreach ($device in $devices) {
+                if ($device.Enable -ne $true) {
+                    Set-CimInstance -CimInstance $device -Property @{ Enable = $true } | Out-Null
+                }
+            }
+            """).ConfigureAwait(false);
+
+        await OptimizationOptions.StartInCmd("powercfg /SETACVALUEINDEX SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 1").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("powercfg /SETDCVALUEINDEX SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 1").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("powercfg /S SCHEME_CURRENT").ConfigureAwait(false);
+    }
+
+    public static async Task DisablePowerThrottling()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Power\\PowerThrottling\" /v PowerThrottlingOff /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\USB\\AutomaticSurpriseRemoval\" /v AttemptRecoveryFromUsbPowerDrain /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnablePowerThrottling()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Power\\PowerThrottling\" /v PowerThrottlingOff /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\USB\\AutomaticSurpriseRemoval\" /v AttemptRecoveryFromUsbPowerDrain /f").ConfigureAwait(false);
+    }
+
+    public static async Task ApplyGpuDriverTweaks()
+    {
+        await RunEncodedPowerShell("""
+            $displayClass = 'HKLM:\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}'
+
+            function Set-DwordValue {
+                param(
+                    [string]$Path,
+                    [string]$Name,
+                    [int]$Value
+                )
+
+                New-ItemProperty -Path $Path -Name $Name -Value $Value -PropertyType DWord -Force | Out-Null
+            }
+
+            $controllers = Get-CimInstance -ClassName Win32_VideoController -ErrorAction SilentlyContinue
+
+            foreach ($gpu in $controllers) {
+                $deviceId = [string]$gpu.DeviceID
+                if ($deviceId -notmatch '^VideoController(\d+)$') {
+                    continue
+                }
+
+                $index = [int]$Matches[1] - 1
+                $path = Join-Path $displayClass ('{0:D4}' -f $index)
+                if (-not (Test-Path $path)) {
+                    continue
+                }
+
+                $vendorText = "$($gpu.Name) $($gpu.AdapterCompatibility)"
+                if ($vendorText -match 'AMD|Advanced Micro Devices|ATI') {
+                    Set-DwordValue $path 'EnableULPS' 0
+                    Set-DwordValue $path 'DisablePowerGating' 1
+                    Set-DwordValue $path 'PP_GPUPowerDownEnabled' 0
+                    Set-DwordValue $path 'DisableDynamicPstate' 1
+                    Set-DwordValue $path 'DisableVCEPowerGating' 1
+                    Set-DwordValue $path 'DisableVceClockGating' 1
+                    Set-DwordValue $path 'EnableUvdClockGating' 0
+                    Set-DwordValue $path 'EnableVceSwClockGating' 0
+                    Set-DwordValue $path 'EnableAspmL0s' 0
+                    Set-DwordValue $path 'EnableAspmL1' 0
+                }
+                elseif ($vendorText -match 'NVIDIA') {
+                    Set-DwordValue $path 'DisableDynamicPstate' 1
+                    Set-DwordValue $path 'DisableASyncPstates' 1
+                }
+                elseif ($vendorText -match 'Intel') {
+                    Set-DwordValue $path 'Display1_DisableAsyncFlips' 1
+                    Set-DwordValue $path 'AdaptiveVsyncEnable' 0
+                }
+            }
+            """).ConfigureAwait(false);
+    }
+
+    public static async Task RevertGpuDriverTweaks()
+    {
+        await RunEncodedPowerShell("""
+            $displayClass = 'HKLM:\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}'
+            $values = @(
+                'EnableULPS',
+                'DisablePowerGating',
+                'PP_GPUPowerDownEnabled',
+                'DisableDynamicPstate',
+                'DisableVCEPowerGating',
+                'DisableVceClockGating',
+                'EnableUvdClockGating',
+                'EnableVceSwClockGating',
+                'EnableAspmL0s',
+                'EnableAspmL1',
+                'DisableASyncPstates',
+                'Display1_DisableAsyncFlips',
+                'AdaptiveVsyncEnable'
+            )
+
+            Get-ChildItem -Path $displayClass -ErrorAction SilentlyContinue |
+                Where-Object { $_.PSChildName -match '^\d{4}$' } |
+                ForEach-Object {
+                    foreach ($value in $values) {
+                        Remove-ItemProperty -Path $_.PSPath -Name $value -ErrorAction SilentlyContinue
+                    }
+                }
+            """).ConfigureAwait(false);
     }
 
     public static async Task SetWindowsUpdatesDefault()
@@ -1429,22 +1620,6 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\OneDrive\" /v DisableFileSyncNGSC /f").ConfigureAwait(false);
     }
 
-    public static async Task EnableSensorServices()
-    {
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SensrSvc\" /v Start /t REG_DWORD /d 2 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SensorService\" /v Start /t REG_DWORD /d 2 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("sc start SensrSvc").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("sc start SensorService").ConfigureAwait(false);
-    }
-
-    public static async Task DisableSensorServices()
-    {
-        await OptimizationOptions.StartInCmd("sc stop SensrSvc").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("sc stop SensorService").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SensrSvc\" /v Start /t REG_DWORD /d 4 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SensorService\" /v Start /t REG_DWORD /d 4 /f").ConfigureAwait(false);
-    }
-
     public static async Task DisableNewsAndInterests()
     {
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Dsh\" /v AllowNewsAndInterests /t REG_DWORD /d 0 /f");
@@ -1534,11 +1709,6 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SearchSettings\" /v SafeSearchMode /t REG_DWORD /d 0 /f").ConfigureAwait(false);
     }
 
-    public static async Task DisableActivityUploads()
-    {
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v UploadUserActivities /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-    }
-
     public static async Task DisableClipboardSync()
     {
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v AllowCrossDeviceClipboard /t REG_DWORD /d 0 /f").ConfigureAwait(false);
@@ -1566,11 +1736,6 @@ public static partial class OptimizeSystemHelper
     {
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\FindMyDevice\" /v AllowFindMyDevice /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Microsoft\\Settings\\FindMyDevice\" /v LocationSyncEnabled /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-    }
-
-    public static async Task DisableActivityFeed()
-    {
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v EnableActivityFeed /t REG_DWORD /d 0 /f").ConfigureAwait(false);
     }
 
     public static async Task DisableCdp()
@@ -1674,11 +1839,6 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SearchSettings\" /v SafeSearchMode /t REG_DWORD /d 1 /f").ConfigureAwait(false);
     }
 
-    public static async Task EnableActivityUploads()
-    {
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v UploadUserActivities /t REG_DWORD /d 1 /f").ConfigureAwait(false);
-    }
-
     public static async Task EnableClipboardSync()
     {
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v AllowCrossDeviceClipboard /t REG_DWORD /d 1 /f").ConfigureAwait(false);
@@ -1706,11 +1866,6 @@ public static partial class OptimizeSystemHelper
     {
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\FindMyDevice\" /v AllowFindMyDevice /t REG_DWORD /d 1 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Microsoft\\Settings\\FindMyDevice\" /v LocationSyncEnabled /t REG_DWORD /d 1 /f").ConfigureAwait(false);
-    }
-
-    public static async Task EnableActivityFeed()
-    {
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v EnableActivityFeed /t REG_DWORD /d 1 /f").ConfigureAwait(false);
     }
 
     public static async Task EnableCdp()
@@ -1799,7 +1954,6 @@ public static partial class OptimizeSystemHelper
 
     public static async Task DisableQuickAccessHistory()
     {
-        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v ShowTaskViewButton /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\OperationStatusManager\" /v EnthusiastMode /t REG_DWORD /d 1 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v ShowSyncProviderNotifications /t REG_DWORD /d 0 /f").ConfigureAwait(false);
 
@@ -1814,7 +1968,6 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\File History\" /v Disabled /t REG_DWORD /d 1 /f").ConfigureAwait(false);
 
         // Prevent Start menu and shell from pre-loading into RAM
-        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v Start_TrackProgs /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\TestHooks\" /v DisablePreLaunch /t REG_DWORD /d 1 /f").ConfigureAwait(false);
     }
 
@@ -1831,12 +1984,10 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\FileHistory\" /v Disabled /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\File History\" /v Disabled /f").ConfigureAwait(false);
 
-        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Search\" /v SearchboxTaskbarMode /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\" /v HideSCAMeetNow /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\" /v HideSCAMeetNow /f").ConfigureAwait(false);
 
         // Restore Start menu pre-loading
-        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v Start_TrackProgs /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\TestHooks\" /v DisablePreLaunch /f").ConfigureAwait(false);
     }
 
@@ -1860,9 +2011,7 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager\" /v SubscribedContentEnabled /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager\" /v SoftLandingEnabled /t REG_DWORD /d 0 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager\" /v FeatureManagementEnabled /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Policies\\Microsoft\\Windows\\Explorer\" /v DisableSearchBoxSuggestions /t REG_DWORD /d 1 /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\" /v AllowOnlineTips /t REG_DWORD /d 0 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\" /v DisableSearchBoxSuggestions /t REG_DWORD /d 1 /f").ConfigureAwait(false);
     }
 
     public static async Task EnableStartMenuAds()
@@ -1885,9 +2034,7 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager\" /v SubscribedContent-338388Enabled /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager\" /v SoftLandingEnabled /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager\" /v FeatureManagementEnabled /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Policies\\Microsoft\\Windows\\Explorer\" /v DisableSearchBoxSuggestions /f").ConfigureAwait(false);
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\" /v AllowOnlineTips /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\" /v DisableSearchBoxSuggestions /f").ConfigureAwait(false);
     }
 
     public static async Task DisableMyPeople()
@@ -2705,5 +2852,254 @@ public static partial class OptimizeSystemHelper
         }
         catch { /* ignore errors */ }
         return size;
+    }
+    // Timer Resolution Optimizations
+    public static async Task EnableGlobalTimerResolution()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel\" /v GlobalTimerResolutionRequests /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableGlobalTimerResolution()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel\" /v GlobalTimerResolutionRequests /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableHPET()
+    {
+        await OptimizationOptions.StartInCmd("bcdedit /deletevalue useplatformclock").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("bcdedit /set useplatformtick yes").ConfigureAwait(false);
+    }
+
+    public static async Task EnableHPET()
+    {
+        await OptimizationOptions.StartInCmd("bcdedit /set useplatformclock true").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("bcdedit /deletevalue useplatformtick").ConfigureAwait(false);
+    }
+
+    public static async Task DisableDynamicTick()
+    {
+        await OptimizationOptions.StartInCmd("bcdedit /set disabledynamictick yes").ConfigureAwait(false);
+    }
+
+    public static async Task EnableDynamicTick()
+    {
+        await OptimizationOptions.StartInCmd("bcdedit /deletevalue disabledynamictick").ConfigureAwait(false);
+    }
+
+    // Memory Optimizations
+    public static async Task DisablePrefetch()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnablePrefetcher /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnableSuperfetch /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnablePrefetch()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnablePrefetcher /t REG_DWORD /d 3 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnableSuperfetch /t REG_DWORD /d 3 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableLargeSystemCache()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v LargeSystemCache /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableLargeSystemCache()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v LargeSystemCache /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableNDU()
+    {
+        await SetServiceStatusAsync("Ndu", 4).ConfigureAwait(false);
+    }
+
+    public static async Task EnableNDU()
+    {
+        await SetServiceStatusAsync("Ndu", 2).ConfigureAwait(false);
+    }
+
+    public static async Task DisablePageFileEncryption()
+    {
+        await OptimizationOptions.StartInCmd("fsutil behavior set encryptpagingfile 0").ConfigureAwait(false);
+    }
+
+    public static async Task EnablePageFileEncryption()
+    {
+        await OptimizationOptions.StartInCmd("fsutil behavior set encryptpagingfile 1").ConfigureAwait(false);
+    }
+
+    // Notification Controls
+    public static async Task DisableLockScreenNotifications()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Policies\\Microsoft\\Windows\\CurrentVersion\\PushNotifications\" /v NoToastApplicationNotificationOnLockScreen /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableLockScreenNotifications()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Policies\\Microsoft\\Windows\\CurrentVersion\\PushNotifications\" /v NoToastApplicationNotificationOnLockScreen /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableToastNotifications()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Policies\\Microsoft\\Windows\\CurrentVersion\\PushNotifications\" /v NoToastApplicationNotification /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableToastNotifications()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Policies\\Microsoft\\Windows\\CurrentVersion\\PushNotifications\" /v NoToastApplicationNotification /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableNotificationCenter()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Policies\\Microsoft\\Windows\\Explorer\" /v DisableNotificationCenter /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("taskkill /F /IM explorer.exe & start %SystemRoot%\\explorer.exe").ConfigureAwait(false);
+    }
+
+    public static async Task EnableNotificationCenter()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Policies\\Microsoft\\Windows\\Explorer\" /v DisableNotificationCenter /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("taskkill /F /IM explorer.exe & start %SystemRoot%\\explorer.exe").ConfigureAwait(false);
+    }
+
+    public static async Task DisableSuggestedActions()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\SmartActionPlatform\\SmartClipboard\" /v Disabled /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableSuggestedActions()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\SmartActionPlatform\\SmartClipboard\" /v Disabled /f").ConfigureAwait(false);
+    }
+
+    // Additional Privacy Hardening
+    public static async Task DisableWiFiSense()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Microsoft\\WcmSvc\\wifinetworkmanager\\config\" /v AutoConnectAllowedOEM /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowAutoConnectToWiFiSenseHotspots\" /v value /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\Software\\Microsoft\\PolicyManager\\default\\WiFi\\AllowWiFiHotSpotReporting\" /v value /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableWiFiSense()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Microsoft\\WcmSvc\\wifinetworkmanager\\config\" /v AutoConnectAllowedOEM /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowAutoConnectToWiFiSenseHotspots\" /v value /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowWiFiHotSpotReporting\" /v value /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableWebSearchResults()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Policies\\Microsoft\\Windows\\Explorer\" /v DisableSearchBoxSuggestions /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\" /v ConnectedSearchUseWeb /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Search\" /v BingSearchEnabled /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableWebSearchResults()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Policies\\Microsoft\\Windows\\Explorer\" /v DisableSearchBoxSuggestions /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\" /v ConnectedSearchUseWeb /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg delete \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Search\" /v BingSearchEnabled /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableAppLaunchTracking()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v Start_TrackProgs /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableAppLaunchTracking()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v Start_TrackProgs /t REG_DWORD /d 1 /f").ConfigureAwait(false);
+    }
+
+    public static async Task DisableTimelineHistory()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v EnableActivityFeed /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v PublishUserActivities /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v UploadUserActivities /t REG_DWORD /d 0 /f").ConfigureAwait(false);
+    }
+
+    public static async Task EnableTimelineHistory()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v EnableActivityFeed /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v PublishUserActivities /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v UploadUserActivities /f").ConfigureAwait(false);
+    }
+
+    // Context Menu Customizations
+    public static async Task AddTakeOwnership()
+    {
+        var cmds = new List<string>
+        {
+            "reg add \"HKCR\\*\\shell\\runas\" /ve /t REG_SZ /d \"Take Ownership\" /f",
+            "reg add \"HKCR\\*\\shell\\runas\" /v NoWorkingDirectory /t REG_SZ /d \"\" /f",
+            "reg add \"HKCR\\*\\shell\\runas\" /v HasLUAShield /t REG_SZ /d \"\" /f",
+            "reg add \"HKCR\\*\\shell\\runas\\command\" /ve /t REG_SZ /d \"cmd.exe /c takeown /f \\\"%1\\\" && icacls \\\"%1\\\" /grant administrators:F\" /f",
+            "reg add \"HKCR\\*\\shell\\runas\\command\" /v IsolatedCommand /t REG_SZ /d \"cmd.exe /c takeown /f \\\"%1\\\" && icacls \\\"%1\\\" /grant administrators:F\" /f",
+            "reg add \"HKCR\\Directory\\shell\\runas\" /ve /t REG_SZ /d \"Take Ownership\" /f",
+            "reg add \"HKCR\\Directory\\shell\\runas\" /v NoWorkingDirectory /t REG_SZ /d \"\" /f",
+            "reg add \"HKCR\\Directory\\shell\\runas\" /v HasLUAShield /t REG_SZ /d \"\" /f",
+            "reg add \"HKCR\\Directory\\shell\\runas\\command\" /ve /t REG_SZ /d \"cmd.exe /c takeown /f \\\"%1\\\" /r /d y && icacls \\\"%1\\\" /grant administrators:F /t\" /f",
+            "reg add \"HKCR\\Directory\\shell\\runas\\command\" /v IsolatedCommand /t REG_SZ /d \"cmd.exe /c takeown /f \\\"%1\\\" /r /d y && icacls \\\"%1\\\" /grant administrators:F /t\" /f"
+        };
+        foreach (var c in cmds) await OptimizationOptions.StartInCmd(c).ConfigureAwait(false);
+    }
+
+    public static async Task RemoveTakeOwnership()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKCR\\*\\shell\\runas\" /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg delete \"HKCR\\Directory\\shell\\runas\" /f").ConfigureAwait(false);
+    }
+
+    public static async Task AddOpenCmdHere()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCR\\Directory\\Background\\shell\\OpenCmdHere\" /ve /t REG_SZ /d \"Open Command Prompt Here\" /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCR\\Directory\\Background\\shell\\OpenCmdHere\" /v Icon /t REG_SZ /d \"cmd.exe\" /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCR\\Directory\\Background\\shell\\OpenCmdHere\\command\" /ve /t REG_SZ /d \"cmd.exe /s /k pushd \\\"%V\\\"\" /f").ConfigureAwait(false);
+    }
+
+    public static async Task RemoveOpenCmdHere()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKCR\\Directory\\Background\\shell\\OpenCmdHere\" /f").ConfigureAwait(false);
+    }
+
+    public static async Task AddCopyFilePath()
+    {
+        await OptimizationOptions.StartInCmd("reg add \"HKCR\\*\\shell\\CopyFilePath\" /ve /t REG_SZ /d \"Copy File Path\" /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCR\\*\\shell\\CopyFilePath\" /v Icon /t REG_SZ /d \"shell32.dll,134\" /f").ConfigureAwait(false);
+        await OptimizationOptions.StartInCmd("reg add \"HKCR\\*\\shell\\CopyFilePath\\command\" /ve /t REG_SZ /d \"cmd.exe /c echo \\\"%1\\\" | clip\" /f").ConfigureAwait(false);
+    }
+
+    public static async Task RemoveCopyFilePath()
+    {
+        await OptimizationOptions.StartInCmd("reg delete \"HKCR\\*\\shell\\CopyFilePath\" /f").ConfigureAwait(false);
+    }
+}
+
+public static class MemoryHelper
+{
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+    public class MEMORYSTATUSEX
+    {
+        public uint dwLength = (uint)Marshal.SizeOf(typeof(MEMORYSTATUSEX));
+        public uint dwMemoryLoad;
+        public ulong ullTotalPhys;
+        public ulong ullAvailPhys;
+        public ulong ullTotalPageFile;
+        public ulong ullAvailPageFile;
+        public ulong ullTotalVirtual;
+        public ulong ullAvailVirtual;
+        public ulong ullAvailExtendedVirtual;
+    }
+
+    [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    public static extern bool GlobalMemoryStatusEx([In, Out] MEMORYSTATUSEX lpBuffer);
+
+    public static ulong GetTotalPhysicalMemory()
+    {
+        var memStatus = new MEMORYSTATUSEX();
+        if (!GlobalMemoryStatusEx(memStatus))
+            throw new Exception("Unable to get memory status");
+
+        return memStatus.ullTotalPhys;
     }
 }

@@ -1,13 +1,34 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using Microsoft.Win32;
+using RyTuneX.Services;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using Windows.ApplicationModel;
+using Windows.Management.Deployment;
 
 namespace RyTuneX.Helpers;
+
+public class AppInfo : Tuple<string, string, bool>
+{
+    public string Name { get; }
+    public string IconPath { get; }
+    public bool IsWin32 { get; }
+    public string PackageId { get; }
+
+    public AppInfo(string name, string iconPath, bool isWin32, string packageId)
+        : base(name, iconPath, isWin32)
+    {
+        Name = name;
+        IconPath = iconPath;
+        IsWin32 = isWin32;
+        PackageId = packageId;
+    }
+}
 
 internal partial class OptimizationOptions
 {
@@ -29,7 +50,28 @@ internal partial class OptimizationOptions
     [DllImport("user32.dll")]
     private static extern bool DestroyIcon(IntPtr hIcon);
 
-    public static async Task<(List<Tuple<string, string, bool>> Apps, HashSet<string> UninstallableNames)> GetInstalledApps()
+    [DllImport("shlwapi.dll", BestFitMapping = false, CharSet = CharSet.Unicode, ExactSpelling = true, SetLastError = false, ThrowOnUnmappableChar = true)]
+    private static extern int SHLoadIndirectString(string pszSource, StringBuilder pszOutBuf, uint cchOutBuf, IntPtr ppvReserved);
+
+    private static string CleanPackageName(string rawName)
+    {
+        if (string.IsNullOrWhiteSpace(rawName)) return "Unknown App";
+
+        var name = rawName;
+        if (name.StartsWith("Microsoft.", StringComparison.OrdinalIgnoreCase))
+        {
+            name = name["Microsoft.".Length..];
+        }
+        if (name.StartsWith("Windows.", StringComparison.OrdinalIgnoreCase))
+        {
+            name = name["Windows.".Length..];
+        }
+
+        var result = Regex.Replace(name, @"(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])", " ");
+        return string.IsNullOrWhiteSpace(result) ? rawName : result.Trim();
+    }
+
+    public static async Task<(List<AppInfo> Apps, HashSet<string> UninstallableNames)> GetInstalledApps()
     {
         Directory.CreateDirectory(IconCacheDirectory);
         EnsureDefaultIcon();
@@ -42,8 +84,8 @@ internal partial class OptimizationOptions
         var (uwpApps, uninstallableNames) = uwpAppsTask.Result;
 
         var installedApps = uwpApps.Concat(win32AppsTask.Result)
-            .DistinctBy(app => app.Item1)
-            .OrderBy(app => app.Item1)
+            .DistinctBy(app => app.Name, StringComparer.OrdinalIgnoreCase)
+            .OrderBy(app => app.Name)
             .ToList();
 
         _ = LogHelper.Log("Returning Installed Apps [GetInstalledApps]");
@@ -55,17 +97,23 @@ internal partial class OptimizationOptions
         var defaultPath = Path.Combine(IconCacheDirectory, "defaulticon.png");
         if (File.Exists(defaultPath) && new FileInfo(defaultPath).Length > 0)
             return;
-
-        var largeIcons = new IntPtr[1];
-        ExtractIconEx(@"C:\Windows\System32\imageres.dll", 152, largeIcons, null, 1);
-        var hIcon = largeIcons[0];
-        if (hIcon != IntPtr.Zero)
+        try
         {
-            using var clonedIcon = (System.Drawing.Icon)System.Drawing.Icon.FromHandle(hIcon).Clone();
-            DestroyIcon(hIcon);
+            var largeIcons = new IntPtr[1];
+            ExtractIconEx(@"C:\Windows\System32\imageres.dll", 152, largeIcons, null, 1);
+            var hIcon = largeIcons[0];
+            if (hIcon != IntPtr.Zero)
+            {
+                using var clonedIcon = (System.Drawing.Icon)System.Drawing.Icon.FromHandle(hIcon).Clone();
+                DestroyIcon(hIcon);
 
-            using var bmp = clonedIcon.ToBitmap();
-            bmp.Save(defaultPath, ImageFormat.Png);
+                using var bmp = clonedIcon.ToBitmap();
+                bmp.Save(defaultPath, ImageFormat.Png);
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = LogHelper.LogWarning($"Failed to extract default icon: {ex.Message}");
         }
     }
 
@@ -76,99 +124,160 @@ internal partial class OptimizationOptions
         return $"{safe}_{Math.Abs(identity.GetHashCode())}.png";
     }
 
-    private static async Task<(List<Tuple<string, string, bool>> Apps, HashSet<string> UninstallableNames)> GetUwpApps()
+    private static string? ResolveIndirectString(string resourceUri)
     {
-        var installedApps = new List<Tuple<string, string, bool>>();
-        var uninstallableNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        try
+        {
+            var sb = new StringBuilder(1024);
+            int hr = SHLoadIndirectString(resourceUri, sb, (uint)sb.Capacity, IntPtr.Zero);
+            if (hr == 0 && sb.Length > 0)
+            {
+                return sb.ToString();
+            }
+        }
+        catch { }
+        return null;
+    }
 
-        // Single PowerShell call that returns Name, InstallLocation, and NonRemovable
-        var command = """Get-AppxPackage -AllUsers | Select-Object Name,InstallLocation,NonRemovable | Format-List""";
+    private static async Task<string> GetUwpDisplayNameAsync(Package pkg)
+    {
+        // 1. Dynamic WinRT AppListEntry DisplayName (returns real-time localized name from Windows app manifest/resource)
+        try
+        {
+            var appListEntries = await pkg.GetAppListEntriesAsync();
+            if (appListEntries != null && appListEntries.Count > 0)
+            {
+                var displayName = appListEntries[0].DisplayInfo?.DisplayName;
+                if (!string.IsNullOrWhiteSpace(displayName) && !displayName.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase))
+                {
+                    return displayName.Trim();
+                }
+            }
+        }
+        catch { }
+
+        // 2. Package.DisplayName property
+        try
+        {
+            var displayName = pkg.DisplayName;
+            if (!string.IsNullOrWhiteSpace(displayName) && !displayName.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase))
+            {
+                return displayName.Trim();
+            }
+        }
+        catch { }
+
+        // 3. Dynamic real-time resolution of ms-resource: indirect strings via SHLoadIndirectString API
+        try
+        {
+            var rawName = pkg.DisplayName;
+            if (!string.IsNullOrWhiteSpace(rawName) && rawName.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase))
+            {
+                var indirectUri = $"@{{{pkg.Id.FullName}?{rawName}}}";
+                var resolved = ResolveIndirectString(indirectUri);
+                if (!string.IsNullOrWhiteSpace(resolved) &&
+                    !resolved.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase) &&
+                    !resolved.StartsWith("@{", StringComparison.OrdinalIgnoreCase))
+                {
+                    return resolved.Trim();
+                }
+
+                var indirectUri2 = $"@{{{pkg.Id.FullName}?ms-resource://{pkg.Id.Name}/resources/AppName}}";
+                var resolved2 = ResolveIndirectString(indirectUri2);
+                if (!string.IsNullOrWhiteSpace(resolved2) &&
+                    !resolved2.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase) &&
+                    !resolved2.StartsWith("@{", StringComparison.OrdinalIgnoreCase))
+                {
+                    return resolved2.Trim();
+                }
+            }
+        }
+        catch { }
+
+        // 4. Dynamic formatting fallback for internal identity names
+        return CleanPackageName(pkg.Id.Name);
+    }
+
+    private static async Task<(List<AppInfo> Apps, HashSet<string> UninstallableNames)> GetUwpApps()
+    {
+        var installedApps = new List<AppInfo>();
+        var uninstallableNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         try
         {
-            using var process = new Process
+            var packageManager = new PackageManager();
+            IEnumerable<Package> packages;
+            try
             {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -Command \"{command}\"",
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                }
-            };
-            process.Start();
-
-            var output = await process.StandardOutput.ReadToEndAsync().ConfigureAwait(false);
-
-            // Parse all apps and track which are removable
-            string? currentName = null;
-            string? currentLocation = null;
-            bool currentNonRemovable = false;
-            var parsedApps = new List<(string Name, string? Location)>();
-
-            foreach (var line in output.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries))
+                packages = packageManager.FindPackagesForUser(string.Empty);
+            }
+            catch
             {
-                if (line.StartsWith("Name", StringComparison.Ordinal))
+                try { packages = packageManager.FindPackages(); }
+                catch { packages = Array.Empty<Package>(); }
+            }
+
+            var parsedApps = new List<(string Name, string? Location, bool NonRemovable, string PackageId)>();
+
+            foreach (var pkg in packages)
+            {
+                try
                 {
-                    // Flush previous app
-                    if (!string.IsNullOrEmpty(currentName))
+                    if (pkg.IsFramework || pkg.IsResourcePackage || pkg.IsOptional)
+                        continue;
+
+                    var rawName = pkg.Id.Name;
+                    if (string.IsNullOrWhiteSpace(rawName))
+                        continue;
+
+                    if (rawName.Contains("RyTuneX", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    var displayName = await GetUwpDisplayNameAsync(pkg).ConfigureAwait(false);
+
+                    string? location = null;
+                    try { location = pkg.InstalledLocation?.Path; } catch { }
+
+                    bool nonRemovable = false;
+                    try
                     {
-                        parsedApps.Add((currentName, currentLocation));
-                        if (!currentNonRemovable)
-                            uninstallableNames.Add(currentName);
+                        nonRemovable = (pkg.SignatureKind == PackageSignatureKind.System);
                     }
+                    catch { }
 
-                    currentName = line.Split([':'], 2)[1].Trim();
-                    currentLocation = null;
-                    currentNonRemovable = false;
+                    var packageId = pkg.Id.FullName ?? rawName;
+
+                    parsedApps.Add((displayName, location, nonRemovable, packageId));
+
+                    if (!nonRemovable)
+                    {
+                        uninstallableNames.Add(displayName);
+                        uninstallableNames.Add(packageId);
+                        uninstallableNames.Add(rawName);
+                    }
                 }
-                else if (line.StartsWith("InstallLocation", StringComparison.Ordinal))
+                catch (Exception ex)
                 {
-                    currentLocation = line.Split([':'], 2)[1].Trim();
-                }
-                else if (line.StartsWith("NonRemovable", StringComparison.Ordinal))
-                {
-                    var val = line.Split([':'], 2)[1].Trim();
-                    currentNonRemovable = val.Equals("True", StringComparison.OrdinalIgnoreCase);
-                }
-                else if (!string.IsNullOrWhiteSpace(currentLocation) && line.StartsWith(" ", StringComparison.Ordinal))
-                {
-                    currentLocation += " " + line.Trim();
+                    _ = LogHelper.LogWarning($"Error inspecting package: {ex.Message}");
                 }
             }
 
-            // Flush last app
-            if (!string.IsNullOrEmpty(currentName))
-            {
-                parsedApps.Add((currentName, currentLocation));
-                if (!currentNonRemovable)
-                    uninstallableNames.Add(currentName);
-            }
-
-            await process.WaitForExitAsync().ConfigureAwait(false);
-
-            // Extract icons in parallel (I/O-bound, safe to parallelize)
-            var iconTasks = parsedApps
-                .Where(app => !string.IsNullOrEmpty(app.Location))
-                .Select(async app =>
-                {
-                    var logoPath = await ExtractLogoPath(app.Location, false, app.Name).ConfigureAwait(false);
-                    return new Tuple<string, string, bool>(app.Name, logoPath, false);
-                })
+            var uniqueApps = parsedApps
+                .DistinctBy(app => app.Name, StringComparer.OrdinalIgnoreCase)
                 .ToList();
 
-            // Apps without install location still get added with empty icon
-            foreach (var app in parsedApps.Where(app => string.IsNullOrEmpty(app.Location)))
+            var iconTasks = uniqueApps.Select(async app =>
             {
-                installedApps.Add(new Tuple<string, string, bool>(app.Name, string.Empty, false));
-            }
+                var logoPath = await ExtractLogoPath(app.Location, false, app.Name).ConfigureAwait(false);
+                return new AppInfo(app.Name, logoPath, false, app.PackageId);
+            }).ToList();
 
-            installedApps.AddRange(await Task.WhenAll(iconTasks).ConfigureAwait(false));
+            var results = await Task.WhenAll(iconTasks).ConfigureAwait(false);
+            installedApps.AddRange(results);
         }
         catch (Exception ex)
         {
-            _ = LogHelper.LogError(ex.Message).ConfigureAwait(false);
+            _ = LogHelper.LogError($"Failed to load UWP apps via WinRT: {ex.Message}");
         }
 
         return (installedApps, uninstallableNames);
@@ -203,7 +312,6 @@ internal partial class OptimizationOptions
         }
     }
 
-    // Find the uninstall (or quiet uninstall) string for a Win32 app by its display name using the same uninstall roots as GetWin32Apps.
     internal static string? GetWin32UninstallString(string appName)
     {
         try
@@ -246,9 +354,119 @@ internal partial class OptimizationOptions
         return null;
     }
 
-    public static async Task<List<Tuple<string, string, bool>>> GetWin32Apps()
+    public static async Task UninstallWin32AppAsync(string appName)
     {
-        var appEntries = new List<(string DisplayName, string? InstallLocation, string? DisplayIcon)>();
+        if (appName.Contains("edge", StringComparison.OrdinalIgnoreCase) ||
+            appName.Contains("Microsoft Edge", StringComparison.OrdinalIgnoreCase))
+        {
+            var scriptFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "RemoveEdge.ps1");
+            var cmdCommand = $"powershell.exe -ExecutionPolicy Bypass -File \"{scriptFilePath}\" -UninstallEdge -RemoveEdgeData -NonInteractive";
+            await StartInCmd(cmdCommand).ConfigureAwait(false);
+            return;
+        }
+
+        var uninstallString = GetWin32UninstallString(appName);
+        if (string.IsNullOrEmpty(uninstallString))
+        {
+            throw new Exception($"Uninstall command for '{appName}' not found in registry.");
+        }
+
+        _ = LogHelper.Log($"Uninstall string for {appName}: {uninstallString}");
+
+        var exitCode = await StartInCmd(uninstallString).ConfigureAwait(false);
+        if (exitCode != 0)
+        {
+            _ = LogHelper.LogWarning($"Uninstall of Win32 app '{appName}' exited with code {exitCode}.");
+        }
+    }
+
+    public static async Task UninstallUwpAppAsync(string packageId, string appName)
+    {
+        _ = LogHelper.Log($"Uninstalling UWP App: '{appName}' (ID: '{packageId}')");
+
+        if (appName.Contains("edge", StringComparison.OrdinalIgnoreCase) ||
+            packageId.Contains("Microsoft.MicrosoftEdge", StringComparison.OrdinalIgnoreCase))
+        {
+            var scriptFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "RemoveEdge.ps1");
+            var cmdCommand = $"powershell.exe -ExecutionPolicy Bypass -File \"{scriptFilePath}\" -UninstallEdge -RemoveEdgeData -NonInteractive";
+            await StartInCmd(cmdCommand).ConfigureAwait(false);
+            return;
+        }
+
+        bool removedDirectly = false;
+
+        try
+        {
+            var packageManager = new PackageManager();
+            var packages = packageManager.FindPackages()
+                .Where(p => string.Equals(p.Id.FullName, packageId, StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(p.Id.FamilyName, packageId, StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(p.Id.Name, packageId, StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(p.Id.Name, appName, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (packages.Count > 0)
+            {
+                foreach (var pkg in packages)
+                {
+                    try
+                    {
+                        var depOp = packageManager.RemovePackageAsync(pkg.Id.FullName, RemovalOptions.RemoveForAllUsers);
+                        await depOp;
+                        removedDirectly = true;
+                        _ = LogHelper.Log($"Successfully removed UWP package {pkg.Id.FullName} via WinRT PackageManager.");
+                    }
+                    catch (Exception ex)
+                    {
+                        _ = LogHelper.LogWarning($"RemovePackageAsync (all users) failed for {pkg.Id.FullName}: {ex.Message}. Trying default remove.");
+                        try
+                        {
+                            var depOp = packageManager.RemovePackageAsync(pkg.Id.FullName);
+                            await depOp;
+                            removedDirectly = true;
+                            _ = LogHelper.Log($"Successfully removed UWP package {pkg.Id.FullName} via WinRT PackageManager.");
+                        }
+                        catch (Exception ex2)
+                        {
+                            _ = LogHelper.LogWarning($"Default RemovePackageAsync failed: {ex2.Message}");
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = LogHelper.LogWarning($"WinRT Package Manager removal error: {ex.Message}");
+        }
+
+        try
+        {
+            var searchPattern = packageId;
+            if (searchPattern.Contains('_'))
+            {
+                searchPattern = searchPattern.Split('_')[0];
+            }
+            // Sanitize for PowerShell single-quoted strings
+            searchPattern = searchPattern.Replace("'", "''");
+
+            var removeProvisioned = $"Get-AppxProvisionedPackage -Online | Where-Object {{ $_.DisplayName -eq '{searchPattern}' -or $_.PackageName -like '*{searchPattern}*' }} | ForEach-Object {{ Remove-AppxProvisionedPackage -Online -PackageName $_.PackageName }}";
+            await RunPowerShell(removeProvisioned).ConfigureAwait(false);
+
+            if (!removedDirectly)
+            {
+                var removeAppx = $"Get-AppxPackage -AllUsers | Where-Object {{ $_.Name -eq '{searchPattern}' -or $_.PackageFullName -eq '{packageId}' }} | Remove-AppxPackage -AllUsers";
+                await RunPowerShell(removeAppx).ConfigureAwait(false);
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = LogHelper.LogError($"Fallback PowerShell cleanup error for {packageId}: {ex.Message}");
+        }
+    }
+
+    public static async Task<List<AppInfo>> GetWin32Apps()
+    {
+        var appEntries = new List<(string DisplayName, string? InstallLocation, string? DisplayIcon, string UninstallString)>();
 
         try
         {
@@ -274,9 +492,6 @@ internal partial class OptimizationOptions
                 if (string.IsNullOrEmpty(displayName) || systemComponent == 1)
                     continue;
 
-                if (displayName.Contains("edge", StringComparison.CurrentCultureIgnoreCase))
-                    continue;
-
                 var installLocation = subKey.GetValue("InstallLocation") as string;
                 if (!string.IsNullOrEmpty(installLocation))
                 {
@@ -285,19 +500,22 @@ internal partial class OptimizationOptions
                         installLocation = Path.GetDirectoryName(installLocation);
                 }
 
-                if (string.IsNullOrEmpty(installLocation))
+                var uninstallString = subKey.GetValue("QuietUninstallString") as string;
+                if (string.IsNullOrEmpty(uninstallString))
                 {
-                    var uninstallString = (subKey.GetValue("UninstallString") as string)?.Replace("\"", "");
-                    if (!string.IsNullOrEmpty(uninstallString))
-                    {
-                        installLocation = Path.GetDirectoryName(uninstallString);
-                        if (!string.IsNullOrEmpty(installLocation) && installLocation.Contains(".exe"))
-                            installLocation = Path.GetDirectoryName(installLocation);
-                    }
+                    uninstallString = subKey.GetValue("UninstallString") as string;
+                }
+
+                if (string.IsNullOrEmpty(installLocation) && !string.IsNullOrEmpty(uninstallString))
+                {
+                    var cleanUninstall = uninstallString.Replace("\"", "");
+                    installLocation = Path.GetDirectoryName(cleanUninstall);
+                    if (!string.IsNullOrEmpty(installLocation) && installLocation.Contains(".exe"))
+                        installLocation = Path.GetDirectoryName(installLocation);
                 }
 
                 var displayIcon = subKey.GetValue("DisplayIcon") as string;
-                appEntries.Add((displayName, installLocation, displayIcon));
+                appEntries.Add((displayName, installLocation, displayIcon, uninstallString ?? string.Empty));
             }
         }
         catch (Exception ex)
@@ -305,21 +523,19 @@ internal partial class OptimizationOptions
             _ = LogHelper.LogError($"Failed to load Win32 apps: {ex.Message}");
         }
 
-        // Deduplicate before icon extraction to avoid wasted work
         var unique = appEntries
             .DistinctBy(e => e.DisplayName, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-        // Extract icons in parallel
         var iconTasks = unique.Select(async entry =>
         {
             var logoPath = await ExtractLogoPath(entry.InstallLocation, true, entry.DisplayName, entry.DisplayIcon).ConfigureAwait(false);
-            return new Tuple<string, string, bool>(entry.DisplayName, logoPath, true);
+            return new AppInfo(entry.DisplayName, logoPath, true, entry.UninstallString);
         }).ToList();
 
         var results = await Task.WhenAll(iconTasks).ConfigureAwait(false);
 
-        return [.. results.OrderBy(app => app.Item1)];
+        return [.. results.OrderBy(app => app.Name)];
     }
 
     private static async Task<string> ExtractLogoPath(string? installLocation, bool isWin32, string appName, string? displayIconPath = null)
@@ -467,7 +683,7 @@ internal partial class OptimizationOptions
 
     private static int GetScale(string file)
     {
-        var m = Regex.Match(file, @"Scale-(\\d+)");
+        var m = Regex.Match(file, @"Scale-(\d+)");
         return m.Success ? int.Parse(m.Groups[1].Value) : 100;
     }
 
@@ -534,8 +750,11 @@ internal partial class OptimizationOptions
         };
 
         process.Start();
-        var output = await process.StandardOutput.ReadToEndAsync().ConfigureAwait(false);
+        var outputTask = process.StandardOutput.ReadToEndAsync();
+        var errorTask = process.StandardError.ReadToEndAsync();
         await process.WaitForExitAsync().ConfigureAwait(false);
+        var output = await outputTask.ConfigureAwait(false);
+        await errorTask.ConfigureAwait(false); // drain stderr to prevent deadlock
         return output.Trim();
     }
 
@@ -544,10 +763,11 @@ internal partial class OptimizationOptions
         try
         {
             // Get all toggle switches that have been applied (saved state == 1)
-            using var rytunexKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine,
+            using var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine,
                 Environment.Is64BitOperatingSystem && !Environment.Is64BitProcess
                     ? RegistryView.Registry64
-                    : RegistryView.Default).OpenSubKey(RegistryBaseKey);
+                    : RegistryView.Default);
+            using var rytunexKey = baseKey.OpenSubKey(RegistryBaseKey);
 
             if (rytunexKey != null)
             {
@@ -555,30 +775,29 @@ internal partial class OptimizationOptions
 
                 foreach (var valueName in valueNames)
                 {
-                    // Handle Windows Updates mode separately
-                    if (valueName == "WindowsUpdatesMode")
+                    try
                     {
-                        var savedMode = rytunexKey.GetValue(valueName) as string;
-                        if (!string.IsNullOrEmpty(savedMode) && !savedMode.Equals("Default", StringComparison.OrdinalIgnoreCase))
+                        // Handle Windows Updates mode separately
+                        if (valueName == "WindowsUpdatesMode")
                         {
-                            // Revert Windows Updates to default
-                            await OptimizeSystemHelper.SetWindowsUpdatesDefault().ConfigureAwait(false);
+                            var savedMode = rytunexKey.GetValue(valueName) as string;
+                            if (!string.IsNullOrEmpty(savedMode) && !savedMode.Equals("Default", StringComparison.OrdinalIgnoreCase))
+                            {
+                                await OptimizeSystemHelper.SetWindowsUpdatesDefault().ConfigureAwait(false);
+                            }
+                            continue;
                         }
-                        continue;
-                    }
 
-                    var savedState = rytunexKey.GetValue(valueName);
-                    if (savedState is int state && state == 1)
-                    {
-                        // Create a fake toggle switch to revert the optimization
-                        var fakeToggleSwitch = new ToggleSwitch
+                        var savedState = rytunexKey.GetValue(valueName);
+                        if (savedState is int state && state == 1)
                         {
-                            Tag = valueName,
-                            IsOn = false // Set to false to trigger the reverse action
-                        };
-
-                        // Call the method to revert
-                        await XamlSwitchesAsync(fakeToggleSwitch);
+                            await ExecuteToggleActionAsync(valueName, false, CancellationToken.None).ConfigureAwait(false);
+                        }
+                    }
+                    catch (Exception itemEx)
+                    {
+                        // Log individual toggle revert failure but continue with remaining items
+                        _ = LogHelper.LogError($"RevertAllChanges: Failed to revert '{valueName}': {itemEx.Message}");
                     }
                 }
             }
@@ -588,6 +807,115 @@ internal partial class OptimizationOptions
             _ = LogHelper.LogError($"RevertAllChanges: {ex.Message}\n Stack Trace: {ex.StackTrace}");
         }
     }
+
+    public static int GetSavedOptimizationsCount()
+    {
+        try
+        {
+            using var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine,
+                Environment.Is64BitOperatingSystem && !Environment.Is64BitProcess
+                    ? RegistryView.Registry64
+                    : RegistryView.Default);
+            using var rytunexKey = baseKey.OpenSubKey(RegistryBaseKey);
+
+            if (rytunexKey == null) return 0;
+
+            int count = 0;
+            foreach (var valueName in rytunexKey.GetValueNames())
+            {
+                var val = rytunexKey.GetValue(valueName);
+                if (val is int || (valueName == "WindowsUpdatesMode" && val is string s && !s.Equals("Default", StringComparison.OrdinalIgnoreCase)))
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        catch (Exception ex)
+        {
+            _ = LogHelper.LogError($"GetSavedOptimizationsCount failed: {ex.Message}");
+            return 0;
+        }
+    }
+
+    public static async Task<int> ReapplyAllOptimizationsAsync(CancellationToken ct = default)
+    {
+        int appliedCount = 0;
+        try
+        {
+            using var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine,
+                Environment.Is64BitOperatingSystem && !Environment.Is64BitProcess
+                    ? RegistryView.Registry64
+                    : RegistryView.Default);
+            using var rytunexKey = baseKey.OpenSubKey(RegistryBaseKey);
+
+            if (rytunexKey != null)
+            {
+                var valueNames = rytunexKey.GetValueNames();
+
+                foreach (var valueName in valueNames)
+                {
+                    if (ct.IsCancellationRequested) break;
+
+                    try
+                    {
+                        // Handle Windows Updates mode separately
+                        if (valueName == "WindowsUpdatesMode")
+                        {
+                            var savedMode = rytunexKey.GetValue(valueName) as string;
+                            if (!string.IsNullOrEmpty(savedMode) && !savedMode.Equals("Default", StringComparison.OrdinalIgnoreCase))
+                            {
+                                switch (savedMode)
+                                {
+                                    case "Security":
+                                        await OptimizeSystemHelper.SetWindowsUpdatesSecurityOnly().ConfigureAwait(false);
+                                        appliedCount++;
+                                        break;
+                                    case "Manually":
+                                        await OptimizeSystemHelper.SetWindowsUpdatesManually().ConfigureAwait(false);
+                                        appliedCount++;
+                                        break;
+                                    case "Disabled":
+                                        await OptimizeSystemHelper.SetWindowsUpdatesDisabled().ConfigureAwait(false);
+                                        appliedCount++;
+                                        break;
+                                }
+                                _ = LogHelper.Log($"Re-applied Windows Updates mode: {savedMode}");
+                            }
+                            continue;
+                        }
+
+                        var savedState = rytunexKey.GetValue(valueName);
+                        if (savedState is int state)
+                        {
+                            // 1 = turn on, 0 = turn off
+                            bool isOn = state == 1;
+                            await ExecuteToggleActionAsync(valueName, isOn, ct).ConfigureAwait(false);
+                            IntelligentOptimizationEngine.SetCachedState(valueName, isOn);
+                            appliedCount++;
+                            _ = LogHelper.Log($"Re-applied setting: {valueName} = {(isOn ? 1 : 0)}");
+                        }
+                    }
+                    catch (Exception itemEx)
+                    {
+                        _ = LogHelper.LogError($"ReapplyAllOptimizations: Failed to re-apply '{valueName}': {itemEx.Message}");
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = LogHelper.LogError($"ReapplyAllOptimizations: {ex.Message}\n Stack Trace: {ex.StackTrace}");
+        }
+
+        if (appliedCount > 0)
+        {
+            ReviewPromptHelper.NotifyOptimizationCompleted();
+        }
+
+        return appliedCount;
+    }
+
     public static async Task XamlSwitchesAsync(ToggleSwitch toggleSwitch)
     {
         if (toggleSwitch == null || toggleSwitch.Tag == null) return;
@@ -622,6 +950,8 @@ internal partial class OptimizationOptions
         if (!await _toggleQueueLock.WaitAsync(0, ct).ConfigureAwait(false))
             return; // another process is running
 
+        int executedCount = 0;
+
         try
         {
             while (_toggleQueue.TryDequeue(out var work))
@@ -630,6 +960,7 @@ internal partial class OptimizationOptions
                 try
                 {
                     await work(ct).ConfigureAwait(false);
+                    executedCount++;
                 }
                 catch (OperationCanceledException) { break; }
                 catch (Exception ex)
@@ -645,10 +976,24 @@ internal partial class OptimizationOptions
         finally
         {
             _toggleQueueLock.Release();
+
+            if (executedCount > 0)
+            {
+                ReviewPromptHelper.NotifyOptimizationCompleted();
+            }
         }
     }
 
-    private static async Task ExecuteToggleActionAsync(string? tag, bool isOn, CancellationToken ct)
+    // Executes a toggle action directly without requiring a UI ToggleSwitch element.
+    public static async Task ExecuteToggleDirectAsync(string tag, bool isOn)
+    {
+        if (string.IsNullOrEmpty(tag)) return;
+
+        _toggleQueue.Enqueue(ct => ExecuteToggleActionAsync(tag, isOn, ct));
+        await Task.Run(() => ProcessToggleQueueAsync(_toggleCts.Token)).ConfigureAwait(false);
+    }
+
+    internal static async Task ExecuteToggleActionAsync(string? tag, bool isOn, CancellationToken ct = default)
     {
         if (string.IsNullOrEmpty(tag)) return;
 
@@ -697,6 +1042,16 @@ internal partial class OptimizationOptions
                 else await OptimizeSystemHelper.EnableMouseHoverTime().ConfigureAwait(false);
                 break;
 
+            case "KeyboardLatency":
+                if (isOn) await OptimizeSystemHelper.EnableKeyboardLatencyOptimization().ConfigureAwait(false);
+                else await OptimizeSystemHelper.DisableKeyboardLatencyOptimization().ConfigureAwait(false);
+                break;
+
+            case "MouseAcceleration":
+                if (isOn) await OptimizeSystemHelper.DisableMouseAcceleration().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableMouseAcceleration().ConfigureAwait(false);
+                break;
+
             case "BackgroundApps":
                 if (isOn) await OptimizeSystemHelper.DisableBackgroundApps().ConfigureAwait(false);
                 else await OptimizeSystemHelper.EnableBackgroundApps().ConfigureAwait(false);
@@ -733,8 +1088,8 @@ internal partial class OptimizationOptions
                 break;
 
             case "LowDiskSpaceChecks":
-                if (isOn) await OptimizeSystemHelper.EnableLowDiskSpaceChecks().ConfigureAwait(false);
-                else await OptimizeSystemHelper.DisableLowDiskSpaceChecks().ConfigureAwait(false);
+                if (isOn) await OptimizeSystemHelper.DisableLowDiskSpaceChecks().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableLowDiskSpaceChecks().ConfigureAwait(false);
                 break;
 
             case "LinkResolve":
@@ -753,8 +1108,8 @@ internal partial class OptimizationOptions
                 break;
 
             case "FileExtensionsAndHiddenFiles":
-                if (isOn) await OptimizeSystemHelper.HideFileExtensionsAndHiddenFiles().ConfigureAwait(false);
-                else await OptimizeSystemHelper.ShowFileExtensionsAndHiddenFiles().ConfigureAwait(false);
+                if (isOn) await OptimizeSystemHelper.ShowFileExtensionsAndHiddenFiles().ConfigureAwait(false);
+                else await OptimizeSystemHelper.HideFileExtensionsAndHiddenFiles().ConfigureAwait(false);
                 break;
 
             case "SystemProfile":
@@ -847,6 +1202,26 @@ internal partial class OptimizationOptions
                 else await OptimizeSystemHelper.DisableGamingMode().ConfigureAwait(false);
                 break;
 
+            case "FullscreenOptimizations":
+                if (isOn) await OptimizeSystemHelper.EnableFullscreenOptimizations().ConfigureAwait(false);
+                else await OptimizeSystemHelper.DisableFullscreenOptimizations().ConfigureAwait(false);
+                break;
+
+            case "UsbPowerSaving":
+                if (isOn) await OptimizeSystemHelper.DisableUsbPowerSaving().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableUsbPowerSaving().ConfigureAwait(false);
+                break;
+
+            case "PowerThrottling":
+                if (isOn) await OptimizeSystemHelper.DisablePowerThrottling().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnablePowerThrottling().ConfigureAwait(false);
+                break;
+
+            case "GpuDriverTweaks":
+                if (isOn) await OptimizeSystemHelper.ApplyGpuDriverTweaks().ConfigureAwait(false);
+                else await OptimizeSystemHelper.RevertGpuDriverTweaks().ConfigureAwait(false);
+                break;
+
             case "StoreUpdates":
                 if (isOn) await OptimizeSystemHelper.DisableStoreUpdates().ConfigureAwait(false);
                 else await OptimizeSystemHelper.EnableStoreUpdates().ConfigureAwait(false);
@@ -855,11 +1230,6 @@ internal partial class OptimizationOptions
             case "OneDrive":
                 if (isOn) await OptimizeSystemHelper.DisableOneDrive().ConfigureAwait(false);
                 else await OptimizeSystemHelper.EnableOneDrive().ConfigureAwait(false);
-                break;
-
-            case "SensorServices":
-                if (isOn) await OptimizeSystemHelper.DisableSensorServices().ConfigureAwait(false);
-                else await OptimizeSystemHelper.EnableSensorServices().ConfigureAwait(false);
                 break;
 
             case "NewsAndInterests":
@@ -922,11 +1292,6 @@ internal partial class OptimizationOptions
                 else await OptimizeSystemHelper.EnableSafeSearchMode().ConfigureAwait(false);
                 break;
 
-            case "ActivityUploads":
-                if (isOn) await OptimizeSystemHelper.DisableActivityUploads().ConfigureAwait(false);
-                else await OptimizeSystemHelper.EnableActivityUploads().ConfigureAwait(false);
-                break;
-
             case "ClipboardSync":
                 if (isOn) await OptimizeSystemHelper.DisableClipboardSync().ConfigureAwait(false);
                 else await OptimizeSystemHelper.EnableClipboardSync().ConfigureAwait(false);
@@ -950,11 +1315,6 @@ internal partial class OptimizationOptions
             case "FindMyDevice":
                 if (isOn) await OptimizeSystemHelper.DisableFindMyDevice().ConfigureAwait(false);
                 else await OptimizeSystemHelper.EnableFindMyDevice().ConfigureAwait(false);
-                break;
-
-            case "ActivityFeed":
-                if (isOn) await OptimizeSystemHelper.DisableActivityFeed().ConfigureAwait(false);
-                else await OptimizeSystemHelper.EnableActivityFeed().ConfigureAwait(false);
                 break;
 
             case "Cdp":
@@ -1130,6 +1490,96 @@ internal partial class OptimizationOptions
             case "WindowsAI":
                 if (isOn) await OptimizeSystemHelper.DisableWindowsAI().ConfigureAwait(false);
                 else await OptimizeSystemHelper.EnableWindowsAI().ConfigureAwait(false);
+                break;
+
+            case "GlobalTimerResolution":
+                if (isOn) await OptimizeSystemHelper.EnableGlobalTimerResolution().ConfigureAwait(false);
+                else await OptimizeSystemHelper.DisableGlobalTimerResolution().ConfigureAwait(false);
+                break;
+
+            case "HPET":
+                if (isOn) await OptimizeSystemHelper.DisableHPET().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableHPET().ConfigureAwait(false);
+                break;
+
+            case "DynamicTick":
+                if (isOn) await OptimizeSystemHelper.DisableDynamicTick().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableDynamicTick().ConfigureAwait(false);
+                break;
+
+            case "Prefetch":
+                if (isOn) await OptimizeSystemHelper.DisablePrefetch().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnablePrefetch().ConfigureAwait(false);
+                break;
+
+            case "LargeSystemCache":
+                if (isOn) await OptimizeSystemHelper.EnableLargeSystemCache().ConfigureAwait(false);
+                else await OptimizeSystemHelper.DisableLargeSystemCache().ConfigureAwait(false);
+                break;
+
+            case "NDU":
+                if (isOn) await OptimizeSystemHelper.DisableNDU().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableNDU().ConfigureAwait(false);
+                break;
+
+            case "PageFileEncryption":
+                if (isOn) await OptimizeSystemHelper.DisablePageFileEncryption().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnablePageFileEncryption().ConfigureAwait(false);
+                break;
+
+            case "LockScreenNotifications":
+                if (isOn) await OptimizeSystemHelper.DisableLockScreenNotifications().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableLockScreenNotifications().ConfigureAwait(false);
+                break;
+
+            case "ToastNotifications":
+                if (isOn) await OptimizeSystemHelper.DisableToastNotifications().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableToastNotifications().ConfigureAwait(false);
+                break;
+
+            case "NotificationCenter":
+                if (isOn) await OptimizeSystemHelper.DisableNotificationCenter().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableNotificationCenter().ConfigureAwait(false);
+                break;
+
+            case "SuggestedActions":
+                if (isOn) await OptimizeSystemHelper.DisableSuggestedActions().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableSuggestedActions().ConfigureAwait(false);
+                break;
+
+            case "WiFiSense":
+                if (isOn) await OptimizeSystemHelper.DisableWiFiSense().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableWiFiSense().ConfigureAwait(false);
+                break;
+
+            case "WebSearchResults":
+                if (isOn) await OptimizeSystemHelper.DisableWebSearchResults().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableWebSearchResults().ConfigureAwait(false);
+                break;
+
+            case "AppLaunchTracking":
+                if (isOn) await OptimizeSystemHelper.DisableAppLaunchTracking().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableAppLaunchTracking().ConfigureAwait(false);
+                break;
+
+            case "TimelineHistory":
+                if (isOn) await OptimizeSystemHelper.DisableTimelineHistory().ConfigureAwait(false);
+                else await OptimizeSystemHelper.EnableTimelineHistory().ConfigureAwait(false);
+                break;
+
+            case "TakeOwnership":
+                if (isOn) await OptimizeSystemHelper.AddTakeOwnership().ConfigureAwait(false);
+                else await OptimizeSystemHelper.RemoveTakeOwnership().ConfigureAwait(false);
+                break;
+
+            case "OpenCmdHere":
+                if (isOn) await OptimizeSystemHelper.AddOpenCmdHere().ConfigureAwait(false);
+                else await OptimizeSystemHelper.RemoveOpenCmdHere().ConfigureAwait(false);
+                break;
+
+            case "CopyFilePath":
+                if (isOn) await OptimizeSystemHelper.AddCopyFilePath().ConfigureAwait(false);
+                else await OptimizeSystemHelper.RemoveCopyFilePath().ConfigureAwait(false);
                 break;
 
             default:

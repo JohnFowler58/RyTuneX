@@ -1,110 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -118,7 +59,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Shell_Home.Content" xml:space="preserve">
-    <value>RyTuneX</value>
+    <value>Início</value>
   </data>
   <data name="Shell_Debloat.Content" xml:space="preserve">
     <value>Debloat</value>
@@ -180,26 +121,35 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>Entre para o nosso servidor</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
     <value>Mais informações</value>
   </data>
-  <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
-    <value>Enviar feedback</value>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>Visão geral do sistema</value>
   </data>
-  <data name="SystemInfoPage_CPU.Text" xml:space="preserve">
-    <value>Processador</value>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>Sistema</value>
   </data>
-  <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
-    <value>Placa de vídeo</value>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>Aplicativos instalados</value>
   </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>Sistema operacional</value>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>Processos</value>
   </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>RAM</value>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>Serviços</value>
   </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>Armazenamento</value>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>Ações rápidas</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>Otimizar sistema</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>Reparar problemas</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>Limpar arquivos temporários</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>Debloat</value>
@@ -297,20 +247,11 @@
   <data name="Version" xml:space="preserve">
     <value>Versão</value>
   </data>
-  <data name="VideoArchitecture" xml:space="preserve">
-    <value>Arquitetura de vídeo</value>
-  </data>
   <data name="WindowsDirectory" xml:space="preserve">
     <value>Diretório do Windows</value>
   </data>
   <data name="ErrTempDel" xml:space="preserve">
     <value>Erro ao excluir arquivos temporários</value>
-  </data>
-  <data name="FeaturesPage_SysFeat.Text" xml:space="preserve">
-    <value>Recursos do sistema</value>
-  </data>
-  <data name="FeaturesPage_Win11.Text" xml:space="preserve">
-    <value>Exclusivo do Windows 11</value>
   </data>
   <data name="SystemInfoPage_FolderPathText.Text" xml:space="preserve">
     <value>Selecione uma pasta</value>
@@ -335,12 +276,6 @@
   </data>
   <data name="SystemInfoPage_Drivers.Text" xml:space="preserve">
     <value>Drivers</value>
-  </data>
-  <data name="SystemInfoPage_ExtractButton.Content" xml:space="preserve">
-    <value>Extrair</value>
-  </data>
-  <data name="SystemInfoPage_ExtractDrivers.Text" xml:space="preserve">
-    <value>Extrair seus drivers para uma pasta externa para backup fácil</value>
   </data>
   <data name="SystemInfoPage_ExtractingStatusText.Text" xml:space="preserve">
     <value>Extraindo Drivers</value>
@@ -401,12 +336,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>Desativa o recurso Minhas Pessoas na barra de tarefas</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>Desabilitar Serviços de Sensor</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>Desativa os serviços de sensor para privacidade e economia de energia. Não recomendado para laptops com sensores relevantes</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>Desativar Windows Ink</value>
@@ -504,12 +433,6 @@
   <data name="Feature_DisableCoPilotAI.Description" xml:space="preserve">
     <value>Desabilita o recurso CoPilot AI no Windows para assistência na escrita de código. Não recomendado para desenvolvedores</value>
   </data>
-  <data name="OptimizeBasic.Text" xml:space="preserve">
-    <value>Otimizações básicas</value>
-  </data>
-  <data name="Feature_PerformanceTweaks.Header" xml:space="preserve">
-    <value>Ajustes de desempenho</value>
-  </data>
   <data name="Feature_DisableSysMain.Header" xml:space="preserve">
     <value>Desabilitar SysMain</value>
   </data>
@@ -522,14 +445,23 @@
   <data name="Feature_EnableGamingMode.Description" xml:space="preserve">
     <value>Habilita o modo de jogo, que otimiza os recursos do sistema para uma experiência de jogo mais suave. Pode afetar processos em segundo plano.</value>
   </data>
+  <data name="Feature_EnableFullscreenOptimizations.Header" xml:space="preserve">
+    <value>Ativar otimizações de tela inteira</value>
+  </data>
+  <data name="Feature_EnableFullscreenOptimizations.Description" xml:space="preserve">
+    <value>Permite que o Windows use a otimização de tela inteira para jogos. Desative esta opção apenas para jogos que exigem o modo de tela inteira exclusivo.</value>
+  </data>
+  <data name="Feature_GpuDriverTweaks.Header" xml:space="preserve">
+    <value>Otimizações de desempenho do driver da GPU</value>
+  </data>
+  <data name="Feature_GpuDriverTweaks.Description" xml:space="preserve">
+    <value>Aplica ajustes no Registro para AMD, NVIDIA e Intel a fim de reduzir a troca de estados de energia da GPU e a latência da tela.</value>
+  </data>
   <data name="Feature_ExcludeDriversFromWindowsUpdates.Header" xml:space="preserve">
     <value>Excluir drivers das atualizações do Windows</value>
   </data>
   <data name="Feature_ExcludeDriversFromWindowsUpdates.Description" xml:space="preserve">
     <value>Exclui atualizações de driver do Windows Update. Pode levar a drivers desatualizados com potenciais riscos de segurança ou problemas de compatibilidade. Use com cautela.</value>
-  </data>
-  <data name="OptimizeAdvanced.Text" xml:space="preserve">
-    <value>Otimizações avançadas</value>
   </data>
   <data name="Feature_DisableSystemRestore.Header" xml:space="preserve">
     <value>Desabilitar restauração do sistema</value>
@@ -548,12 +480,6 @@
   </data>
   <data name="Feature_DisableStoreUpdates.Description" xml:space="preserve">
     <value>Desabilita atualizações automáticas para aplicativos baixados da Microsoft Store. Pode deixar os aplicativos vulneráveis ​​a riscos de segurança ou sem novos recursos.</value>
-  </data>
-  <data name="Privacy_Telemetry.Text" xml:space="preserve">
-    <value>Telemetria</value>
-  </data>
-  <data name="Feature_EnhancePrivacy.Header" xml:space="preserve">
-    <value>Aprimorar privacidade</value>
   </data>
   <data name="Feature_DisableSMBv1.Header" xml:space="preserve">
     <value>Desabilitar SMBv1</value>
@@ -621,15 +547,6 @@
   <data name="Network_ApplyDNS.Content" xml:space="preserve">
     <value>Aplicar DNS</value>
   </data>
-  <data name="Network_IPv4Title.Text" xml:space="preserve">
-    <value>Servidores DNS IPv4</value>
-  </data>
-  <data name="Network_IPv6Title.Text" xml:space="preserve">
-    <value>Servidores DNS IPv6</value>
-  </data>
-  <data name="Network_NicTitle.Text" xml:space="preserve">
-    <value>Interface de rede</value>
-  </data>
   <data name="Network_Primary.Text" xml:space="preserve">
     <value>Primário</value>
   </data>
@@ -639,9 +556,6 @@
   <data name="Network_Secondary.Text" xml:space="preserve">
     <value>Secundário</value>
   </data>
-  <data name="Network_SetDNSTitle.Text" xml:space="preserve">
-    <value>Definir DNS personalizado</value>
-  </data>
   <data name="NoIPv4" xml:space="preserve">
     <value>Nenhum endereço DNS IPv4 encontrado</value>
   </data>
@@ -650,6 +564,12 @@
   </data>
   <data name="NoNic" xml:space="preserve">
     <value>Nenhuma interface de rede selecionada</value>
+  </data>
+  <data name="NoInterfaceTitle" xml:space="preserve">
+    <value>Nenhuma interface selecionada</value>
+  </data>
+  <data name="NoInterfaceMessage" xml:space="preserve">
+    <value>Selecione uma interface de rede antes de aplicar as configurações de DNS.</value>
   </data>
   <data name="NotSet" xml:space="preserve">
     <value>Não definido</value>
@@ -669,38 +589,14 @@
   <data name="AppDescription" xml:space="preserve">
     <value>O RyTuneX é um otimizador de ponta criado com a estrutura WinUI 3, projetado para amplificar o desempenho de dispositivos Windows. Criado para Windows 10 e 11, o RyTuneX capacita os usuários a remover facilmente aplicativos pré-instalados teimosos e otimizar recursos do sistema</value>
   </data>
-  <data name="SettingsPage_UpdateButton.Content" xml:space="preserve">
-    <value>Verificar atualizações</value>
-  </data>
-  <data name="AvailableUpdateContent0" xml:space="preserve">
-    <value>Uma versão mais recente (</value>
-  </data>
-  <data name="AvailableUpdateContent1" xml:space="preserve">
-    <value>) está disponível. Atualize para a versão mais recente para aproveitar novos recursos e melhorias.</value>
-  </data>
   <data name="UpdateTitle" xml:space="preserve">
     <value>Atualizações do RyTuneX</value>
-  </data>
-  <data name="NetworkError" xml:space="preserve">
-    <value>Ocorreu um erro. Certifique-se de verificar sua conexão com a Internet e tente novamente mais tarde.</value>
-  </data>
-  <data name="UnavailableUpdate0" xml:space="preserve">
-    <value>Você já está executando a versão mais recente (</value>
-  </data>
-  <data name="UnavailableUpdate1" xml:space="preserve">
-    <value>). Nenhuma atualização está disponível no momento.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fechar</value>
   </data>
   <data name="Update" xml:space="preserve">
     <value>Atualizar</value>
-  </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>Rede</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>Bateria</value>
   </data>
   <data name="MACAddress" xml:space="preserve">
     <value>Endereço MAC</value>
@@ -714,17 +610,11 @@
   <data name="BatteryStatus" xml:space="preserve">
     <value>Status da bateria</value>
   </data>
-  <data name="Chemistry" xml:space="preserve">
-    <value>Chemistry</value>
-  </data>
   <data name="Shell_Security.Content" xml:space="preserve">
     <value>Segurança</value>
   </data>
   <data name="UnexpectedError" xml:space="preserve">
     <value>Ocorreu um erro inesperado</value>
-  </data>
-  <data name="SettingsPage_LogsLink.Content" xml:space="preserve">
-    <value>Exibir logs</value>
   </data>
   <data name="TotalApps" xml:space="preserve">
     <value>Total: {0} Aplicativo(s)</value>
@@ -780,23 +670,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>Uso da RAM</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>Uso da GPU</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>Uso do disco</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>Uso da rede</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>Aplicativos instalados</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>Processos</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>Serviços</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>Desativar Smart Screen</value>
@@ -876,12 +754,6 @@
   <data name="Feature_DisableSafeSearchMode.Description" xml:space="preserve">
     <value>Desativa o Modo de Pesquisa Segura, que filtra conteúdo potencialmente prejudicial ou inapropriado dos resultados da pesquisa. Desabilitar isso aumenta o risco de exposição a conteúdo inseguro.</value>
   </data>
-  <data name="Feature_DisableActivityUploads.Header" xml:space="preserve">
-    <value>Desabilitar uploads de atividades</value>
-  </data>
-  <data name="Feature_DisableActivityUploads.Description" xml:space="preserve">
-    <value>Desabilita o upload de dados de atividade, impedindo que a Microsoft colete seus dados de uso para melhorar os serviços. Isso ajuda a manter a privacidade.</value>
-  </data>
   <data name="Feature_DisableClipboardSync.Header" xml:space="preserve">
     <value>Desabilitar sincronização da área de transferência</value>
   </data>
@@ -912,23 +784,11 @@
   <data name="Feature_DisableFindMyDevice.Description" xml:space="preserve">
     <value>Desativa o recurso Localizar meu dispositivo, que ajuda a localizar seu dispositivo em caso de perda. Desabilitar isso reduz sua capacidade de recuperar um dispositivo perdido, mas aumenta a privacidade.</value>
   </data>
-  <data name="Feature_DisableActivityFeed.Header" xml:space="preserve">
-    <value>Desabilitar Feed de Atividades</value>
-  </data>
-  <data name="Feature_DisableActivityFeed.Description" xml:space="preserve">
-    <value>Desativa o feed de atividades que mostra suas atividades recentes, ajudando a proteger sua privacidade ao impedir que outras pessoas vejam o que você está fazendo no seu dispositivo.</value>
-  </data>
   <data name="Feature_DisableCdp.Header" xml:space="preserve">
     <value>Desabilitar CDP (Customer Data Platform)</value>
   </data>
   <data name="Feature_DisableCdp.Description" xml:space="preserve">
     <value>Desabilita o CDP, impedindo a coleta e o uso dos seus dados pela plataforma de dados do cliente para análise e recomendações direcionadas. Isso aumenta a privacidade, mas pode limitar a personalização.</value>
-  </data>
-  <data name="Feature_DisableTailoredExperiencesInPrivacy.Header" xml:space="preserve">
-    <value>Desabilitar experiências personalizadas em privacidade</value>
-  </data>
-  <data name="Feature_DisableTailoredExperiencesInPrivacy.Description" xml:space="preserve">
-    <value>Desabilita o recurso de experiências personalizadas nas configurações de privacidade, impedindo que o Windows use seus dados para personalizar suas experiências. Isso pode reduzir os recursos de personalização.</value>
   </data>
   <data name="Feature_DisableDiagnosticsToast.Header" xml:space="preserve">
     <value>Desabilitar notificação de notificação de diagnóstico</value>
@@ -941,12 +801,6 @@
   </data>
   <data name="Feature_DisableOnlineSpeechPrivacy.Description" xml:space="preserve">
     <value>Desabilita a privacidade de fala online, impedindo que o Windows armazene ou processe comandos de voz. Isso aumenta a privacidade, mas limita recursos de voz, como pesquisa por voz e comandos.</value>
-  </data>
-  <data name="Feature_DisableLocationAccess.Header" xml:space="preserve">
-    <value>Desabilitar acesso à localização</value>
-  </data>
-  <data name="Feature_DisableLocationAccess.Description" xml:space="preserve">
-    <value>Desativa o acesso à localização para aplicativos e serviços, impedindo que eles usem o GPS ou a localização da rede do seu dispositivo. Isso melhora a privacidade, mas pode limitar serviços baseados em localização.</value>
   </data>
   <data name="Feature_DisableLocationFeatures.Header" xml:space="preserve">
     <value>Desabilitar recursos de localização</value>
@@ -965,6 +819,18 @@
   </data>
   <data name="Feature_MouseHoverTime.Description" xml:space="preserve">
     <value>Ajusta o tempo que o sistema espera antes de disparar um evento de foco. Desabilitar isso pode acelerar as interações, mas pode levar a ativações não intencionais.</value>
+  </data>
+  <data name="Feature_KeyboardLatency.Header" xml:space="preserve">
+    <value>Otimizar a latência do teclado</value>
+  </data>
+  <data name="Feature_KeyboardLatency.Description" xml:space="preserve">
+    <value>Define o atraso de repetição do teclado para o menor valor e mantém a velocidade de repetição no máximo para uma entrada mais responsiva.</value>
+  </data>
+  <data name="Feature_DisableMouseAcceleration.Header" xml:space="preserve">
+    <value>Desativar aceleração do mouse</value>
+  </data>
+  <data name="Feature_DisableMouseAcceleration.Description" xml:space="preserve">
+    <value>Desativa a aceleração do ponteiro do Windows para manter o movimento do mouse consistente em jogos e entradas de precisão.</value>
   </data>
   <data name="Feature_AutoComplete.Header" xml:space="preserve">
     <value>Desabilitar preenchimento automático</value>
@@ -1038,9 +904,6 @@
   <data name="Feature_SystemProfile.Description" xml:space="preserve">
     <value>Melhora o desempenho do seu sistema ajustando as configurações do perfil do sistema. Este recurso prioriza velocidade e eficiência, melhorando a capacidade de resposta geral do sistema e o gerenciamento de recursos.</value>
   </data>
-  <data name="SystemInfoPage_DeviceInfo.Text" xml:space="preserve">
-    <value>Informações do dispositivo</value>
-  </data>
   <data name="Feature_EnableClassicContextMenu.Header" xml:space="preserve">
     <value>Habilitar menu de contexto clássico</value>
   </data>
@@ -1050,17 +913,11 @@
   <data name="DoNotShowCheckBox" xml:space="preserve">
     <value>Não mostrar esta mensagem novamente</value>
   </data>
-  <data name="RestorePointDialogTitle" xml:space="preserve">
-    <value>Criar ponto de restauração</value>
-  </data>
   <data name="RestorePointDialogText" xml:space="preserve">
     <value>É altamente recomendável criar um ponto de restauração antes de fazer qualquer alteração no seu sistema.
 
 
 Gostaria de criar um ponto de restauração do sistema antes de prosseguir?</value>
-  </data>
-  <data name="CreatingRestorePoint" xml:space="preserve">
-    <value>Criando ponto de restauração</value>
   </data>
   <data name="Settings_RevertChanges.Header" xml:space="preserve">
     <value>Reverter todas as alterações</value>
@@ -1076,9 +933,6 @@ Gostaria de criar um ponto de restauração do sistema antes de prosseguir?</val
 
 
 Tem certeza de que deseja continuar?</value>
-  </data>
-  <data name="NoChangesFound" xml:space="preserve">
-    <value>Nenhuma alteração notável encontrada.</value>
   </data>
   <data name="OperationStopped" xml:space="preserve">
     <value>Operação interrompida</value>
@@ -1107,20 +961,8 @@ Verifique se há problemas de memória em seu computador</value>
   <data name="ScheduledLater" xml:space="preserve">
     <value>Agendado para a próxima reinicialização</value>
   </data>
-  <data name="RepairPage_ScanButton.Content" xml:space="preserve">
-    <value>Verificar</value>
-  </data>
-  <data name="RepairPage_RepairButton.Content" xml:space="preserve">
-    <value>Reparar</value>
-  </data>
   <data name="RepairPage_StopButton.Content" xml:space="preserve">
     <value>Parar</value>
-  </data>
-  <data name="RepairPage_StatusTextBlock.Text" xml:space="preserve">
-    <value>Selecione pelo menos uma opção para escanear/reparar</value>
-  </data>
-  <data name="StatusTextBlockDefault" xml:space="preserve">
-    <value>Selecione pelo menos uma opção para escanear/reparar</value>
   </data>
   <data name="RepairPage_BatteryHealth.Header" xml:space="preserve">
     <value>Saúde da bateria</value>
@@ -1158,11 +1000,14 @@ Verifique se há problemas de memória em seu computador</value>
   <data name="RepairPage_RepairOptions.Text" xml:space="preserve">
     <value>Opções de reparo</value>
   </data>
-  <data name="RepairPage_DiagnoseOptions.Text" xml:space="preserve">
-    <value>Opções de diagnóstico</value>
-  </data>
   <data name="OperationCompleted" xml:space="preserve">
     <value>Operação concluída</value>
+  </data>
+  <data name="CheckCompleted" xml:space="preserve">
+    <value>Check completed successfully</value>
+  </data>
+  <data name="RepairedFiles" xml:space="preserve">
+    <value>Repaired files (from CBS.log):</value>
   </data>
   <data name="RestorePointTitle" xml:space="preserve">
     <value>Ponto de restauração</value>
@@ -1178,12 +1023,6 @@ Verifique se há problemas de memória em seu computador</value>
   </data>
   <data name="OtherSettings.Text" xml:space="preserve">
     <value>Outras configurações</value>
-  </data>
-  <data name="OptimizeSystemPage_BasicOptimization.Text" xml:space="preserve">
-    <value>Otimizações básicas do sistema</value>
-  </data>
-  <data name="OptimizeSystemPage_AdvancedOptimization.Text" xml:space="preserve">
-    <value>Otimizações avançadas do sistema</value>
   </data>
   <data name="DebloatSystemPage_NoAppFound.Text" xml:space="preserve">
     <value>Nenhum aplicativo corresponde à sua pesquisa</value>
@@ -1272,9 +1111,6 @@ Verifique se há problemas de memória em seu computador</value>
   <data name="Feature_WPBT.Description" xml:space="preserve">
     <value>Impedir que o firmware execute programas (por exemplo, bloatware OEM) durante a inicialização.</value>
   </data>
-  <data name="Settings_RevertTitle.Text" xml:space="preserve">
-    <value>Reverter alterações</value>
-  </data>
   <data name="SettingsPageImportButton.Text" xml:space="preserve">
     <value>Importar</value>
   </data>
@@ -1307,12 +1143,6 @@ Verifique se há problemas de memória em seu computador</value>
   </data>
   <data name="KeepAppData" xml:space="preserve">
     <value>Manter os dados do app</value>
-  </data>
-  <data name="IsAdminIcon.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Você está executando como administrador</value>
-  </data>
-  <data name="NotAdminIcon.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Reinicie o app como administrador para que suas alterações tenham efeito</value>
   </data>
   <data name="SecurityPage_RefreshButton.Text" xml:space="preserve">
     <value>Atualizar</value>
@@ -1419,14 +1249,20 @@ Verifique se há problemas de memória em seu computador</value>
   <data name="Feature_AddUltimatePowerPlan.Header" xml:space="preserve">
     <value>Adicionar plano de desempenho máximo</value>
   </data>
+  <data name="Feature_DisableUsbPowerSaving.Header" xml:space="preserve">
+    <value>Desativar economia de energia USB</value>
+  </data>
+  <data name="Feature_DisableUsbPowerSaving.Description" xml:space="preserve">
+    <value>Desativa a suspensão seletiva de USB e a economia de energia dos hubs raiz USB para reduzir a latência de ativação do controlador durante os jogos.</value>
+  </data>
+  <data name="Feature_DisablePowerThrottling.Header" xml:space="preserve">
+    <value>Desativar limitação de energia</value>
+  </data>
+  <data name="Feature_DisablePowerThrottling.Description" xml:space="preserve">
+    <value>Desativa a limitação de energia do Windows e o comportamento de recuperação de economia de energia do USB para manter os aplicativos em primeiro plano responsivos.</value>
+  </data>
   <data name="AddUltimatePowerPlanTitle" xml:space="preserve">
     <value>Adicionar plano de desempenho máximo</value>
-  </data>
-  <data name="PoliciesPage_Warning" xml:space="preserve">
-    <value>Este recurso detecta apenas entradas do registro com suporte a políticas. Não detecta alterações de serviço ou ajustes de registro não relacionados a políticas.</value>
-  </data>
-  <data name="PoliciesPage_InfoMessage" xml:space="preserve">
-    <value>Esta página detecta e permite remover substituições de política de grupo local. A remoção de uma substituição de política a retorna ao estado Não configurado.</value>
   </data>
   <data name="PoliciesPage_PolicySummary" xml:space="preserve">
     <value>Resumo da política</value>
@@ -1451,12 +1287,6 @@ Verifique se há problemas de memória em seu computador</value>
   </data>
   <data name="PoliciesPage_NoPoliciesDetected" xml:space="preserve">
     <value>Nenhuma substituição de política detectada.</value>
-  </data>
-  <data name="PoliciesPage_RemoveAllOverrides" xml:space="preserve">
-    <value>Remover todas as substituições</value>
-  </data>
-  <data name="PoliciesPage_Title" xml:space="preserve">
-    <value>Detecção de substituição de política de grupo</value>
   </data>
   <data name="PoliciesPage_ScanningPolicies" xml:space="preserve">
     <value>Verificando políticas...</value>
@@ -1614,15 +1444,6 @@ Verifique se há problemas de memória em seu computador</value>
   <data name="Feature_WindowsUpdates_Default.Content" xml:space="preserve">
     <value>Padrão</value>
   </data>
-  <data name="ScanResults" xml:space="preserve">
-    <value>Resultados da verificação</value>
-  </data>
-  <data name="MicrosoftAccount" xml:space="preserve">
-    <value>Conta Microsoft</value>
-  </data>
-  <data name="LocalAccount" xml:space="preserve">
-    <value>Conta local</value>
-  </data>
   <data name="Feature_DisableWindowsAI.Header" xml:space="preserve">
     <value>Desativar IA do Windows</value>
   </data>
@@ -1640,6 +1461,27 @@ Verifique se há problemas de memória em seu computador</value>
   </data>
   <data name="Settings_ThemeSettingsCard.Description" xml:space="preserve">
     <value>Escolha o tema de cores do aplicativo</value>
+  </data>
+  <data name="Settings_AccentColorExpander.Header" xml:space="preserve">
+    <value>Cor de destaque</value>
+  </data>
+  <data name="Settings_AccentColorExpander.Description" xml:space="preserve">
+    <value>Escolha entre o estilo RyTuneX, as cores do sistema ou uma cor personalizada</value>
+  </data>
+  <data name="Settings_AccentColor_RyTuneX.Text" xml:space="preserve">
+    <value>Estilo RyTuneX</value>
+  </data>
+  <data name="Settings_AccentColor_System.Text" xml:space="preserve">
+    <value>Cores atuais do sistema</value>
+  </data>
+  <data name="Settings_AccentColor_Custom.Text" xml:space="preserve">
+    <value>Cor personalizada</value>
+  </data>
+  <data name="Settings_CustomColorSettingsCard.Header" xml:space="preserve">
+    <value>Cor de destaque personalizada</value>
+  </data>
+  <data name="Settings_CustomColorSettingsCard.Description" xml:space="preserve">
+    <value>Selecione sua cor de destaque preferida</value>
   </data>
   <data name="Settings_NavigationStyle.Header" xml:space="preserve">
     <value>Estilo de navegação</value>
@@ -1673,5 +1515,1882 @@ Verifique se há problemas de memória em seu computador</value>
   </data>
   <data name="Loading.Text" xml:space="preserve">
     <value>Carregando...</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Fabricante</value>
+  </data>
+  <data name="DedicatedVRAM" xml:space="preserve">
+    <value>VRAM dedicada</value>
+  </data>
+  <data name="SharedMemory" xml:space="preserve">
+    <value>Memória compartilhada</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Pesquisar...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Pacotes</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>Navegar</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>Atualizações</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Pesquisar pacotes WinGet...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>Instalar Selecionados</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>Instalados</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>Nome do Pacote</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>ID do Pacote</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>Carregando pacotes…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>Selecione um pacote para instalar</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Pesquisar serviços...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>Em execução</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>Parados</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Desativado</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>Nome do Serviço</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>Inicialização</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>Ações</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>Desativado</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Pesquisar processos...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>Memória</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>Threads</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>Ações</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>Finalizar Tarefa</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>Sistema Operacional</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>Processador</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>Gráficos</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>Armazenamento</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>Rede</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>Bateria</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>Drivers para Backup</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>Idioma do Sistema</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>Esquerda</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>Superior</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>Atualizar selecionados</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>Selecione pacotes para atualizar</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>Carregando pacotes, por favor aguarde…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>Nenhuma atualização disponível. Todos os pacotes estão atualizados.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>{0} pacote(s) selecionado(s) para instalação</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>{0} pacote(s) selecionado(s) para atualização</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="RepairPage_SystemHealthTitle.Text" xml:space="preserve">
+    <value>Integridade do sistema</value>
+  </data>
+  <data name="RepairPage_SystemHealthSubtitle.Text" xml:space="preserve">
+    <value>Verifique o Windows em busca de problemas comuns do sistema e armazenamento.</value>
+  </data>
+  <data name="RepairPage_LastCheckedNever.Text" xml:space="preserve">
+    <value>Última verificação: Nunca</value>
+  </data>
+  <data name="RepairPage_CheckSystemButton.Content" xml:space="preserve">
+    <value>Verificar sistema</value>
+  </data>
+  <data name="RepairPage_WindowsImage.Text" xml:space="preserve">
+    <value>Imagem do Windows</value>
+  </data>
+  <data name="RepairPage_WindowsImageDescription.Text" xml:space="preserve">
+    <value>Repositório de componentes do Windows</value>
+  </data>
+  <data name="RepairPage_SystemFiles.Text" xml:space="preserve">
+    <value>Arquivos do sistema</value>
+  </data>
+  <data name="RepairPage_SystemFilesDescription.Text" xml:space="preserve">
+    <value>Arquivos protegidos do sistema do Windows</value>
+  </data>
+  <data name="RepairPage_SystemDrive.Text" xml:space="preserve">
+    <value>Unidade do sistema</value>
+  </data>
+  <data name="RepairPage_SystemDriveDescription.Text" xml:space="preserve">
+    <value>Integridade do sistema de arquivos</value>
+  </data>
+  <data name="RepairPage_TechnicalDetails.Header" xml:space="preserve">
+    <value>Detalhes técnicos</value>
+  </data>
+  <data name="RepairPage_MoreTroubleshooting.Text" xml:space="preserve">
+    <value>Mais solução de problemas</value>
+  </data>
+  <data name="RepairPage_StateIdle_Title" xml:space="preserve">
+    <value>Integridade do sistema</value>
+  </data>
+  <data name="RepairPage_StateIdle_Subtitle" xml:space="preserve">
+    <value>Verifique o Windows em busca de problemas comuns do sistema e armazenamento.</value>
+  </data>
+  <data name="RepairPage_StateIdle_Button" xml:space="preserve">
+    <value>Verificar sistema</value>
+  </data>
+  <data name="RepairPage_StateChecking_Title" xml:space="preserve">
+    <value>Verificando seu sistema...</value>
+  </data>
+  <data name="RepairPage_StateChecking_Subtitle" xml:space="preserve">
+    <value>Isso pode levar alguns minutos.</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Title" xml:space="preserve">
+    <value>Seu sistema está íntegro</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Subtitle" xml:space="preserve">
+    <value>Nenhum problema foi encontrado.</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Button" xml:space="preserve">
+    <value>Verificar novamente</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Title" xml:space="preserve">
+    <value>Problemas encontrados</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Subtitle" xml:space="preserve">
+    <value>O RyTuneX pode reparar esses problemas automaticamente.</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Button" xml:space="preserve">
+    <value>Reparar sistema</value>
+  </data>
+  <data name="RepairPage_StateRepairing_Title" xml:space="preserve">
+    <value>Reparando seu sistema...</value>
+  </data>
+  <data name="RepairPage_StateRepairing_Subtitle" xml:space="preserve">
+    <value>Isso pode levar vários minutos. Não desligue seu PC.</value>
+  </data>
+  <data name="RepairPage_StateRepairCompleted_Title" xml:space="preserve">
+    <value>Reparo concluído</value>
+  </data>
+  <data name="RepairPage_StateRepairCompleted_Subtitle" xml:space="preserve">
+    <value>Seu sistema foi reparado.</value>
+  </data>
+  <data name="RepairPage_RowStatus_Healthy" xml:space="preserve">
+    <value>Íntegro</value>
+  </data>
+  <data name="RepairPage_RowStatus_NeedsAttention" xml:space="preserve">
+    <value>Requer atenção</value>
+  </data>
+  <data name="RepairPage_RowStatus_Scheduled" xml:space="preserve">
+    <value>Agendado para reiniciar</value>
+  </data>
+  <data name="RepairPage_RowStatus_Unknown" xml:space="preserve">
+    <value>Desconhecido</value>
+  </data>
+  <data name="RepairPage_RowStatus_Checking" xml:space="preserve">
+    <value>Verificando...</value>
+  </data>
+  <data name="RepairPage_StatusChecking" xml:space="preserve">
+    <value>Verificando {friendlyName}... ({current}/{total})</value>
+  </data>
+  <data name="RepairPage_StatusRepairing" xml:space="preserve">
+    <value>Reparando {friendlyName}... ({current}/{total})</value>
+  </data>
+  <data name="RepairPage_LastCheckedFormat" xml:space="preserve">
+    <value>Última verificação: {time}</value>
+  </data>
+  <data name="RepairPage_ChkdskScheduledNote" xml:space="preserve">
+    <value>O reparo da unidade do sistema está agendado para a próxima reinicialização.</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupChangedTitle" xml:space="preserve">
+    <value>Tipo de Inicialização Alterado</value>
+  </data>
+  <data name="ServicesPage_TotalServices.Text" xml:space="preserve">
+    <value>Total de Serviços</value>
+  </data>
+  <data name="ServicesPage_StartServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Iniciar serviço</value>
+  </data>
+  <data name="ServicesPage_Action_Restarted" xml:space="preserve">
+    <value>reiniciado</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlError" xml:space="preserve">
+    <value>Falha ao controlar o serviço: {error}</value>
+  </data>
+  <data name="ServicesPage_StopServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Parar serviço</value>
+  </data>
+  <data name="ServicesPage_StoppedServices.Text" xml:space="preserve">
+    <value>Serviços Parados</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupError" xml:space="preserve">
+    <value>Falha ao alterar tipo de inicialização: {error}</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupChanged" xml:space="preserve">
+    <value>Tipo de inicialização do serviço '{name}' definido para {type}.</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlErrorTitle" xml:space="preserve">
+    <value>Erro no Controle do Serviço</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupErrorTitle" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="ServicesPage_RunningServices.Text" xml:space="preserve">
+    <value>Serviços em Execução</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlSuccess" xml:space="preserve">
+    <value>O serviço '{name}' foi {action} com sucesso.</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlTitle" xml:space="preserve">
+    <value>Controle de Serviço</value>
+  </data>
+  <data name="ServicesPage_Action_Stopped" xml:space="preserve">
+    <value>parado</value>
+  </data>
+  <data name="ServicesPage_Action_Started" xml:space="preserve">
+    <value>iniciado</value>
+  </data>
+  <data name="ServicesPage_ResultsText" xml:space="preserve">
+    <value>Exibindo {count} de {total} serviços</value>
+  </data>
+  <data name="ServicesPage_RestartServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Reiniciar serviço</value>
+  </data>
+  <data name="ServicesPage_Notification_Title" xml:space="preserve">
+    <value>Serviços</value>
+  </data>
+  <data name="ServicesPage_LoadError" xml:space="preserve">
+    <value>Falha ao carregar a lista de serviços. Privilégios de administrador podem ser necessários.</value>
+  </data>
+  <data name="ServicesPage_Notification_ServiceTimeout" xml:space="preserve">
+    <value>O serviço não respondeu a tempo. Por favor, tente novamente.</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupTypeAdminRequired" xml:space="preserve">
+    <value>São necessários privilégios de administrador para alterar o tipo de inicialização do serviço.</value>
+  </data>
+  <data name="StartupPage_Notification_FileNotFound" xml:space="preserve">
+    <value>Arquivo não encontrado em '{0}'. Ele ainda será adicionado à inicialização, mas pode não iniciar.</value>
+  </data>
+  <data name="StartupPage_Notification_EnabledCountFailed" xml:space="preserve">
+    <value>{0} aplicativos de inicialização habilitados. {1} falharam.</value>
+  </data>
+  <data name="StartupPage_Notification_DisabledCountFailed" xml:space="preserve">
+    <value>{0} aplicativos de inicialização desabilitados. {1} falharam.</value>
+  </data>
+  <data name="SystemInfoPage_ExportButton.Content" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="Shell_Startup.Content" xml:space="preserve">
+    <value>Aplicativos de Inicialização</value>
+  </data>
+  <data name="StartupPage_TotalApps.Text" xml:space="preserve">
+    <value>Total de Apps de Inicialização</value>
+  </data>
+  <data name="StartupPage_EnabledApps.Text" xml:space="preserve">
+    <value>Habilitados</value>
+  </data>
+  <data name="StartupPage_DisabledApps.Text" xml:space="preserve">
+    <value>Deshabilitados</value>
+  </data>
+  <data name="StartupPage_HighImpactApps.Text" xml:space="preserve">
+    <value>Alto Impacto</value>
+  </data>
+  <data name="StartupPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Pesquisar aplicativos de inicialização por nome, comando ou editor...</value>
+  </data>
+  <data name="StartupPage_FilterAll.Content" xml:space="preserve">
+    <value>Todos os status</value>
+  </data>
+  <data name="StartupPage_FilterEnabled.Content" xml:space="preserve">
+    <value>Apenas Habilitados</value>
+  </data>
+  <data name="StartupPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Apenas Deshabilitados</value>
+  </data>
+  <data name="StartupPage_FilterHighImpact.Content" xml:space="preserve">
+    <value>Alto Impacto</value>
+  </data>
+  <data name="StartupPage_FilterBroken.Content" xml:space="preserve">
+    <value>Quebrado / Ausente</value>
+  </data>
+  <data name="StartupPage_FilterUser.Content" xml:space="preserve">
+    <value>Escopo do Usuário (HKCU)</value>
+  </data>
+  <data name="StartupPage_FilterSystem.Content" xml:space="preserve">
+    <value>Escopo do Sistema (HKLM)</value>
+  </data>
+  <data name="StartupPage_AddAppButton.Text" xml:space="preserve">
+    <value>Adicionar App</value>
+  </data>
+  <data name="StartupPage_EnableAllButton.Text" xml:space="preserve">
+    <value>Habilitar Todos</value>
+  </data>
+  <data name="StartupPage_DisableAllButton.Text" xml:space="preserve">
+    <value>Deshabilitar Todos</value>
+  </data>
+  <data name="StartupPage_RefreshButtonTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Atualizar lista de inicialização</value>
+  </data>
+  <data name="StartupPage_ColName.Text" xml:space="preserve">
+    <value>Nome do App</value>
+  </data>
+  <data name="StartupPage_ColPublisher.Text" xml:space="preserve">
+    <value>Publicador</value>
+  </data>
+  <data name="StartupPage_ColLocation.Text" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="StartupPage_ColImpact.Text" xml:space="preserve">
+    <value>Impacto</value>
+  </data>
+  <data name="StartupPage_ColStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StartupPage_ColActions.Text" xml:space="preserve">
+    <value>Ações</value>
+  </data>
+  <data name="StartupPage_OpenFolderTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Abrir local do arquivo</value>
+  </data>
+  <data name="StartupPage_DetailsTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ver detalhes do aplicativo</value>
+  </data>
+  <data name="StartupPage_DeleteTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Remover app de inicialização</value>
+  </data>
+  <data name="StartupPage_ResultsText" xml:space="preserve">
+    <value>Exibindo {0} de {1} itens de inicialização</value>
+  </data>
+  <data name="StartupPage_Notification_ToggledMessage" xml:space="preserve">
+    <value>Habilitado '{0}' na inicialização</value>
+  </data>
+  <data name="StartupPage_Notification_ToggledMessageDisabled" xml:space="preserve">
+    <value>Deshabilitado '{0}' da inicialização</value>
+  </data>
+  <data name="StartupPage_Notification_AdminRequired" xml:space="preserve">
+    <value>Permissões de administrador são necessárias para modificar itens do sistema.</value>
+  </data>
+  <data name="StartupPage_Impact_High" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="StartupPage_Impact_Medium" xml:space="preserve">
+    <value>Médio</value>
+  </data>
+  <data name="StartupPage_Impact_Low" xml:space="preserve">
+    <value>Baixo</value>
+  </data>
+  <data name="StartupPage_Impact_Broken" xml:space="preserve">
+    <value>Arquivo Ausente</value>
+  </data>
+  <data name="StartupPage_Title" xml:space="preserve">
+    <value>Gerenciador de Inicialização</value>
+  </data>
+  <data name="StartupPage_AddDialog_Title" xml:space="preserve">
+    <value>Adicionar App de Inicialização</value>
+  </data>
+  <data name="StartupPage_AddDialog_AppNameHeader" xml:space="preserve">
+    <value>Nome do Aplicativo</value>
+  </data>
+  <data name="StartupPage_AddDialog_AppPathHeader" xml:space="preserve">
+    <value>Caminho do Executável ou Script</value>
+  </data>
+  <data name="StartupPage_AddDialog_ArgsHeader" xml:space="preserve">
+    <value>Argumentos (Opcional)</value>
+  </data>
+  <data name="StartupPage_AddDialog_BrowseButton" xml:space="preserve">
+    <value>Procurar...</value>
+  </data>
+  <data name="StartupPage_AddDialog_ScopeHeader" xml:space="preserve">
+    <value>Escopo de Inicialização:</value>
+  </data>
+  <data name="StartupPage_AddDialog_CurrentUser" xml:space="preserve">
+    <value>Usuário Atual (HKCU)</value>
+  </data>
+  <data name="StartupPage_AddDialog_AllUsers" xml:space="preserve">
+    <value>Todos os Usuários (HKLM - Requer Admin)</value>
+  </data>
+  <data name="StartupPage_AddDialog_PrimaryButton" xml:space="preserve">
+    <value>Adicionar à Inicialização</value>
+  </data>
+  <data name="StartupPage_AddDialog_CancelButton" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Title" xml:space="preserve">
+    <value>Detalhes do App de Inicialização</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_CloseButton" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Name" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Publisher" xml:space="preserve">
+    <value>Publicador:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Description" xml:space="preserve">
+    <value>Descrição:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Command" xml:space="preserve">
+    <value>Comando:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_TargetPath" xml:space="preserve">
+    <value>Caminho de Destino:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Location" xml:space="preserve">
+    <value>Local:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Impact" xml:space="preserve">
+    <value>Impacto:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_FileSize" xml:space="preserve">
+    <value>Tamanho do Arquivo:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_FileExists" xml:space="preserve">
+    <value>Arquivo Existe:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_NoMissing" xml:space="preserve">
+    <value>Não (Ausente)</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_Title" xml:space="preserve">
+    <value>Remover App de Inicialização</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_Content" xml:space="preserve">
+    <value>Tem certeza de que deseja remover '{0}' da inicialização? Esta ação excluirá a entrada.</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_PrimaryButton" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_CancelButton" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="StartupPage_Notification_ItemRemoved" xml:space="preserve">
+    <value>Removido '{0}' da inicialização.</value>
+  </data>
+  <data name="StartupPage_Notification_RemoveFailed" xml:space="preserve">
+    <value>Falha ao remover item. Permissões de administrador podem ser necessárias.</value>
+  </data>
+  <data name="StartupPage_Notification_EmptyAppError" xml:space="preserve">
+    <value>O nome e o caminho do aplicativo não podem estar vazios.</value>
+  </data>
+  <data name="StartupPage_Notification_ItemAdded" xml:space="preserve">
+    <value>Adicionado '{0}' à inicialização.</value>
+  </data>
+  <data name="StartupPage_Notification_AddFailed" xml:space="preserve">
+    <value>Falha ao adicionar item. Permissões de administrador podem ser necessárias.</value>
+  </data>
+  <data name="StartupPage_Notification_EnabledCount" xml:space="preserve">
+    <value>Habilitados {0} aplicativos de inicialização.</value>
+  </data>
+  <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
+    <value>Deshabilitados {0} aplicativos de inicialização.</value>
+  </data>
+  <data name="StartupPage_SelectionCount" xml:space="preserve">
+    <value>{0} item(ns) selecionado(s)</value>
+  </data>
+  <data name="StartupPage_RemoveSelectedButtonText.Text" xml:space="preserve">
+    <value>Remover selecionados</value>
+  </data>
+  <data name="StartupPage_RemoveSelectedButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Remover todos os itens de inicialização selecionados</value>
+  </data>
+  <data name="StartupPage_ClearSelectionButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Limpar seleção</value>
+  </data>
+  <data name="StartupPage_BatchRemoveDialog_Title" xml:space="preserve">
+    <value>Remover aplicativos de inicialização</value>
+  </data>
+  <data name="StartupPage_BatchRemoveDialog_Content" xml:space="preserve">
+    <value>Tem certeza de que deseja remover {0} item(ns) da inicialização?</value>
+  </data>
+  <data name="StartupPage_Notification_BatchRemoved" xml:space="preserve">
+    <value>{0} item(ns) de inicialização removido(s).</value>
+  </data>
+  <data name="StartupPage_Notification_BatchRemovedFailed" xml:space="preserve">
+    <value>{0} item(ns) removido(s). {1} falharam.</value>
+  </data>
+  <data name="StartupPage_SelectAllCheckBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Selecionar tudo</value>
+  </data>
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>Pontuação de Otimização</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>Verificando...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ Excelente</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B Bom</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C Razoável</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D Precisa de Ajustes</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F Não Otimizado</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>Centro de Diagnóstico Inteligente</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>Selecione uma categoria para visualizar recomendações inteligentes, reduzir a latência do sistema e ajustar sua configuração.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>Motor de Desempenho</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>Otimiza o agendamento de hardware da GPU, divisão de tempo da CPU, indexação de buffer NTFS e elimina atrasos nos menus da área de trabalho.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>Escudo de Privacidade e Telemetria</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>Bloqueia telemetria de diagnóstico em segundo plano, coleta de dados de IA do Windows, capturas de tela do Recall e envios de atividade para a nuvem.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>Usabilidade e Recursos do Shell</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>Restaura menus clássicos de clique com botão direito, ativa 'Finalizar Tarefa' na barra de tarefas, exibe extensões/arquivos ocultos e limpa o Menu Iniciar.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>Ativo: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>Otimizações Ativas: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>Ganho: +{0} pts</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>Recomendado: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>Restaurações: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>Baixa Latência e Interface Rápida</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>Proteção de Dados e Voz</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>Produtividade em 1 Clique</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>Desempenho</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>Privacidade</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>Usabilidade</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>Rec.</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>Recomendado: Ajustes de alto impacto e 100% seguros</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>Seguro</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>Tudo Seguro: Todas as otimizações 100% seguras e não invasivas</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>Avanç.</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>Avançado: Inclui ajustes moderados e para usuários avançados</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>Aplicar {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} Ativo ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>Visualizar</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>Reverter</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>Ajustar por Domínio</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>Visualização: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>Revise as alterações de otimização propostas antes de aplicar. Pontos de restauração serão salvos automaticamente.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>Aplicar Otimizações Selecionadas</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>Todas as otimizações nesta página já estão ativas! Nada para visualizar.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>Etapa 5 [Aplicar] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>Etapa 6 [Verificar]: Consultando estado do sistema em tempo real...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>{0} otimizações aplicadas e verificadas com sucesso!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>Todas as otimizações de {0} nesta página já estão ativas!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>Revertendo {0} itens nesta página...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>{0} itens foram revertidos para o estado anterior à aplicação.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>Nenhum backup de restauração encontrado para esta página.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>Ideal ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>Recomendado</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>Seguro</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>Moderado</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>Avançado</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>Cuidado</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} pts</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>Detalhes Técnicos</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>Backup Pré-Aplicação: Salvo em {0} (Estado inicial: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>Backup Pré-Aplicação: Nenhum (Alterne para criar um ponto de restauração)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>Estado Atual: {0}</value>
+  </data>
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>Verificado como Ativo ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>Requer Reinicialização 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>Falha na Verificação ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>Não Verificado</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>Geral</value>
+  </data>
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>Libera ciclos de CPU em segundo plano e economiza mais de 200 MB de RAM.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>Reduz micro-stutters e melhora a consistência do framerate.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>Melhora a responsividade do app ativo durante multitarefa pesada.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Habilitar Modo de Jogo do Windows</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Configura o Modo de Jogo do Windows e o Agendamento de Hardware GPU para latência ultra-baixa.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>Bloqueia núcleos de CPU para processos de jogos e otimiza o agendamento de threads.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>Habilitar Otimizações de Tela Cheia</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>Configura o pipeline de exibição do Windows para apresentação sem borda de alto desempenho.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Minimiza a latência de exibição mantendo a troca rápida por Alt+Tab.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>Evita flutuações de clock de energia da GPU durante jogos e renderização 3D.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>Sensação de navegação instantânea no Explorador de Arquivos e área de trabalho.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>Dicas de ferramenta e miniaturas da barra de tarefas imediatas.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>Reconhecimento instantâneo de entrada de teclas e repetição de caracteres mais rápida.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>Desativar Aceleração do Mouse (Entrada Raw)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>Desativa a curva de aceleração do mouse do Windows para precisão pura de cursor 1:1.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>Consistência de rastreamento do cursor para jogos e trabalho de design preciso.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>Acelera a indexação de diretórios e buscas de metadados do disco.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>Reduz o overhead do total de processos em 30-50 em sistemas com 8GB+ de RAM.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>Desativar Suspensão Seletiva USB</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Impede o Windows de desligar controladores USB e periféricos em estados de baixo consumo.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>Evita falhas de áudio USB, lag do controlador e desconexões do mouse.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>Desativar Limitação de Energia</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>Desativa o algoritmo de limitação de energia do Windows nos threads de execução em segundo plano.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>Garante que renderizações e compilações em segundo plano sejam executadas em velocidades máximas do CPU.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>Interrompe as interrupções de sondagem de disco recorrentes.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>Acelera a abertura de atalhos quebrados sem congelar o Explorer.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>Navegação de caminho mais rápida na barra de endereço.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Desativar Telemetria e Diagnóstico do Windows</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>Desativa completamente DiagTrack e dmwappushservice para coleta de diagnósticos em segundo plano.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>Para o rastreamento automático em segundo plano, o registro de teclas e os uploads de telemetria.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Desativar Recursos de IA e Mineração do Windows</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Bloqueia análise de IA em segundo plano do Windows, integrações de IA no Bloco de Notas/Paint e relatórios de consulta de modelos.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>Protege a privacidade dos arquivos locais e interrompe o scraping contínuo de IA na nuvem.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Desativar Capturas de Tela do Windows Recall</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>Bloqueia capturas de tela contínuas periódicas de áreas de trabalho ativas e indexação OCR.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>Garante que dados bancários sensíveis, senhas e documentos privados nunca sejam gravados.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Desativar Assistente de IA Copilot</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Desativa a barra lateral do Copilot, o botão da barra de tarefas e as consultas contínuas de sincronização na nuvem.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>Libera espaço na barra de tarefas e elimina processos de visualização web em segundo plano.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Desativar ID de Publicidade do Windows</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Impede que aplicativos da Windows Store rastreiem a atividade do usuário para publicidade personalizada.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>Para o rastreamento de perfil de identificador de publicidade exclusivo.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>Desativar Sincronização de Histórico de Atividades na Nuvem</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>Impede o upload do histórico de inicialização de aplicativos e do histórico de navegação para a nuvem da Microsoft.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>O histórico de uso do dispositivo nunca é transmitido para contas de nuvem vinculadas.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>Desativar Sincronização de Área de Transferência na Nuvem entre Dispositivos</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>Impede que o buffer de cópia da área de transferência seja enviado automaticamente para servidores na nuvem.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>Protege texto copiado sensível, senhas e tokens da exposição na nuvem.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>Desativar Acesso de Localização e Sensores</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Desativa o serviço de provedor de localização do Windows e as APIs de sensor de localização.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Impede que navegadores da web e aplicativos de desktop determinem coordenadas físicas.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Restaurar Menu de Clique com Botão Direito Clássico do Windows 10</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>Restaura o menu de contexto completo e instantâneo ao clicar com o botão direito no Windows 11 sem clicar em 'Mostrar mais opções'.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>Economiza 1 clique em cada ação de clique direito no Explorer.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>Habilitar 'Finalizar Tarefa' nos Ícones de Aplicativos da Barra de Tarefas</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>Adiciona a ação direta 'Finalizar Tarefa' ao clicar com o botão direito nos itens da barra de tarefas para encerramento instantâneo.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>Encerre instantaneamente programas congelados sem abrir o Gerenciador de Tarefas.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>Protege contra malware de extensão dupla falsificada (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>Desativar Prompt de Teclas de Aderência</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>Desativa a caixa de diálogo popup ao pressionar Shift 5 vezes em jogos.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Para as interrupções de jogo causadas pelo pressionamento da tecla Shift.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>Ocultar Seção Recomendada no Menu Iniciar</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Remove o painel de arquivos recentes e recomendados no Menu Iniciar do Windows 11.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>Menu Iniciar mais limpo com mais espaço para aplicativos fixados.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>Alinhar Ícones da Barra de Tarefas à Esquerda</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Move o botão Iniciar e os ícones da barra de tarefas do Windows 11 para a posição clássica no canto inferior esquerdo.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>Alinhamento clássico de memória muscular.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>Habilitar Visualização Compacta no Explorador de Arquivos</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>Reduz o preenchimento vertical entre linhas no Explorador de Arquivos para maior densidade de arquivos.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>Veja mais arquivos por tela sem rolar.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>Habilitar Histórico de Área de Transferência Aprimorado</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>Configura o histórico de área de transferência local Win+V sem sincronização na nuvem.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Histórico de área de transferência com vários itens acessível com Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Desativar Barra Lateral Discover e Widgets do Edge</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Desativa o botão da barra lateral do navegador Edge e o widget de pesquisa flutuante.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Remove a desordem no navegador Edge.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Desativar Sinalizações de Publicidade Bluetooth</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Impede o Windows de transmitir sinalizações de publicidade Bluetooth para hardware próximo.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>Melhora a privacidade do dispositivo sem fio em locais públicos.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Desativar Sugestões do Windows Spotlight</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>Desativa sugestões promocionais e downloads de imagens na nuvem em segundo plano na tela de bloqueio.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>Para anúncios na tela de bloqueio e tráfego de download em segundo plano.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>Desativar Container de Telemetria NVIDIA</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>Desativa as tarefas de telemetria em segundo plano do driver NVIDIA e os serviços de rastreamento.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>Para uploads de análise de GPU e libera mais de 100 MB de RAM em segundo plano.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Desativar Telemetria do Microsoft Edge</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Desativa diagnósticos do navegador Edge, relatórios de falhas e o impulso de inicialização em segundo plano.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Impede o Edge de manter processos persistentes em segundo plano.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>Fecha uma vulnerabilidade de rede importante explorada por malware e ransomware.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>Desativar Protocolo de Rede SMBv1 Legado</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>Desativa o inseguro protocolo de compartilhamento de arquivos SMBv1 de 30 anos (vetor de ataque EternalBlue/WannaCry).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>Proteção crítica de segurança contra exploits de worm de rede.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Desativar Painel de Widgets do Windows 11</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>Desativa o feed de Widgets da barra de tarefas e os processos Edge WebView em segundo plano.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>Libera mais de 300 MB de RAM e para a renderização contínua em segundo plano do Edge.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>Otimizar SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>Ajusta ou desativa o serviço SysMain para parar o pré-carregamento desnecessário em SSDs.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>Elimina picos elevados de uso de disco em segundo plano e ciclos de gravação desnecessários em SSDs.</value>
+  </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Avaliar e comentar</value>
+  </data>
+  <data name="Network_ToolsSection.Text" xml:space="preserve">
+    <value>Ferramentas de Rede</value>
+  </data>
+  <data name="Network_OptimizationSection.Text" xml:space="preserve">
+    <value>Otimização de Rede</value>
+  </data>
+  <data name="Network_CurrentDNSSection.Text" xml:space="preserve">
+    <value>Servidores DNS Atuais</value>
+  </data>
+  <data name="Network_SetDNSSection.Text" xml:space="preserve">
+    <value>Definir DNS Personalizado</value>
+  </data>
+  <data name="Network_FlushDNS.Header" xml:space="preserve">
+    <value>Limpar Cache DNS</value>
+  </data>
+  <data name="Network_FlushDNS.Description" xml:space="preserve">
+    <value>Limpa o cache do resolvedor DNS local, forçando novas consultas DNS para todos os domínios.</value>
+  </data>
+  <data name="Network_FlushDNS_Button.Content" xml:space="preserve">
+    <value>Limpar DNS</value>
+  </data>
+  <data name="Network_ReleaseRenew.Header" xml:space="preserve">
+    <value>Liberar e Renovar IP</value>
+  </data>
+  <data name="Network_ReleaseRenew.Description" xml:space="preserve">
+    <value>Libera o endereço IP atual e solicita um novo ao servidor DHCP. Útil em problemas de conectividade.</value>
+  </data>
+  <data name="Network_ReleaseRenew_Button.Content" xml:space="preserve">
+    <value>Liberar e Renovar</value>
+  </data>
+  <data name="Network_ResetTCPIP.Header" xml:space="preserve">
+    <value>Redefinir Pilha TCP/IP</value>
+  </data>
+  <data name="Network_ResetTCPIP.Description" xml:space="preserve">
+    <value>Redefine a pilha TCP/IP e o catálogo Winsock para o padrão. É necessário reiniciar o sistema.</value>
+  </data>
+  <data name="Network_ResetTCPIP_Button.Content" xml:space="preserve">
+    <value>Redefinir TCP/IP</value>
+  </data>
+  <data name="Network_OpenNetworkSettings.Header" xml:space="preserve">
+    <value>Abrir Configurações de Rede</value>
+  </data>
+  <data name="Network_OpenNetworkSettings.Description" xml:space="preserve">
+    <value>Abre a página de configurações de Rede e Internet do Windows.</value>
+  </data>
+  <data name="Network_OpenAdapterSettings.Header" xml:space="preserve">
+    <value>Configurações do Adaptador de Rede</value>
+  </data>
+  <data name="Network_OpenAdapterSettings.Description" xml:space="preserve">
+    <value>Abre o painel clássico de Conexões de Rede para gerenciar adaptadores.</value>
+  </data>
+  <data name="Network_DisableThrottling.Header" xml:space="preserve">
+    <value>Desativar Limitação de Rede</value>
+  </data>
+  <data name="Network_DisableThrottling.Description" xml:space="preserve">
+    <value>Remove o limite de 10 pacotes/ms que o Windows aplica ao tráfego de rede durante a execução de aplicativos multimídia.</value>
+  </data>
+  <data name="Network_DisableNagle.Header" xml:space="preserve">
+    <value>Desativar Algoritmo de Nagle</value>
+  </data>
+  <data name="Network_DisableNagle.Description" xml:space="preserve">
+    <value>Reduz a latência em conexões TCP enviando pacotes imediatamente. Benéfico para jogos e aplicativos em tempo real.</value>
+  </data>
+  <data name="Network_EnableRSS.Header" xml:space="preserve">
+    <value>Habilitar Receive-Side Scaling (RSS)</value>
+  </data>
+  <data name="Network_EnableRSS.Description" xml:space="preserve">
+    <value>Distribui o processamento de recebimento de rede entre vários núcleos da CPU, melhorando o rendimento e reduzindo a latência.</value>
+  </data>
+  <data name="Network_EnableECN.Header" xml:space="preserve">
+    <value>Habilitar ECN (Notificação Explícita de Congestionamento)</value>
+  </data>
+  <data name="Network_EnableECN.Description" xml:space="preserve">
+    <value>Permite que roteadores sinalizem congestionamento sem descartar pacotes, reduzindo retransmissões.</value>
+  </data>
+  <data name="Network_EnableCTCP.Header" xml:space="preserve">
+    <value>Habilitar Compound TCP (CTCP)</value>
+  </data>
+  <data name="Network_EnableCTCP.Description" xml:space="preserve">
+    <value>Usa um algoritmo de congestionamento mais agressivo que aumenta a taxa de transferência em conexões de alta largura de banda e latência.</value>
+  </data>
+  <data name="Network_DisableIPv6.Header" xml:space="preserve">
+    <value>Desativar IPv6</value>
+  </data>
+  <data name="Network_DisableIPv6.Description" xml:space="preserve">
+    <value>Desativa a pilha do protocolo IPv6. Recomendado apenas para solução de problemas relacionados ao IPv6. Pode ser necessário reiniciar.</value>
+  </data>
+  <data name="Network_NicSection.Text" xml:space="preserve">
+    <value>Interface de Rede</value>
+  </data>
+  <data name="Network_NicCard.Header" xml:space="preserve">
+    <value>Adaptador Ativo</value>
+  </data>
+  <data name="Network_NicCard.Description" xml:space="preserve">
+    <value>Selecione o adaptador de rede para o qual deseja definir as configurações de DNS.</value>
+  </data>
+  <data name="Network_IPv4Card.Header" xml:space="preserve">
+    <value>Servidores DNS IPv4</value>
+  </data>
+  <data name="Network_IPv4Card.Description" xml:space="preserve">
+    <value>Servidores DNS configurados atualmente para IPv4.</value>
+  </data>
+  <data name="Network_IPv6Card.Header" xml:space="preserve">
+    <value>Servidores DNS IPv6</value>
+  </data>
+  <data name="Network_IPv6Card.Description" xml:space="preserve">
+    <value>Servidores DNS configurados atualmente para IPv6.</value>
+  </data>
+  <data name="Network_SetDNSCard.Header" xml:space="preserve">
+    <value>Predefinição de DNS</value>
+  </data>
+  <data name="Network_SetDNSCard.Description" xml:space="preserve">
+    <value>Escolha um provedor DNS e aplique-o ao adaptador de rede selecionado.</value>
+  </data>
+  <data name="Network_ResetTCPIPWarningTitle" xml:space="preserve">
+    <value>Reinicialização Necessária</value>
+  </data>
+  <data name="Network_ResetTCPIPWarningMessage" xml:space="preserve">
+    <value>A pilha TCP/IP e o Winsock foram redefinidos. Reinicie o computador para que as alterações tenham efeito.</value>
+  </data>
+  <data name="Network_FlushDNSSuccess" xml:space="preserve">
+    <value>Cache DNS limpo com sucesso.</value>
+  </data>
+  <data name="Network_ReleaseRenewSuccess" xml:space="preserve">
+    <value>Endereço IP liberado e renovado com sucesso.</value>
+  </data>
+  <data name="Network_SuccessTitle" xml:space="preserve">
+    <value>Sucesso</value>
+  </data>
+  <data name="OptimizeSystemPage_TimerResolution.Text" xml:space="preserve">
+    <value>Resolução do temporizador e latência</value>
+  </data>
+  <data name="Feature_GlobalTimerResolution.Header" xml:space="preserve">
+    <value>Ativar resolução global do temporizador</value>
+  </data>
+  <data name="Feature_GlobalTimerResolution.Description" xml:space="preserve">
+    <value>Permite que os aplicativos solicitem uma resolução de temporizador mais alta globalmente, reduzindo a latência de agendamento em jogos e áudio em tempo real.</value>
+  </data>
+  <data name="Feature_DisableHPET.Header" xml:space="preserve">
+    <value>Desativar HPET</value>
+  </data>
+  <data name="Feature_DisableHPET.Description" xml:space="preserve">
+    <value>Desativa o High Precision Event Timer e alterna para o TSC para obter menor latência de tempo. Requer reinicialização.</value>
+  </data>
+  <data name="Feature_DisableDynamicTick.Header" xml:space="preserve">
+    <value>Desativar tique dinâmico (Dynamic Tick)</value>
+  </data>
+  <data name="Feature_DisableDynamicTick.Description" xml:space="preserve">
+    <value>Força o temporizador do sistema a operar a uma taxa constante em vez de ajustar dinamicamente, reduzindo oscilações em tarefas sensíveis à latência.</value>
+  </data>
+  <data name="OptimizeSystemPage_MemoryOptimization.Text" xml:space="preserve">
+    <value>Otimização de memória</value>
+  </data>
+  <data name="Feature_DisablePrefetch.Header" xml:space="preserve">
+    <value>Desativar Prefetch e Superfetch</value>
+  </data>
+  <data name="Feature_DisablePrefetch.Description" xml:space="preserve">
+    <value>Desativa o pré-carregamento do Windows Prefetcher e Superfetch para liberar RAM e reduzir E/S de disco. Recomendado para usuários de SSD.</value>
+  </data>
+  <data name="Feature_EnableLargeSystemCache.Header" xml:space="preserve">
+    <value>Ativar cache de sistema grande</value>
+  </data>
+  <data name="Feature_EnableLargeSystemCache.Description" xml:space="preserve">
+    <value>Aloca mais memória do sistema para cache de arquivos, melhorando o desempenho de leitura de disco em cargas intensivas de arquivos.</value>
+  </data>
+  <data name="Feature_DisableNDU.Header" xml:space="preserve">
+    <value>Desativar monitor de uso de dados de rede (NDU)</value>
+  </data>
+  <data name="Feature_DisableNDU.Description" xml:space="preserve">
+    <value>Desativa o serviço NDU, conhecido por causar vazamentos de memória no pool não paginado em alguns sistemas após longo tempo ligado.</value>
+  </data>
+  <data name="Feature_DisablePageFileEncryption.Header" xml:space="preserve">
+    <value>Desativar criptografia do arquivo de paginação</value>
+  </data>
+  <data name="Feature_DisablePageFileEncryption.Description" xml:space="preserve">
+    <value>Desativa a criptografia do arquivo de paginação do Windows para reduzir o uso da CPU durante operações de paginação.</value>
+  </data>
+  <data name="FeaturesPage_NotificationControls.Text" xml:space="preserve">
+    <value>Controles de notificações</value>
+  </data>
+  <data name="Feature_DisableLockScreenNotifications.Header" xml:space="preserve">
+    <value>Desativar notificações na tela de bloqueio</value>
+  </data>
+  <data name="Feature_DisableLockScreenNotifications.Description" xml:space="preserve">
+    <value>Impede que notificações apareçam na tela de bloqueio para maior privacidade e menos distrações.</value>
+  </data>
+  <data name="Feature_DisableToastNotifications.Header" xml:space="preserve">
+    <value>Desativar todas as notificações pop-up</value>
+  </data>
+  <data name="Feature_DisableToastNotifications.Description" xml:space="preserve">
+    <value>Desativa completamente todas as notificações pop-up (toast) de aplicativos e do sistema.</value>
+  </data>
+  <data name="Feature_DisableNotificationCenter.Header" xml:space="preserve">
+    <value>Desativar Central de Notificações</value>
+  </data>
+  <data name="Feature_DisableNotificationCenter.Description" xml:space="preserve">
+    <value>Remove a Central de Notificações/Ações da barra de tarefas. Requer reinicialização do Explorer.</value>
+  </data>
+  <data name="Feature_DisableSuggestedActions.Header" xml:space="preserve">
+    <value>Desativar ações sugeridas</value>
+  </data>
+  <data name="Feature_DisableSuggestedActions.Description" xml:space="preserve">
+    <value>Desativa o menu de ações sugeridas da área de transferência inteligente ao copiar datas, telefones ou endereços.</value>
+  </data>
+  <data name="FeaturesPage_ContextMenu.Text" xml:space="preserve">
+    <value>Personalização do menu de contexto</value>
+  </data>
+  <data name="Feature_AddTakeOwnership.Header" xml:space="preserve">
+    <value>Adicionar "Obter Propriedade" ao menu de contexto</value>
+  </data>
+  <data name="Feature_AddTakeOwnership.Description" xml:space="preserve">
+    <value>Adiciona a opção "Obter Propriedade" ao menu de contexto de arquivos e pastas para transferência rápida de permissões.</value>
+  </data>
+  <data name="Feature_AddOpenCmdHere.Header" xml:space="preserve">
+    <value>Adicionar "Abrir Prompt de Comando Aqui"</value>
+  </data>
+  <data name="Feature_AddOpenCmdHere.Description" xml:space="preserve">
+    <value>Adiciona uma opção para abrir o prompt de comando no caminho atual a partir do fundo da pasta.</value>
+  </data>
+  <data name="Feature_AddCopyFilePath.Header" xml:space="preserve">
+    <value>Adicionar "Copiar Caminho do Arquivo" ao menu de contexto</value>
+  </data>
+  <data name="Feature_AddCopyFilePath.Description" xml:space="preserve">
+    <value>Adiciona uma opção ao menu de contexto para copiar rapidamente o caminho completo do arquivo para a área de transferência.</value>
+  </data>
+  <data name="PrivacyPage_PrivacyHardening.Text" xml:space="preserve">
+    <value>Reforço de privacidade</value>
+  </data>
+  <data name="Feature_DisableWiFiSense.Header" xml:space="preserve">
+    <value>Desativar Sensor de Wi-Fi (Wi-Fi Sense)</value>
+  </data>
+  <data name="Feature_DisableWiFiSense.Description" xml:space="preserve">
+    <value>Desativa a conexão automática a pontos de acesso Wi-Fi abertos sugeridos e redes compartilhadas por contatos.</value>
+  </data>
+  <data name="Feature_DisableWebSearchResults.Header" xml:space="preserve">
+    <value>Desativar resultados da Web na pesquisa</value>
+  </data>
+  <data name="Feature_DisableWebSearchResults.Description" xml:space="preserve">
+    <value>Impede que a Pesquisa do Windows envie consultas ao Bing e exiba resultados da web. Mantém a pesquisa local e privada.</value>
+  </data>
+  <data name="Feature_DisableAppLaunchTracking.Header" xml:space="preserve">
+    <value>Desativar rastreamento de inicialização de aplicativos</value>
+  </data>
+  <data name="Feature_DisableAppLaunchTracking.Description" xml:space="preserve">
+    <value>Impede o Windows de rastrear quais aplicativos você abre para personalizar a lista dos mais usados no menu Iniciar.</value>
+  </data>
+  <data name="Feature_DisableTimelineHistory.Header" xml:space="preserve">
+    <value>Desativar histórico de atividades e linha do tempo</value>
+  </data>
+  <data name="Feature_DisableTimelineHistory.Description" xml:space="preserve">
+    <value>Desativa a Linha do Tempo do Windows e impede a publicação ou envio de dados de atividade para a nuvem.</value>
+  </data>
+  <data name="Network_DisableP2PDelivery.Header" xml:space="preserve">
+    <value>Desativar entrega P2P de atualizações</value>
+  </data>
+  <data name="Network_DisableP2PDelivery.Description" xml:space="preserve">
+    <value>Desativa a distribuição ponto a ponto do Windows Update, impedindo que seu PC compartilhe dados de atualização com outros PCs na internet.</value>
+  </data>
+  <data name="Network_DisableHotspot20.Header" xml:space="preserve">
+    <value>Desativar Hotspot 2.0</value>
+  </data>
+  <data name="Network_DisableHotspot20.Description" xml:space="preserve">
+    <value>Desativa a descoberta e conexão automática a redes Wi-Fi Hotspot 2.0 (Passpoint) para maior privacidade.</value>
+  </data>
+  <data name="Network_DisableNetBIOS.Header" xml:space="preserve">
+    <value>Desativar NetBIOS sobre TCP/IP</value>
+  </data>
+  <data name="Network_DisableNetBIOS.Description" xml:space="preserve">
+    <value>Desativa a resolução de nomes NetBIOS legada sobre TCP/IP para reduzir a superfície de ataque na rede e melhorar a segurança.</value>
+  </data>
+  <data name="OptimizeSystemPage_InputResponsiveness.Text" xml:space="preserve">
+    <value>Entrada e capacidade de resposta</value>
+  </data>
+  <data name="OptimizeSystemPage_GamingGpu.Text" xml:space="preserve">
+    <value>Jogos e placa de vídeo</value>
+  </data>
+  <data name="OptimizeSystemPage_DiskFileSystem.Text" xml:space="preserve">
+    <value>Disco e sistema de arquivos</value>
+  </data>
+  <data name="OptimizeSystemPage_ServicesSystem.Text" xml:space="preserve">
+    <value>Serviços e sistema</value>
+  </data>
+  <data name="OptimizeSystemPage_WindowsComponents.Text" xml:space="preserve">
+    <value>Componentes do Windows</value>
+  </data>
+  <data name="FeaturesPage_AppearanceUI.Text" xml:space="preserve">
+    <value>Aparência e interface</value>
+  </data>
+  <data name="FeaturesPage_SystemServices.Text" xml:space="preserve">
+    <value>Serviços do sistema</value>
+  </data>
+  <data name="FeaturesPage_InputAccessibility.Text" xml:space="preserve">
+    <value>Entrada e acessibilidade</value>
+  </data>
+  <data name="FeaturesPage_ExplorerShell.Text" xml:space="preserve">
+    <value>Explorador e interface</value>
+  </data>
+  <data name="FeaturesPage_Win11UI.Text" xml:space="preserve">
+    <value>Interface do Windows 11</value>
+  </data>
+  <data name="FeaturesPage_WindowsAIEdge.Text" xml:space="preserve">
+    <value>IA do Windows e Edge</value>
+  </data>
+  <data name="PrivacyPage_DataCollection.Text" xml:space="preserve">
+    <value>Coleta de dados e entrada</value>
+  </data>
+  <data name="PrivacyPage_CloudSync.Text" xml:space="preserve">
+    <value>Nuvem e sincronização de dispositivos</value>
+  </data>
+  <data name="PrivacyPage_LocationSecurity.Text" xml:space="preserve">
+    <value>Localização e segurança</value>
+  </data>
+  <data name="Shell_StressTest.Content" xml:space="preserve">
+    <value>Teste de Estresse</value>
+  </data>
+  <data name="StressTestPage_Title.Text" xml:space="preserve">
+    <value>Teste de Estresse</value>
+  </data>
+  <data name="StressTestPage_Description.Text" xml:space="preserve">
+    <value>Leve o seu hardware ao limite e monitore o desempenho em tempo real sob carga.</value>
+  </data>
+  <data name="StressTestPage_StartAll.Text" xml:space="preserve">
+    <value>Iniciar Tudo</value>
+  </data>
+  <data name="StressTestPage_StopAll.Text" xml:space="preserve">
+    <value>Parar Tudo</value>
+  </data>
+  <data name="StressTestPage_CPU.Text" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="StressTestPage_RAM.Text" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="StressTestPage_Disk.Text" xml:space="preserve">
+    <value>Disco</value>
+  </data>
+  <data name="StressTestPage_GPU.Text" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="StressTestPage_CpuStressTest.Text" xml:space="preserve">
+    <value>Teste de Estresse da CPU</value>
+  </data>
+  <data name="StressTestPage_CpuStressTestDesc.Text" xml:space="preserve">
+    <value>Carga computacional em todos os núcleos usando cargas paralelas de inteiros e ponto flutuante</value>
+  </data>
+  <data name="StressTestPage_RamStressTest.Text" xml:space="preserve">
+    <value>Teste de Estresse da RAM</value>
+  </data>
+  <data name="StressTestPage_RamStressTestDesc.Text" xml:space="preserve">
+    <value>Padrões de acesso à memória sequenciais e aleatórios para detectar problemas de estabilidade</value>
+  </data>
+  <data name="StressTestPage_DiskStressTest.Text" xml:space="preserve">
+    <value>Teste de Estresse do Disco</value>
+  </data>
+  <data name="StressTestPage_DiskStressTestDesc.Text" xml:space="preserve">
+    <value>Benchmark de taxa de transferência sequencial de leitura/gravação na unidade do sistema</value>
+  </data>
+  <data name="StressTestPage_GpuStressTest.Text" xml:space="preserve">
+    <value>Teste de Estresse da GPU</value>
+  </data>
+  <data name="StressTestPage_GpuStressTestDesc.Text" xml:space="preserve">
+    <value>Pipeline volumétrico e fractal de raymarching 3D acelerado por hardware para estressar a GPU em até 100%</value>
+  </data>
+  <data name="StressTestPage_Start.Text" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="StressTestPage_Stop.Text" xml:space="preserve">
+    <value>Parar</value>
+  </data>
+  <data name="StressTestPage_Usage.Text" xml:space="preserve">
+    <value>Uso</value>
+  </data>
+  <data name="StressTestPage_Threads.Text" xml:space="preserve">
+    <value>Threads</value>
+  </data>
+  <data name="StressTestPage_Score.Text" xml:space="preserve">
+    <value>Pontuação</value>
+  </data>
+  <data name="StressTestPage_Status.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StressTestPage_Idle.Text" xml:space="preserve">
+    <value>Inativo</value>
+  </data>
+  <data name="StressTestPage_Running.Text" xml:space="preserve">
+    <value>Em execução</value>
+  </data>
+  <data name="StressTestPage_Allocating.Text" xml:space="preserve">
+    <value>Alocando</value>
+  </data>
+  <data name="StressTestPage_RunningHlsl.Text" xml:space="preserve">
+    <value>Em execução (Computação HLSL)</value>
+  </data>
+  <data name="StressTestPage_Allocated.Text" xml:space="preserve">
+    <value>Alocado</value>
+  </data>
+  <data name="StressTestPage_Bandwidth.Text" xml:space="preserve">
+    <value>Largura de Banda</value>
+  </data>
+  <data name="StressTestPage_WriteSpeed.Text" xml:space="preserve">
+    <value>Gravação</value>
+  </data>
+  <data name="StressTestPage_ReadSpeed.Text" xml:space="preserve">
+    <value>Leitura</value>
+  </data>
+  <data name="StressTestPage_IOPS.Text" xml:space="preserve">
+    <value>IOPS</value>
+  </data>
+  <data name="StressTestPage_GFLOPS.Text" xml:space="preserve">
+    <value>GFLOPS</value>
+  </data>
+  <data name="StressTestPage_VRAM.Text" xml:space="preserve">
+    <value>VRAM</value>
+  </data>
+  <data name="StressTestPage_Temperature.Text" xml:space="preserve">
+    <value>Temperatura</value>
+  </data>
+  <data name="StressTestPage_FPS.Text" xml:space="preserve">
+    <value>FPS</value>
+  </data>
+  <data name="StressTestPage_RamPercentCombo.Header" xml:space="preserve">
+    <value>% de RAM</value>
+  </data>
+  <data name="StressTestPage_AllCores.Text" xml:space="preserve">
+    <value>Todos os Núcleos</value>
+  </data>
+  <data name="StressTestPage_AllCoresWithCount" xml:space="preserve">
+    <value>Todos os Núcleos ({0})</value>
+  </data>
+  <data name="StressTestPage_SelectedCoresCount" xml:space="preserve">
+    <value>{0} de {1} Núcleos</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Title" xml:space="preserve">
+    <value>Selecionar Núcleos da CPU</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="StressTestPage_SelectCpuCoresDialog_Warning" xml:space="preserve">
+    <value>Selecione pelo menos um núcleo.</value>
+  </data>
+  <data name="Intelligent_Domain_Optimizer" xml:space="preserve">
+    <value>Otimizador do Sistema</value>
+  </data>
+  <data name="Intelligent_DetectingHardware" xml:space="preserve">
+    <value>Detectando hardware...</value>
+  </data>
+  <data name="Intelligent_StatusMessageDefault" xml:space="preserve">
+    <value>Verifica, analisa, pré-visualiza, aplica, confirma e suporta reversão individual para todas as otimizações.</value>
+  </data>
+  <data name="Intelligent_Metric_NonIntrusive" xml:space="preserve">
+    <value>Seguro / Não Intrusivo</value>
+  </data>
+  <data name="Intelligent_Btn_Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="Intelligent_Preview_DialogDefaultTitle" xml:space="preserve">
+    <value>Prévia da Otimização Inteligente</value>
+  </data>
+  <data name="Intelligent_State_On" xml:space="preserve">
+    <value>LIGADO</value>
+  </data>
+  <data name="Intelligent_State_Off" xml:space="preserve">
+    <value>DESLIGADO</value>
+  </data>
+  <data name="Intelligent_Status_Optional" xml:space="preserve">
+    <value>Opcional</value>
+  </data>
+  <data name="Intelligent_General_Optimization" xml:space="preserve">
+    <value>Otimização</value>
+  </data>
+  <data name="Intelligent_Flyout_CategoryRisk" xml:space="preserve">
+    <value>Categoria: {0} • Risco: {1}</value>
+  </data>
+  <data name="Intelligent_Flyout_Impact" xml:space="preserve">
+    <value>Impacto: {0}</value>
+  </data>
+  <data name="Intelligent_Flyout_RollbackPoint" xml:space="preserve">
+    <value>Ponto de Reversão: {0} • Original: {1}</value>
+  </data>
+  <data name="OptimizeInspector_ConfiguresCount" xml:space="preserve">
+    <value>Configura {0} definições do sistema para {1}.</value>
+  </data>
+  <data name="OptimizeInspector_OptimizesDefault" xml:space="preserve">
+    <value>Otimiza {0} na configuração do Windows.</value>
+  </data>
+  <data name="OptimizeInspector_SafetyLine" xml:space="preserve">
+    <value>Segurança: {0} • Peso: +{1} pts • Status: {2}</value>
+  </data>
+  <data name="OptimizeInspector_SafetyNote" xml:space="preserve">
+    <value>Nota de Segurança: {0}</value>
+  </data>
+  <data name="OptimizeInspector_ActionsRegistry" xml:space="preserve">
+    <value>Ações e Registro:</value>
+  </data>
+  <data name="OptimizeInspector_Commands" xml:space="preserve">
+    <value>Comandos:</value>
+  </data>
+  <data name="OptimizeInspector_ReasonCaution" xml:space="preserve">
+    <value>Atenção: Recurso avançado do Windows que deve ser ajustado apenas por usuários experientes.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonModerateRec" xml:space="preserve">
+    <value>Recomendado (Moderado): Otimização de alto impacto comprovada em ferramentas de ajuste.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonModerate" xml:space="preserve">
+    <value>Moderado: Otimização avançada para usuários experientes. Incluída na pré-definição moderada.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonPersonalPref" xml:space="preserve">
+    <value>Opcional (Seguro): Preferência visual ou de uso pessoal. Incluída na pré-definição Todas Seguras.</value>
+  </data>
+  <data name="OptimizeInspector_ReasonSafeRec" xml:space="preserve">
+    <value>Recomendado: Otimização segura e não intrusiva para melhorar privacidade e agilidade.</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Title" xml:space="preserve">
+    <value>Operações em andamento</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Content" xml:space="preserve">
+    <value>Existem operações de otimização em segundo plano em execução. Deseja aguardar o término ou sair agora?</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Wait" xml:space="preserve">
+    <value>Aguardar</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="MainWindow_OperationsInProgress_Exit" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="LogViewer_Title" xml:space="preserve">
+    <value>Visualizador de Logs</value>
+  </data>
+  <data name="LogViewer_FilterPlaceholder" xml:space="preserve">
+    <value>Filtrar por nível</value>
+  </data>
+  <data name="LogViewer_FilterAll" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="LogViewer_FilterInfo" xml:space="preserve">
+    <value>Informações</value>
+  </data>
+  <data name="LogViewer_FilterWarn" xml:space="preserve">
+    <value>Aviso</value>
+  </data>
+  <data name="LogViewer_FilterError" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="LogViewer_FilterCritical" xml:space="preserve">
+    <value>Crítico</value>
+  </data>
+  <data name="LogViewer_EntriesCount" xml:space="preserve">
+    <value>{0} de {1} entradas</value>
+  </data>
+  <data name="LogViewer_SearchPlaceholder" xml:space="preserve">
+    <value>Pesquisar nos logs...</value>
+  </data>
+  <data name="LogViewer_NoEntries" xml:space="preserve">
+    <value>Nenhuma entrada de log encontrada.</value>
+  </data>
+  <data name="LogViewer_NewSession" xml:space="preserve">
+    <value>Nova Sessão</value>
+  </data>
+  <data name="LogViewer_CopyButton" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="LogViewer_OpenFileButton" xml:space="preserve">
+    <value>Abrir Arquivo</value>
+  </data>
+  <data name="ProcessesPage_TotalProcesses.Text" xml:space="preserve">
+    <value>Total de Processos</value>
+  </data>
+  <data name="ProcessesPage_TotalMemory.Text" xml:space="preserve">
+    <value>Memória Total</value>
+  </data>
+  <data name="ProcessesPage_TotalThreads.Text" xml:space="preserve">
+    <value>Total de Threads</value>
+  </data>
+  <data name="ProcessesPage_EndTaskTooltip.Text" xml:space="preserve">
+    <value>Finalizar Tarefa</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessEndedTitle" xml:space="preserve">
+    <value>Processo Finalizado</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessEndedMessage" xml:space="preserve">
+    <value>O processo '{0}' (PID: {1}) foi finalizado com sucesso.</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessNotFoundTitle" xml:space="preserve">
+    <value>Processo Não Encontrado</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessNotFoundMessage" xml:space="preserve">
+    <value>O processo com PID {0} não existe mais.</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessErrorTitle" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="ProcessesPage_Notification_ProcessErrorMessage" xml:space="preserve">
+    <value>Falha ao finalizar o processo: {0}</value>
+  </data>
+  <data name="PackagesPage_Notification_Title" xml:space="preserve">
+    <value>Pacotes</value>
+  </data>
+  <data name="PackagesPage_Notification_NoPackagesInstall" xml:space="preserve">
+    <value>Nenhum pacote selecionado para instalação.</value>
+  </data>
+  <data name="PackagesPage_Notification_NoPackagesUpdate" xml:space="preserve">
+    <value>Nenhum pacote selecionado para atualização.</value>
+  </data>
+  <data name="PackagesPage_Notification_InstallCompleted" xml:space="preserve">
+    <value>Instalação concluída: {0} com sucesso, {1} com falha.</value>
+  </data>
+  <data name="PackagesPage_Notification_UpdateCompleted" xml:space="preserve">
+    <value>Atualização concluída: {0} com sucesso, {1} com falha.</value>
+  </data>
+  <data name="DebloatPage_ClearedSize" xml:space="preserve">
+    <value> (Liberado: {0})</value>
+  </data>
+  <data name="Feature_CreatePowerPlanButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Criar Plano de Energia</value>
+  </data>
+  <data name="Search_Category_Navigation" xml:space="preserve">
+    <value>Navegação</value>
+  </data>
+  <data name="StartupPage_Notification_LoadFailed" xml:space="preserve">
+    <value>Falha ao carregar itens de inicialização: {0}</value>
+  </data>
+  <data name="StartupPage_Notification_ToggleFailed" xml:space="preserve">
+    <value>Falha ao atualizar o estado do item de inicialização para '{0}'.</value>
+  </data>
+  <data name="CopilotPlusPC" xml:space="preserve">
+    <value>PC Copilot+</value>
+  </data>
+  <data name="Supported" xml:space="preserve">
+    <value>Suportado</value>
+  </data>
+  <data name="NotSupported" xml:space="preserve">
+    <value>Não suportado</value>
+  </data>
+  <data name="SystemUpdate_DialogTitle" xml:space="preserve">
+    <value>Atualização do Windows Detectada</value>
+  </data>
+  <data name="SystemUpdate_DialogContent" xml:space="preserve">
+    <value>O Windows foi atualizado da compilação {0} para a {1}.
+
+As atualizações do Windows costumam redefinir as otimizações do sistema para os valores padrão.
+
+Deseja que o RyTuneX reaplique todas as suas otimizações, recursos e configurações de privacidade salvas ({2} itens)?</value>
+  </data>
+  <data name="SystemUpdate_DialogContentWithBreakdown" xml:space="preserve">
+    <value>O Windows foi atualizado da compilação {0} para a {1}.
+
+As atualizações do Windows costumam redefinir as otimizações do sistema para os valores padrão.
+
+Deseja que o RyTuneX reaplique todas as configurações salvas ({2} no total: {3} otimizações, {4} recursos, {5} privacidade)?</value>
+  </data>
+  <data name="SystemUpdate_ReapplyButton" xml:space="preserve">
+    <value>Reaplicar Todas as Configurações</value>
+  </data>
+  <data name="SystemUpdate_ReapplyingMessage" xml:space="preserve">
+    <value>Reaplicando otimizações, recursos e configurações de privacidade...</value>
+  </data>
+  <data name="SystemUpdate_ReappliedSuccess" xml:space="preserve">
+    <value>{0} configuração(ões) reaplicada(s) com sucesso.</value>
+  </data>
+  <data name="SystemUpdate_ReappliedSuccessWithBreakdown" xml:space="preserve">
+    <value>{0} configuração(ões) reaplicada(s) com sucesso ({1} otimizações, {2} recursos, {3} privacidade).</value>
+  </data>
+  <data name="Settings_DetectSystemUpdates.Header" xml:space="preserve">
+    <value>Detectar atualizações do Windows</value>
+  </data>
+  <data name="Settings_DetectSystemUpdates.Description" xml:space="preserve">
+    <value>Sugerir reaplicar otimizações, recursos e privacidade após uma atualização do Windows</value>
+  </data>
+  <data name="Settings_ReapplyOptimizations.Header" xml:space="preserve">
+    <value>Reaplicar todas as configurações</value>
+  </data>
+  <data name="Settings_ReapplyOptimizations.Description" xml:space="preserve">
+    <value>Reaplicar todas as otimizações, recursos e privacidade atualmente configurados no RyTuneX</value>
+  </data>
+  <data name="ReapplyingOptimizations" xml:space="preserve">
+    <value>Reaplicando otimizações, recursos e configurações de privacidade...</value>
+  </data>
+  <data name="ReapplyOptimizationsDialogContent" xml:space="preserve">
+    <value>Reaplicar {0} configuração(ões) salva(s) ({1} otimizações, {2} recursos, {3} privacidade) ao seu sistema agora?</value>
+  </data>
+  <data name="ReapplyOptimizationsDialogContentSimple" xml:space="preserve">
+    <value>Reaplicar {0} configuração(ões) salva(s) ao seu sistema agora?</value>
+  </data>
+  <data name="NoSavedOptimizations" xml:space="preserve">
+    <value>Nenhuma otimização, recurso ou configuração de privacidade está salva atualmente no RyTuneX para reaplicação.</value>
+  </data>
+  <data name="DeepClean_Title" xml:space="preserve">
+    <value>Limpeza Profunda</value>
+  </data>
+  <data name="DeepClean_Description" xml:space="preserve">
+    <value>Selecione as categorias que deseja limpar. Os tamanhos são verificados automaticamente.</value>
+  </data>
+  <data name="DeepClean_Scanning" xml:space="preserve">
+    <value>Verificando o sistema...</value>
+  </data>
+  <data name="DeepClean_TotalSelected" xml:space="preserve">
+    <value>Total selecionado: {0}</value>
+  </data>
+  <data name="DeepClean_CleanButton" xml:space="preserve">
+    <value>Limpar Selecionados</value>
+  </data>
+  <data name="DeepClean_CompleteDesc" xml:space="preserve">
+    <value>{0} de dados limpos com sucesso.</value>
+  </data>
+  <data name="DeepClean_Error" xml:space="preserve">
+    <value>Alguns itens não puderam ser limpos. Verifique o log para obter detalhes.</value>
+  </data>
+  <data name="DeepClean_SelectAll" xml:space="preserve">
+    <value>Selecionar Tudo</value>
+  </data>
+  <data name="DeepClean_DeselectAll" xml:space="preserve">
+    <value>Desmarcar Tudo</value>
+  </data>
+  <data name="DeepClean_Cat_TempFiles" xml:space="preserve">
+    <value>Arquivos Temporários</value>
+  </data>
+  <data name="DeepClean_Cat_TempFiles_Desc" xml:space="preserve">
+    <value>Arquivos temporários do usuário e do sistema, cache da Store e do Xbox</value>
+  </data>
+  <data name="DeepClean_Cat_UpdateCache" xml:space="preserve">
+    <value>Cache do Windows Update</value>
+  </data>
+  <data name="DeepClean_Cat_UpdateCache_Desc" xml:space="preserve">
+    <value>Cache de download do Windows Update e otimização de entrega</value>
+  </data>
+  <data name="DeepClean_Cat_ExplorerCache" xml:space="preserve">
+    <value>Cache do Explorador de Arquivos</value>
+  </data>
+  <data name="DeepClean_Cat_ExplorerCache_Desc" xml:space="preserve">
+    <value>Miniaturas, ícones, cache de Internet e itens recentes</value>
+  </data>
+  <data name="DeepClean_Cat_CrashDumps" xml:space="preserve">
+    <value>Dumps de Falha &amp; Relatórios de Erro</value>
+  </data>
+  <data name="DeepClean_Cat_CrashDumps_Desc" xml:space="preserve">
+    <value>Relatórios de erro do Windows, dumps de falha e diagnósticos</value>
+  </data>
+  <data name="DeepClean_Cat_BrowserCache" xml:space="preserve">
+    <value>Cache do Navegador</value>
+  </data>
+  <data name="DeepClean_Cat_BrowserCache_Desc" xml:space="preserve">
+    <value>Dados de cache do Chrome, Edge, Brave e Firefox</value>
+  </data>
+  <data name="DeepClean_Cat_ShaderCache" xml:space="preserve">
+    <value>Cache de Sombreadores GPU</value>
+  </data>
+  <data name="DeepClean_Cat_ShaderCache_Desc" xml:space="preserve">
+    <value>Cache de compilação de sombreadores NVIDIA, AMD e DirectX</value>
+  </data>
+  <data name="DeepClean_Cat_SystemLogs" xml:space="preserve">
+    <value>Logs do Sistema</value>
+  </data>
+  <data name="DeepClean_Cat_SystemLogs_Desc" xml:space="preserve">
+    <value>Logs CBS, DISM, de instalação e dados do índice de pesquisa</value>
+  </data>
+  <data name="DeepClean_Cat_OEMLogs" xml:space="preserve">
+    <value>Logs OEM &amp; do Fabricante</value>
+  </data>
+  <data name="DeepClean_Cat_OEMLogs_Desc" xml:space="preserve">
+    <value>Logs de suporte Dell, HP, Lenovo, ASUS e Acer</value>
+  </data>
+  <data name="DeepClean_Cat_Prefetch" xml:space="preserve">
+    <value>Windows Prefetch</value>
+  </data>
+  <data name="DeepClean_Cat_Prefetch_Desc" xml:space="preserve">
+    <value>Dados de pré-busca e otimização de inicialização de aplicativos</value>
+  </data>
+  <data name="DeepClean_Cat_NetworkCache" xml:space="preserve">
+    <value>Cache de Rede</value>
+  </data>
+  <data name="DeepClean_Cat_NetworkCache_Desc" xml:space="preserve">
+    <value>Cache do resolvedor DNS e redefinição do catálogo Winsock</value>
+  </data>
+  <data name="DeepClean_Cat_RecycleBin" xml:space="preserve">
+    <value>Lixeira</value>
+  </data>
+  <data name="DeepClean_Cat_RecycleBin_Desc" xml:space="preserve">
+    <value>Todos os itens atualmente na Lixeira</value>
+  </data>
+  <data name="DeepClean_Cat_FontCache" xml:space="preserve">
+    <value>Cache de Fontes</value>
+  </data>
+  <data name="DeepClean_Cat_FontCache_Desc" xml:space="preserve">
+    <value>Arquivos de cache de renderização de fontes do Windows</value>
   </data>
 </root>
